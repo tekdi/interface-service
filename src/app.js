@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config({ path: './.env' });
 const app = express();
-const packageValidator = require('./utils/packagevalidator');
+const packageValidator = require('./utils/packageValidator');
 
 //Package Loader & Validation
 const routerPackages = require('./utils/packageLoader').packageLoader();
@@ -13,14 +13,14 @@ const validatedPackages = packageValidator(routerPackages);
 const { orchestratorMapGenerator } = require('./helpers/orchestratorMapGenerator');
 const orchestratedRoutes = require('./constants/orchestratedRoutes');
 const orchestratedRouteMap = orchestratorMapGenerator(orchestratedRoutes);
-console.log(JSON.stringify(orchestratedRouteMap.get('GET'), null, 4));
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true, limit: '50MB' }));
 app.use(bodyParser.json({ limit: '50MB' }));
 
 //Router
-app.use('/interface', require('./routes/index'));
+const { initializeRouter } = require('./router');
+app.use(initializeRouter(validatedPackages));
 
 app.listen(process.env.APPLICATION_PORT, (res, err) => {
 	if (err) {
