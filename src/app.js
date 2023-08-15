@@ -10,16 +10,14 @@ const packageValidator = require('./utils/packageValidator');
 const routerPackages = require('./utils/packageLoader').packageLoader();
 const validatedPackages = packageValidator(routerPackages);
 
-const { orchestratorMapGenerator } = require('./helpers/orchestratorMapGenerator');
-const orchestratedRoutes = require('./constants/orchestratedRoutes');
-const orchestratedRouteMap = orchestratorMapGenerator(orchestratedRoutes);
-
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true, limit: '50MB' }));
 app.use(bodyParser.json({ limit: '50MB' }));
 
 //Router
 const { initializeRouter } = require('./router');
+const { initializeOrchestrationRouter } = require('./router/orchestrationRouter');
+app.use('/interface', initializeOrchestrationRouter());
 app.use(initializeRouter(validatedPackages));
 
 app.listen(process.env.APPLICATION_PORT, (res, err) => {

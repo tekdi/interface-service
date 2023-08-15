@@ -17,22 +17,22 @@ exports.initializeRouter = (packages) => {
 							getRequestController.getRequestHandler
 						);
 					} else if (configObject.type === 'POST') {
-						router.get(
+						router.post(
 							`/${packageMeta.basePackageName}${routeObject.route}`,
 							postRequestController.postRequestHandler
 						);
 					} else if (configObject.type === 'PUT') {
-						router.get(
+						router.put(
 							`/${packageMeta.basePackageName}${routeObject.route}`,
 							putRequestController.putRequestHandler
 						);
 					} else if (configObject.type === 'PATCH') {
-						router.get(
+						router.patch(
 							`/${packageMeta.basePackageName}${routeObject.route}`,
 							patchRequestController.patchRequestHandler
 						);
 					} else if (configObject.type === 'DELETE') {
-						router.get(
+						router.delete(
 							`/${packageMeta.basePackageName}${routeObject.route}`,
 							deleteRequestController.deleteRequestHandler
 						);
