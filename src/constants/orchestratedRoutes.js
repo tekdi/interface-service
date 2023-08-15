@@ -14,17 +14,27 @@ module.exports = [
 		},
 		targetRoutes: [
 			{
+				type: 'GET',
 				basePackageName: 'mentoring',
 				packageName: 'elevate-mentoring',
 				route: '/v1/create-profile',
 				targetBody: [
-					{ sourceField: 'profile', targetFile: 'profile' },
+					{ sourceField: 'profile', targetField: 'profile' },
 					{ sourceField: 'profile.name', targetField: 'name' },
 					{ sourceField: 'profile.designation', targetField: 'designation' },
+					{ sourceField: 'profile.name', targetField: 'additional.name' },
+					{ sourceField: 'profile.designation', targetField: 'additional.designation' },
 				],
 				processors: [
 					{
 						targetField: 'nameDesignation',
+						inputFields: ['profile.name', 'profile.designation'],
+						processor: (name, designation) => {
+							return `${name} - ${designation}`;
+						},
+					},
+					{
+						targetField: 'profile.nameDesignation2',
 						inputFields: ['profile.name', 'profile.designation'],
 						processor: (name, designation) => {
 							return `${name} - ${designation}`;
@@ -36,8 +46,9 @@ module.exports = [
 				basePackageName: 'user',
 				packageName: 'elevate-user',
 				route: '/v1/create-user',
+				type: 'POST',
 				targetBody: [
-					{ sourceField: 'user', targetFile: 'user' },
+					{ sourceField: 'user', targetField: 'user' },
 					{ sourceField: 'user.username', targetField: 'username' },
 					{ sourceField: 'user.password', targetField: 'password' },
 				],

@@ -6,7 +6,7 @@ const packageValidator = (packages) => {
 		supportedHttpTypes: process.env.SUPPORTED_HTTP_TYPES.split(' '),
 	};
 	const validationReport = elevateValidator.packageValidator(packages, allExpectedRoutes, meta);
-	console.log('Validation Report: ', validationReport);
+	//console.log('Validation Report: ', validationReport);
 	return packages;
 };
 

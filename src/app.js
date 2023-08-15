@@ -10,6 +10,11 @@ const packageValidator = require('./utils/packagevalidator');
 const routerPackages = require('./utils/packageLoader').packageLoader();
 const validatedPackages = packageValidator(routerPackages);
 
+const { orchestratorMapGenerator } = require('./helpers/orchestratorMapGenerator');
+const orchestratedRoutes = require('./constants/orchestratedRoutes');
+const orchestratedRouteMap = orchestratorMapGenerator(orchestratedRoutes);
+console.log(JSON.stringify(orchestratedRouteMap.get('GET'), null, 4));
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true, limit: '50MB' }));
 app.use(bodyParser.json({ limit: '50MB' }));
