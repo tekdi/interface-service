@@ -12,13 +12,14 @@ module.exports = [
 				password: 'password',
 			},
 		},
+		inSequence: true,
 		targetRoutes: [
 			{
 				type: 'GET',
 				basePackageName: 'mentoring',
 				packageName: 'elevate-mentoring',
 				route: '/v1/create-profile',
-				targetBody: [
+				/* targetBody: [
 					{ sourceField: 'profile', targetField: 'profile' },
 					{ sourceField: 'profile.name', targetField: 'name' },
 					{ sourceField: 'profile.designation', targetField: 'designation' },
@@ -40,14 +41,14 @@ module.exports = [
 							return `${name} - ${designation}`;
 						},
 					},
-				],
+				], */
 			},
 			{
 				basePackageName: 'user',
 				packageName: 'elevate-user',
 				route: '/v1/create-user',
 				type: 'POST',
-				targetBody: [
+				/* targetBody: [
 					{ sourceField: 'user', targetField: 'user' },
 					{ sourceField: 'user.username', targetField: 'username' },
 					{ sourceField: 'user.password', targetField: 'password' },
@@ -60,8 +61,9 @@ module.exports = [
 							return `${username} - ${password}`;
 						},
 					},
-				],
+				], */
 			},
 		],
+		mergeLogic: [],
 	},
 ];

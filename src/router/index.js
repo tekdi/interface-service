@@ -6,40 +6,33 @@ const { putRequestController } = require('../controllers/put');
 
 exports.initializeRouter = (packages) => {
 	try {
-		const router = require('express').Router();
-		packages.map((package) => {
-			const { packageMeta } = package;
-			package.routes.map((routeObject) => {
-				routeObject.config.map((configObject) => {
-					if (configObject.type === 'GET') {
-						router.get(
+		const express = require('express');
+		const router = express.Router();
+
+		const requestHandlers = {
+			GET: getRequestController.getRequestHandler,
+			POST: postRequestController.postRequestHandler,
+			PUT: putRequestController.putRequestHandler,
+			PATCH: patchRequestController.patchRequestHandler,
+			DELETE: deleteRequestController.deleteRequestHandler,
+		};
+
+		packages.forEach((package) => {
+			const { packageMeta, routes } = package;
+
+			routes.forEach((routeObject) => {
+				routeObject.config.forEach((configObject) => {
+					const requestHandler = requestHandlers[configObject.type];
+					if (requestHandler) {
+						router[configObject.type.toLowerCase()](
 							`/${packageMeta.basePackageName}${routeObject.route}`,
-							getRequestController.getRequestHandler
-						);
-					} else if (configObject.type === 'POST') {
-						router.post(
-							`/${packageMeta.basePackageName}${routeObject.route}`,
-							postRequestController.postRequestHandler
-						);
-					} else if (configObject.type === 'PUT') {
-						router.put(
-							`/${packageMeta.basePackageName}${routeObject.route}`,
-							putRequestController.putRequestHandler
-						);
-					} else if (configObject.type === 'PATCH') {
-						router.patch(
-							`/${packageMeta.basePackageName}${routeObject.route}`,
-							patchRequestController.patchRequestHandler
-						);
-					} else if (configObject.type === 'DELETE') {
-						router.delete(
-							`/${packageMeta.basePackageName}${routeObject.route}`,
-							deleteRequestController.deleteRequestHandler
+							requestHandler
 						);
 					}
 				});
 			});
 		});
+
 		return router;
 	} catch (err) {
 		console.log(err);
