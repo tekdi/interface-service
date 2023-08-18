@@ -1,5 +1,5 @@
 const elevateValidator = require('elevate-package-validator');
-const { allExpectedRoutes } = require('../constants/allExpectedRoutes');
+const { allExpectedRoutes } = require('../constants/routesConfigs');
 
 const packageValidator = (packages) => {
 	const meta = {
