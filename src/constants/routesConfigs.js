@@ -7,7 +7,7 @@ exports.routesConfigs = {
 			priority: 'MUST_HAVE',
 			inSequence: false,
 			orchestrated: false,
-			targetRoutes: [
+			targetPackages: [
 				{
 					basePackageName: 'mentoring',
 					packageName: 'elevate-mentoring',
@@ -20,7 +20,7 @@ exports.routesConfigs = {
 			priority: 'MUST_HAVE',
 			inSequence: true,
 			orchestrated: true,
-			targetRoutes: [
+			targetPackages: [
 				{
 					basePackageName: 'user',
 					packageName: 'elevate-user',
