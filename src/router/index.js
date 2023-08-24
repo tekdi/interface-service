@@ -1,22 +1,21 @@
 const { routesConfigs } = require('../constants/routesConfigs');
 const { orchestrationController } = require('../controllers/orchestration');
 const { targetRoutesInjector } = require('../middlewares/targetRoutesInjector');
+const { routeConfigInjector } = require('../middlewares/routeConfigInjector');
+
 const { httpMethods } = require('../constants/httpMethods');
 
 exports.initializeRouter = (packages) => {
 	try {
 		const express = require('express');
 		const router = express.Router();
-
 		const routes = routesConfigs.routes;
 		routes.map((route) => {
 			const method = httpMethods[route.type];
 			if (!route.orchestrated) {
-				const basePackageName = route.targetRoutes[0].basePackageName;
+				const basePackageName = route.targetPackages[0].basePackageName;
 				const package = packages.find((obj) => obj.packageMeta.basePackageName === basePackageName);
-				const controllerName = route.targetRoutes[0].controllerName;
-				const functionName = route.targetRoutes[0].functionName;
-				router[method](route.sourceRoute, package.controllers[controllerName][functionName]);
+				router[method](route.sourceRoute, routeConfigInjector, package.packageRouter);
 			} else
 				router[method](
 					route.sourceRoute,
