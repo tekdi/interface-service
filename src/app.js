@@ -12,8 +12,8 @@ const routerPackages = require('./utils/packageLoader').packageLoader();
 const validatedPackages = routerPackages; //Bypassing the validator for now
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true, limit: '50MB' }));
-app.use(bodyParser.json({ limit: '50MB' }));
+/* app.use(bodyParser.urlencoded({ extended: true, limit: '50MB' }));
+app.use(bodyParser.json({ limit: '50MB' })); */
 
 //Router
 const { initializeRouter } = require('./router');
