@@ -1,8 +1,8 @@
 const { routesConfigs } = require('../constants/routesConfigs');
 const { orchestrationController } = require('../controllers/orchestration');
-const { targetRoutesInjector } = require('../middlewares/targetRoutesInjector');
+const { targetPackagesInjector } = require('../middlewares/targetPackagesInjector');
 const { routeConfigInjector } = require('../middlewares/routeConfigInjector');
-
+const bodyParser = require('body-parser');
 const { httpMethods } = require('../constants/httpMethods');
 
 exports.initializeRouter = (packages) => {
@@ -16,12 +16,16 @@ exports.initializeRouter = (packages) => {
 				const basePackageName = route.targetPackages[0].basePackageName;
 				const package = packages.find((obj) => obj.packageMeta.basePackageName === basePackageName);
 				router[method](route.sourceRoute, routeConfigInjector, package.packageRouter);
-			} else
+			} else {
+				console.log(route.sourceRoute);
 				router[method](
 					route.sourceRoute,
-					targetRoutesInjector,
+					targetPackagesInjector,
+					bodyParser.urlencoded({ extended: true, limit: '50MB' }),
+					bodyParser.json({ limit: '50MB' }),
 					orchestrationController.orchestrationHandler.bind(null, packages)
 				);
+			}
 		});
 		return router;
 	} catch (err) {

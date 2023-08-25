@@ -1,8 +1,10 @@
 const { routesConfigs } = require('../constants/routesConfigs');
 
-exports.targetRoutesInjector = (req, res, next) => {
+exports.targetPackagesInjector = (req, res, next) => {
 	const routeConfig = routesConfigs.routes.find((route) => route.sourceRoute === req.originalUrl);
 	req['targetPackages'] = routeConfig.targetPackages;
 	req['inSequence'] = routeConfig.inSequence;
+	req['sourceRoute'] = routeConfig.sourceRoute;
+	req['orchestrated'] = routeConfig.orchestrated;
 	next();
 };

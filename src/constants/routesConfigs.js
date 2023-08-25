@@ -2,6 +2,22 @@ exports.routesConfigs = {
 	services: ['user', 'mentoring'],
 	routes: [
 		{
+			sourceRoute: '/interface/user-signup',
+			type: 'POST',
+			inSequence: true,
+			orchestrated: true,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+				{
+					basePackageName: 'mentoring',
+					packageName: 'elevate-mentoring',
+				},
+			],
+		},
+		{
 			sourceRoute: '/user/v1/account/create',
 			type: 'POST',
 			priority: 'MUST_HAVE',

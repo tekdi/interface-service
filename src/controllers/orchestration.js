@@ -1,16 +1,24 @@
 const orchestrationHandler = async (packages, req, res) => {
 	try {
-		const { targetRoutes, inSequence } = req;
+		const { targetPackages, inSequence, sourceRoute } = req;
+		console.log(targetPackages, inSequence, sourceRoute);
+		console.log(packages);
 		let result;
-		console.log('INSEQUENCE: ', inSequence);
 		const responses = {};
 		if (inSequence) {
-			for (const route of targetRoutes) {
-				const package = packages.find((obj) => obj.packageMeta.basePackageName === route.basePackageName);
-				responses[route.route] = package.controllers[route.controllerName][route.functionName].bind(
-					null,
+			for (const package of targetPackages) {
+				const selectedPackage = packages.find(
+					(obj) => obj.packageMeta.basePackageName === package.basePackageName
+				);
+				console.log('SelectedPackage: ', selectedPackage);
+				req['baseUrl'] =
+					process.env[`${selectedPackage.packageMeta.basePackageName.toUpperCase()}_SERVICE_BASE_URL`];
+				responses[selectedPackage.packageMeta.basePackageName] = await selectedPackage.packageRouter(
+					req,
+					res,
 					responses
-				)(req.body);
+				);
+				console.log('RESPONSES::::::::::::: ', responses);
 			}
 			result = responses;
 		} else {
@@ -24,7 +32,7 @@ const orchestrationHandler = async (packages, req, res) => {
 				})
 			);
 		}
-		res.status(200).send({ data: 'Happy from Orchestration', result });
+		res.status(200).send(result);
 	} catch (err) {
 		console.log(err);
 	}
