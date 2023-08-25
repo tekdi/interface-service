@@ -4,11 +4,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config({ path: './.env' });
 const app = express();
-const packageValidator = require('./utils/packageValidator');
+//const packageValidator = require('./utils/packageValidator');
 
 //Package Loader & Validation
 const routerPackages = require('./utils/packageLoader').packageLoader();
-const validatedPackages = packageValidator(routerPackages);
+//const validatedPackages = packageValidator(routerPackages);
+const validatedPackages = routerPackages; //Bypassing the validator for now
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true, limit: '50MB' }));
@@ -16,9 +17,9 @@ app.use(bodyParser.json({ limit: '50MB' }));
 
 //Router
 const { initializeRouter } = require('./router');
-const { initializeOrchestrationRouter } = require('./router/orchestrationRouter');
-app.use('/interface', initializeOrchestrationRouter());
 app.use(initializeRouter(validatedPackages));
+/* const { initializeOrchestrationRouter } = require('./router/orchestrationRouter');
+app.use('/interface', initializeOrchestrationRouter()); */
 
 app.listen(process.env.APPLICATION_PORT, (res, err) => {
 	if (err) {

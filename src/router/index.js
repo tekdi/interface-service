@@ -1,38 +1,28 @@
-const { getRequestController } = require('../controllers/get');
-const { postRequestController } = require('../controllers/post');
-const { patchRequestController } = require('../controllers/patch');
-const { deleteRequestController } = require('../controllers/delete');
-const { putRequestController } = require('../controllers/put');
+const { routesConfigs } = require('../constants/routesConfigs');
+const { orchestrationController } = require('../controllers/orchestration');
+const { targetRoutesInjector } = require('../middlewares/targetRoutesInjector');
+const { routeConfigInjector } = require('../middlewares/routeConfigInjector');
+
+const { httpMethods } = require('../constants/httpMethods');
 
 exports.initializeRouter = (packages) => {
 	try {
 		const express = require('express');
 		const router = express.Router();
-
-		const requestHandlers = {
-			GET: getRequestController.getRequestHandler,
-			POST: postRequestController.postRequestHandler,
-			PUT: putRequestController.putRequestHandler,
-			PATCH: patchRequestController.patchRequestHandler,
-			DELETE: deleteRequestController.deleteRequestHandler,
-		};
-
-		packages.forEach((package) => {
-			const { packageMeta, routes } = package;
-
-			routes.forEach((routeObject) => {
-				routeObject.config.forEach((configObject) => {
-					const requestHandler = requestHandlers[configObject.type];
-					if (requestHandler) {
-						router[configObject.type.toLowerCase()](
-							`/${packageMeta.basePackageName}${routeObject.route}`,
-							requestHandler
-						);
-					}
-				});
-			});
+		const routes = routesConfigs.routes;
+		routes.map((route) => {
+			const method = httpMethods[route.type];
+			if (!route.orchestrated) {
+				const basePackageName = route.targetPackages[0].basePackageName;
+				const package = packages.find((obj) => obj.packageMeta.basePackageName === basePackageName);
+				router[method](route.sourceRoute, routeConfigInjector, package.packageRouter);
+			} else
+				router[method](
+					route.sourceRoute,
+					targetRoutesInjector,
+					orchestrationController.orchestrationHandler.bind(null, packages)
+				);
 		});
-
 		return router;
 	} catch (err) {
 		console.log(err);
