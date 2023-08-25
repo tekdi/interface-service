@@ -2,7 +2,7 @@ exports.routesConfigs = {
 	services: ['user', 'mentoring'],
 	routes: [
 		{
-			sourceRoute: '/user/v1/account/create',
+			sourceRoute: '/user/v1/account/create/:userId/temp/:test',
 			type: 'POST',
 			priority: 'MUST_HAVE',
 			inSequence: false,
