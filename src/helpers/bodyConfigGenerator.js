@@ -1,22 +1,22 @@
-const { addToNestedObject } = require('./addToNestedObject');
+const { addToNestedObject } = require('./addToNestedObject')
 
 exports.bodyConfigGenerator = (targetBody, processors) => {
 	try {
-		let bodyConfig = {};
-		const objectTypeSymbol = Symbol.for('objectTypeSymbol');
+		let bodyConfig = {}
+		const objectTypeSymbol = Symbol.for('objectTypeSymbol')
 		for (const target of targetBody)
-			addToNestedObject(bodyConfig, target.targetField.split('.'), target.sourceField, objectTypeSymbol);
+			addToNestedObject(bodyConfig, target.targetField.split('.'), target.sourceField, objectTypeSymbol)
 		for (const processor of processors)
 			bodyConfig[`${processor.targetField}`] = {
 				inputFields: processor.inputFields,
 				processor,
 				[objectTypeSymbol]: 'processor',
-			};
-		return bodyConfig;
+			}
+		return bodyConfig
 	} catch (err) {
-		console.log(err);
+		console.log(err)
 	}
-};
+}
 
 /* bodyConfigGenerator(
 	[

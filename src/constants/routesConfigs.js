@@ -1550,4 +1550,4 @@ exports.routesConfigs = {
 			],
 		},
 	],
-};
+}

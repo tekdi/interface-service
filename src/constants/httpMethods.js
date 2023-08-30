@@ -4,4 +4,4 @@ exports.httpMethods = {
 	PUT: 'put',
 	PATCH: 'patch',
 	DELETE: 'delete',
-};
+}

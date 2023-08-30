@@ -1,25 +1,25 @@
-const { bodyConfigGenerator } = require('./bodyConfigGenerator');
+const { bodyConfigGenerator } = require('./bodyConfigGenerator')
 
 exports.orchestratorMapGenerator = (orchestratedRoutesArray) => {
 	try {
-		const routesMap = new Map();
+		const routesMap = new Map()
 		for (const routeInfo of orchestratedRoutesArray) {
-			if (!routesMap.has(routeInfo.type)) routesMap.set(routeInfo.type, {});
-			const routeOrchestrationConfig = routesMap.get(routeInfo.type);
+			if (!routesMap.has(routeInfo.type)) routesMap.set(routeInfo.type, {})
+			const routeOrchestrationConfig = routesMap.get(routeInfo.type)
 			routeOrchestrationConfig[`${routeInfo.sourceRoute}`] = routeInfo.targetRoutes.map((targetRouteInfo) => {
 				return {
 					route: targetRouteInfo.route,
 					type: targetRouteInfo.type,
 					bodyConfig: bodyConfigGenerator(targetRouteInfo.targetBody, targetRouteInfo.processors),
-				};
-			});
+				}
+			})
 		}
-		console.log(routesMap);
-		return routesMap;
+		console.log(routesMap)
+		return routesMap
 	} catch (err) {
-		console.log(err);
+		console.log(err)
 	}
-};
+}
 
 /* {
 	GET: {
