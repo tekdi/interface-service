@@ -1,10 +1,10 @@
 'use strict'
-const { routesConfigs } = require('../constants/routesConfigs')
-const { orchestrationController } = require('../controllers/orchestration')
-const { targetPackagesInjector } = require('../middlewares/targetPackagesInjector')
-const { routeConfigInjector } = require('../middlewares/routeConfigInjector')
+const { routesConfigs } = require('@constants/routesConfigs')
+const { orchestrationController } = require('@controllers/orchestration')
+const { targetPackagesInjector } = require('@middlewares/targetPackagesInjector')
+const { routeConfigInjector } = require('@middlewares/routeConfigInjector')
 const bodyParser = require('body-parser')
-const { httpMethods } = require('../constants/httpMethods')
+const { httpMethods } = require('@constants/httpMethods')
 
 exports.initializeRouter = (packages) => {
 	try {

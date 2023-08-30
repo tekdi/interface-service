@@ -1,6 +1,6 @@
 'use strict'
-const { routesConfigs } = require('../constants/routesConfigs')
-const { matchPathsAndExtractParams } = require('../utils/patternMatcher')
+const { routesConfigs } = require('@constants/routesConfigs')
+const { matchPathsAndExtractParams } = require('@utils/patternMatcher')
 
 exports.routeConfigInjector = (req, res, next) => {
 	const baseURL = req.protocol + '://' + req.headers.host + '/'

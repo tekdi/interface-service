@@ -48,6 +48,8 @@
 		"@config": "config",
 		"@utils": "utils",
 		"@tests": "tests",
-		"@middlewares": "middlewares"
+		"@middlewares": "middlewares",
+        "@constants":"constants",
+        "@router":"router"
 	}
 }

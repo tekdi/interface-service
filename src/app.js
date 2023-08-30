@@ -7,7 +7,7 @@ const app = express()
 //const packageValidator = require('./utils/packageValidator');
 
 //Package Loader & Validation
-const routerPackages = require('./utils/packageLoader').packageLoader()
+const routerPackages = require('@utils/packageLoader').packageLoader()
 //const validatedPackages = packageValidator(routerPackages);
 const validatedPackages = routerPackages //Bypassing the validator for now
 
@@ -16,7 +16,7 @@ app.use(cors())
 app.use(bodyParser.json({ limit: '50MB' })); */
 
 //Router
-const { initializeRouter } = require('./router')
+const { initializeRouter } = require('@router')
 app.use(initializeRouter(validatedPackages))
 /* const { initializeOrchestrationRouter } = require('./router/orchestrationRouter');
 app.use('/interface', initializeOrchestrationRouter()); */

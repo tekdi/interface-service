@@ -1,5 +1,5 @@
 'use strict'
-const { routesConfigs } = require('../constants/routesConfigs')
+const { routesConfigs } = require('@constants/routesConfigs')
 
 exports.targetPackagesInjector = (req, res, next) => {
 	const routeConfig = routesConfigs.routes.find((route) => route.sourceRoute === req.originalUrl)
