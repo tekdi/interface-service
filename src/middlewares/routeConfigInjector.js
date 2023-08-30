@@ -1,3 +1,4 @@
+'use strict'
 const { routesConfigs } = require('../constants/routesConfigs')
 const { matchPathsAndExtractParams } = require('../utils/patternMatcher')
 

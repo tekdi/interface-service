@@ -1,3 +1,4 @@
+'use strict'
 const { bodyConfigGenerator } = require('./bodyConfigGenerator')
 
 exports.orchestratorMapGenerator = (orchestratedRoutesArray) => {

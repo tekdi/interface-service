@@ -1,3 +1,4 @@
+'use strict'
 require('module-alias/register')
 const express = require('express')
 const cors = require('cors')

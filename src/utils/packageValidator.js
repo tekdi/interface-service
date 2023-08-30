@@ -1,3 +1,4 @@
+'use strict'
 const elevateValidator = require('elevate-package-validator')
 const { allExpectedRoutes } = require('../constants/routesConfigs')
 

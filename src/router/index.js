@@ -1,3 +1,4 @@
+'use strict'
 const { routesConfigs } = require('../constants/routesConfigs')
 const { orchestrationController } = require('../controllers/orchestration')
 const { targetPackagesInjector } = require('../middlewares/targetPackagesInjector')
@@ -14,8 +15,8 @@ exports.initializeRouter = (packages) => {
 			const method = httpMethods[route.type]
 			if (!route.orchestrated) {
 				const basePackageName = route.targetPackages[0].basePackageName
-				const package = packages.find((obj) => obj.packageMeta.basePackageName === basePackageName)
-				router[method](route.sourceRoute, routeConfigInjector, package.packageRouter)
+				const servicePackage = packages.find((obj) => obj.packageMeta.basePackageName === basePackageName)
+				router[method](route.sourceRoute, routeConfigInjector, servicePackage.packageRouter)
 			} else {
 				console.log(route.sourceRoute)
 				router[method](

@@ -1,3 +1,4 @@
+'use strict'
 exports.addToNestedObject = (existingObject, array, value, objectTypeSymbol) => {
 	if (array.length === 0) return existingObject
 	const key = array.shift()

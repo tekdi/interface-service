@@ -1,3 +1,4 @@
+'use strict'
 const { addToNestedObject } = require('./addToNestedObject')
 
 exports.bodyConfigGenerator = (targetBody, processors) => {

@@ -1,3 +1,4 @@
+'use strict'
 const orchestrationHandler = async (packages, req, res) => {
 	try {
 		const { targetPackages, inSequence, sourceRoute } = req
@@ -6,9 +7,9 @@ const orchestrationHandler = async (packages, req, res) => {
 		let result
 		const responses = {}
 		if (inSequence) {
-			for (const package of targetPackages) {
+			for (const servicePackage of targetPackages) {
 				const selectedPackage = packages.find(
-					(obj) => obj.packageMeta.basePackageName === package.basePackageName
+					(obj) => obj.packageMeta.basePackageName === servicePackage.basePackageName
 				)
 				console.log('SelectedPackage: ', selectedPackage)
 				req['baseUrl'] =
@@ -24,8 +25,13 @@ const orchestrationHandler = async (packages, req, res) => {
 		} else {
 			result = await Promise.all(
 				targetRoutes.map((route) => {
-					const package = packages.find((obj) => obj.packageMeta.basePackageName === route.basePackageName)
-					return package.controllers[route.controllerName][route.functionName].bind(null, responses)(req.body)
+					const servicePackage = packages.find(
+						(obj) => obj.packageMeta.basePackageName === route.basePackageName
+					)
+					return servicePackage.controllers[route.controllerName][route.functionName].bind(
+						null,
+						responses
+					)(req.body)
 				})
 			)
 		}

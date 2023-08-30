@@ -1,3 +1,4 @@
+'use strict'
 exports.routesConfigs = {
 	services: ['user', 'mentoring'],
 	routes: [
