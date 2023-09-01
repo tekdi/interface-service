@@ -20,6 +20,16 @@ const orchestrationHandler = async (packages, req, res) => {
 					responses
 				)
 				console.log('RESPONSES::::::::::::: ', responses)
+				const isBadResponse = (statusCode) => {
+					return statusCode >= 400 && statusCode <= 599
+				}
+				const responseStatusCode = responses[selectedPackage.packageMeta.basePackageName].status
+
+				if (isBadResponse(responseStatusCode)) {
+					return res
+						.status(responseStatusCode)
+						.send(responses[selectedPackage.packageMeta.basePackageName].data)
+				}
 			}
 			result = responses
 		} else {
@@ -37,7 +47,12 @@ const orchestrationHandler = async (packages, req, res) => {
 		}
 		res.status(200).send(result)
 	} catch (err) {
-		console.log(err)
+		const errorResponse = {
+			responseCode: 'INTERNAL_SERVER_ERROR',
+			message: 'Internal Server Error',
+			error: [],
+		}
+		res.status(500).json(errorResponse)
 	}
 }
 
