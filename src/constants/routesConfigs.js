@@ -1590,7 +1590,7 @@ exports.routesConfigs = {
 			],
 		},
 		{
-			sourceRoute: '/scheduler/jobs/run',
+			sourceRoute: '/scheduler/jobs/remove',
 			type: 'POST',
 			priority: 'MUST_HAVE',
 			inSequence: false,
@@ -1603,60 +1603,8 @@ exports.routesConfigs = {
 			],
 		},
 		{
-			sourceRoute: '/scheduler/jobs/every',
+			sourceRoute: '/scheduler/jobs/purge',
 			type: 'POST',
-			priority: 'MUST_HAVE',
-			inSequence: false,
-			orchestrated: false,
-			targetPackages: [
-				{
-					basePackageName: 'scheduler',
-					packageName: 'elevate-scheduler',
-				},
-			],
-		},
-		{
-			sourceRoute: '/scheduler/jobs/once',
-			type: 'POST',
-			priority: 'MUST_HAVE',
-			inSequence: false,
-			orchestrated: false,
-			targetPackages: [
-				{
-					basePackageName: 'scheduler',
-					packageName: 'elevate-scheduler',
-				},
-			],
-		},
-		{
-			sourceRoute: '/scheduler/jobs/cancel',
-			type: 'POST',
-			priority: 'MUST_HAVE',
-			inSequence: false,
-			orchestrated: false,
-			targetPackages: [
-				{
-					basePackageName: 'scheduler',
-					packageName: 'elevate-scheduler',
-				},
-			],
-		},
-		{
-			sourceRoute: '/scheduler/jobs/update',
-			type: 'PUT',
-			priority: 'MUST_HAVE',
-			inSequence: false,
-			orchestrated: false,
-			targetPackages: [
-				{
-					basePackageName: 'scheduler',
-					packageName: 'elevate-scheduler',
-				},
-			],
-		},
-		{
-			sourceRoute: '/scheduler/jobs/delete',
-			type: 'DELETE',
 			priority: 'MUST_HAVE',
 			inSequence: false,
 			orchestrated: false,
