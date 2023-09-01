@@ -1,6 +1,6 @@
 'use strict'
 exports.routesConfigs = {
-	services: ['user', 'mentoring'],
+	services: ['user', 'mentoring', 'notification', 'scheduler'],
 	routes: [
 		{
 			sourceRoute: '/user/v1/account/create',
@@ -1547,6 +1547,123 @@ exports.routesConfigs = {
 				{
 					basePackageName: 'mentoring',
 					packageName: 'elevate-mentoring',
+				},
+			],
+		},
+		{
+			sourceRoute: '/notification/v1/email/send',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'notification',
+					packageName: 'elevate-notification',
+				},
+			],
+		},
+		{
+			sourceRoute: '/scheduler/jobs/list',
+			type: 'GET',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'scheduler',
+					packageName: 'elevate-scheduler',
+				},
+			],
+		},
+		{
+			sourceRoute: '/scheduler/jobs/create',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'scheduler',
+					packageName: 'elevate-scheduler',
+				},
+			],
+		},
+		{
+			sourceRoute: '/scheduler/jobs/run',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'scheduler',
+					packageName: 'elevate-scheduler',
+				},
+			],
+		},
+		{
+			sourceRoute: '/scheduler/jobs/every',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'scheduler',
+					packageName: 'elevate-scheduler',
+				},
+			],
+		},
+		{
+			sourceRoute: '/scheduler/jobs/once',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'scheduler',
+					packageName: 'elevate-scheduler',
+				},
+			],
+		},
+		{
+			sourceRoute: '/scheduler/jobs/cancel',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'scheduler',
+					packageName: 'elevate-scheduler',
+				},
+			],
+		},
+		{
+			sourceRoute: '/scheduler/jobs/update',
+			type: 'PUT',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'scheduler',
+					packageName: 'elevate-scheduler',
+				},
+			],
+		},
+		{
+			sourceRoute: '/scheduler/jobs/delete',
+			type: 'DELETE',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'scheduler',
+					packageName: 'elevate-scheduler',
 				},
 			],
 		},
