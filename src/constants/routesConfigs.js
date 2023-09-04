@@ -20,6 +20,23 @@ exports.routesConfigs = {
 			],
 		},
 		{
+			sourceRoute: '/interface/v1/account/update',
+			type: 'PATCH',
+			priority: 'MUST_HAVE',
+			inSequence: true,
+			orchestrated: true,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+				{
+					basePackageName: 'mentoring',
+					packageName: 'elevate-mentoring',
+				},
+			],
+		},
+		{
 			sourceRoute: '/user/v1/account/login',
 			type: 'POST',
 			priority: 'MUST_HAVE',
