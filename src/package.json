@@ -18,9 +18,10 @@
 	"author": "Joffin Joy",
 	"license": "ISC",
 	"dependencies": {
+		"cli-table": "^0.3.11",
 		"cors": "^2.8.5",
 		"dotenv": "^16.3.1",
-		"elevate-mentoring": "^1.1.7",
+		"elevate-mentoring": "^1.1.6",
 		"elevate-notification": "^1.0.0",
 		"elevate-package-validator": "^1.0.0",
 		"elevate-scheduler": "^1.0.0",
@@ -49,7 +50,7 @@
 		"@utils": "utils",
 		"@tests": "tests",
 		"@middlewares": "middlewares",
-        "@constants":"constants",
-        "@router":"router"
+		"@constants": "constants",
+		"@router": "router"
 	}
 }

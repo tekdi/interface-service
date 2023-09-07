@@ -3,6 +3,13 @@ require('module-alias/register')
 const express = require('express')
 const cors = require('cors')
 require('dotenv').config({ path: './.env' })
+
+/* let environmentData = require('./envVariables')()
+if (!environmentData.success) {
+	console.error('Server could not start . Not all environment variable is provided')
+	process.exit()
+} */
+
 const app = express()
 //const packageValidator = require('./utils/packageValidator');
 
