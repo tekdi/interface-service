@@ -2,6 +2,6 @@
 const config = require('@constants/config.json')
 
 exports.routesConfigs = {
-	services: ['user', 'mentoring'],
+	services: ['user', 'mentoring', 'notification', 'scheduler'],
 	routes: config.routes,
 }
