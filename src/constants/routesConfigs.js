@@ -1,7 +1,7 @@
 'use strict'
-const routes = require('./routes.json')
+const config = require('@constants/config.json')
 
 exports.routesConfigs = {
 	services: ['user', 'mentoring'],
-	routes: routes,
+	routes: config.routes,
 }

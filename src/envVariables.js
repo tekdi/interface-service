@@ -1,4 +1,5 @@
 let table = require('cli-table')
+const config = require('@constants/config.json')
 
 let tableData = new table()
 let environmentVariables = {
@@ -10,8 +11,8 @@ let environmentVariables = {
 		message: 'Required node environment',
 		optional: false,
 	},
-	INSTALLED_PACKAGES: {
-		message: 'Required INSTALLED_PACKAGES',
+	REQUIRED_PACKAGES: {
+		message: 'Required REQUIRED_PACKAGES',
 		optional: false,
 	},
 	SUPPORTED_HTTP_TYPES: {
@@ -26,6 +27,7 @@ let environmentVariables = {
 		message: 'Required notification service base URL',
 		optional: false,
 	},
+	...config.requiredEnvs,
 }
 
 let success = true

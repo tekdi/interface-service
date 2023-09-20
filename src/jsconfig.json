@@ -18,7 +18,7 @@
 			"@services*": ["./services*"],
 			"@validators*": ["./validators*"],
 			"@utils*": ["./utils*"],
-            "@router*":["./router*"]
+			"@router*": ["./router*"]
 		}
 	},
 	"exclude": ["node_modules", "@shelf/jest-mongodb"]
