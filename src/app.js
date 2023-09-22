@@ -4,6 +4,7 @@ const express = require('express')
 const cors = require('cors')
 require('dotenv').config({ path: './.env' })
 const packageInstaller = require('./utils/packageInstaller')
+const path = require('path')
 
 let environmentData = require('./envVariables')()
 if (!environmentData.success) {
@@ -29,8 +30,11 @@ app.use(cors())
 app.use(bodyParser.json({ limit: '50MB' })); */
 
 //Router
-const { initializeRouter } = require('@router')
-app.use(initializeRouter(validatedPackages))
+/* const { initializeRouter } = require('@router')
+app.use(initializeRouter(validatedPackages)) */
+app.get(process.env.API_DOC_URL, function (req, res) {
+	res.sendFile(path.join(__dirname, './api-doc/index.html'))
+})
 /* const { initializeOrchestrationRouter } = require('./router/orchestrationRouter');
 app.use('/interface', initializeOrchestrationRouter()); */
 
