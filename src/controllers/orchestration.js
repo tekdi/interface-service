@@ -19,7 +19,17 @@ const orchestrationHandler = async (packages, req, res) => {
 					res,
 					responses
 				)
-				console.log('RESPONSES::::::::::::: ', responses)
+				console.log('RESPONSES::::::::::::: ', servicePackage, responses)
+				const isBadResponse = (statusCode) => {
+					return statusCode >= 400 && statusCode <= 599
+				}
+				const responseStatusCode = responses[selectedPackage.packageMeta.basePackageName].status
+
+				if (isBadResponse(responseStatusCode)) {
+					return res
+						.status(responseStatusCode)
+						.send(responses[selectedPackage.packageMeta.basePackageName].data)
+				}
 			}
 			result = responses
 		} else {
@@ -35,9 +45,18 @@ const orchestrationHandler = async (packages, req, res) => {
 				})
 			)
 		}
-		res.status(200).send(result)
+		result.user.result = { ...result.user.result, ...result.mentoring.result }
+		delete result.mentoring
+		console.log(result)
+		res.status(200).send(result.user)
 	} catch (err) {
 		console.log(err)
+		const errorResponse = {
+			responseCode: 'INTERNAL_SERVER_ERROR',
+			message: 'Internal Server Error',
+			error: [],
+		}
+		res.status(500).json(errorResponse)
 	}
 }
 
