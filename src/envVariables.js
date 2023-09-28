@@ -1,3 +1,4 @@
+'use strict'
 let table = require('cli-table')
 const config = require('@constants/config.json')
 

@@ -1,4 +1,7 @@
 'use strict'
+const { bodyConfigGenerator } = require('@helpers/bodyConfigGenerator')
+const { bodyValueReplacer } = require('@helpers/bodyValueReplacer')
+
 const orchestrationHandler = async (packages, req, res) => {
 	try {
 		const { targetPackages, inSequence, sourceRoute } = req
@@ -11,20 +14,19 @@ const orchestrationHandler = async (packages, req, res) => {
 				const selectedPackage = packages.find(
 					(obj) => obj.packageMeta.basePackageName === servicePackage.basePackageName
 				)
-				console.log('SelectedPackage: ', selectedPackage)
 				req['baseUrl'] =
 					process.env[`${selectedPackage.packageMeta.basePackageName.toUpperCase()}_SERVICE_BASE_URL`]
+
+				const bodyConfig = bodyConfigGenerator(servicePackage.targetBody)
+				const newBody = bodyValueReplacer(req.body, bodyConfig)
+				req.body = newBody
 				responses[selectedPackage.packageMeta.basePackageName] = await selectedPackage.packageRouter(
 					req,
 					res,
 					responses
 				)
-				console.log('RESPONSES::::::::::::: ', servicePackage, responses)
-				const isBadResponse = (statusCode) => {
-					return statusCode >= 400 && statusCode <= 599
-				}
+				const isBadResponse = (statusCode) => statusCode >= 400 && statusCode <= 599
 				const responseStatusCode = responses[selectedPackage.packageMeta.basePackageName].status
-
 				if (isBadResponse(responseStatusCode)) {
 					return res
 						.status(responseStatusCode)
@@ -45,10 +47,17 @@ const orchestrationHandler = async (packages, req, res) => {
 				})
 			)
 		}
-		result.user.result = { ...result.user.result, ...result.mentoring.result }
-		delete result.mentoring
-		console.log(result)
-		res.status(200).send(result.user)
+		let response = {}
+		for (const servicePackage of targetPackages) {
+			const body = result[servicePackage.basePackageName].result
+			const responseConfig = bodyConfigGenerator(servicePackage.responseBody)
+			console.log('RESPONSE_CONFIG: ', responseConfig)
+			response = {
+				...response,
+				...bodyValueReplacer(body, responseConfig),
+			}
+		}
+		res.status(200).send(response)
 	} catch (err) {
 		console.log(err)
 		const errorResponse = {
