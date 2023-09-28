@@ -51,6 +51,7 @@
 		"@tests": "tests",
 		"@middlewares": "middlewares",
 		"@constants": "constants",
-		"@router": "router"
+		"@router": "router",
+		"@helpers": "helpers"
 	}
 }
