@@ -527,7 +527,7 @@
 		},
 		{
 			"sourceRoute": "/user/v1/entity/update/:id",
-			"type": "PATCH",
+			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
@@ -540,6 +540,19 @@
 		},
 		{
 			"sourceRoute": "/user/v1/entity/delete",
+			"type": "DELETE",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "user",
+					"packageName": "elevate-user"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/user/v1/entity/delete/:id",
 			"type": "DELETE",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
