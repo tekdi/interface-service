@@ -25,6 +25,7 @@ const orchestrationHandler = async (packages, req, res) => {
 					res,
 					responses
 				)
+				console.log('RESPONSEEEEEEEEEEEEEEEEEEEEEEEEESSSSSSS: ', responses)
 				const isBadResponse = (statusCode) => statusCode >= 400 && statusCode <= 599
 				const responseStatusCode = responses[selectedPackage.packageMeta.basePackageName].status
 				if (isBadResponse(responseStatusCode)) {
