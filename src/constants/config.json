@@ -36,11 +36,21 @@
 			"targetPackages": [
 				{
 					"basePackageName": "user",
-					"packageName": "elevate-user"
+					"packageName": "elevate-user",
+					"targetBody": [],
+					"responseBody": [
+						{ "sourceField": "user.created_at", "targetField": "user.user_created_at" },
+						{ "sourceField": "user.updated_at", "targetField": "user.user_updated_at" }
+					]
 				},
 				{
 					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
+					"packageName": "elevate-mentoring",
+					"targetBody": [],
+					"responseBody": [
+						{ "sourceField": "created_at", "targetField": "profile_created_at" },
+						{ "sourceField": "updated_at", "targetField": "profile_updated_at" }
+					]
 				}
 			]
 		},
