@@ -4,7 +4,7 @@ const { bodyValueReplacer } = require('@helpers/bodyValueReplacer')
 
 const orchestrationHandler = async (packages, req, res) => {
 	try {
-		const { targetPackages, inSequence, sourceRoute } = req
+		const { targetPackages, inSequence, sourceRoute, responseMessage } = req
 		console.log(targetPackages, inSequence, sourceRoute)
 		console.log(packages)
 		let result
@@ -58,7 +58,11 @@ const orchestrationHandler = async (packages, req, res) => {
 				...bodyValueReplacer(body, responseConfig),
 			}
 		}
-		res.status(200).send(response)
+		res.status(200).send({
+			responseCode: 'OK',
+			message: responseMessage,
+			result: response,
+		})
 	} catch (err) {
 		console.log(err)
 		const errorResponse = {

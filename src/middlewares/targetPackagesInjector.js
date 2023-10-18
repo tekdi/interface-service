@@ -7,5 +7,6 @@ exports.targetPackagesInjector = (req, res, next) => {
 	req['inSequence'] = routeConfig.inSequence
 	req['sourceRoute'] = routeConfig.sourceRoute
 	req['orchestrated'] = routeConfig.orchestrated
+	req['responseMessage'] = routeConfig.responseMessage
 	next()
 }
