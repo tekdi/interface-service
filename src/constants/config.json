@@ -39,8 +39,10 @@
 					"packageName": "elevate-user",
 					"targetBody": [],
 					"responseBody": [
-						{ "sourceField": "user.created_at", "targetField": "user.user_created_at" },
-						{ "sourceField": "user.updated_at", "targetField": "user.user_updated_at" }
+						{ "sourceField": "created_at", "targetField": "user_created_at" },
+						{ "sourceField": "updated_at", "targetField": "user_updated_at" },
+						{ "sourceField": "meta", "targetField": "user_meta" },
+						{ "sourceField": "deleted_at", "targetField": "user_deleted_at" }
 					]
 				},
 				{
@@ -49,7 +51,9 @@
 					"targetBody": [],
 					"responseBody": [
 						{ "sourceField": "created_at", "targetField": "profile_created_at" },
-						{ "sourceField": "updated_at", "targetField": "profile_updated_at" }
+						{ "sourceField": "updated_at", "targetField": "profile_updated_at" },
+						{ "sourceField": "meta", "targetField": "profile_meta" },
+						{ "sourceField": "deleted_at", "targetField": "profile_deleted_at" }
 					]
 				}
 			]
