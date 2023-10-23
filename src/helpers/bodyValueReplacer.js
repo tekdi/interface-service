@@ -33,16 +33,10 @@ const setNestedField = (obj, path, value) => {
 		currentObj = currentObj[key]
 	}
 	const finalKey = keys[keys.length - 1]
-	if (finalKey.endsWith('[]')) {
-		currentObj[finalKey] = currentObj[finalKey] || []
-		currentObj[finalKey] = currentObj[finalKey].concat(value)
-	} else currentObj[finalKey] = value
+	currentObj[finalKey] = finalKey.endsWith('[]') ? (currentObj[finalKey] || []).concat(value) : value
 }
 
-const isObject = (obj) => {
-	if (typeof obj === 'object' && obj !== null && !Array.isArray(obj)) return true
-	else false
-}
+const isObject = (obj) => typeof obj === 'object' && obj !== null && !Array.isArray(obj)
 
 const transformRecursive = (source, sourceFieldMap, currentPath, result) => {
 	if (isObject(source))
