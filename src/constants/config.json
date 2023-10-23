@@ -61,6 +61,28 @@
 			]
 		},
 		{
+			"sourceRoute": "/interface/v1/entity-type/read",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": true,
+			"orchestrated": true,
+			"responseMessage": "Entity type fetched successfully",
+			"targetPackages": [
+				{
+					"basePackageName": "user",
+					"packageName": "elevate-user",
+					"targetBody": [],
+					"responseBody": [{ "sourceField": "entity_types", "targetField": "entity_types[]" }]
+				},
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring",
+					"targetBody": [],
+					"responseBody": [{ "sourceField": "entity_types", "targetField": "entity_types[]" }]
+				}
+			]
+		},
+		{
 			"sourceRoute": "/user/v1/account/login",
 			"type": "POST",
 			"priority": "MUST_HAVE",
