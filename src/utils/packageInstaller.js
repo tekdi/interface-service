@@ -14,7 +14,7 @@ async function installPackages(packageString) {
 
 		try {
 			const { stdout, stderr } = child_process.execSync(`npm install ${installCommand}`)
-			console.log(`${installCommand} installed successfully`)
+			//console.log(`${installCommand} installed successfully`)
 		} catch (error) {
 			console.error(`Error installing ${installCommand}: ${error}`)
 			throw new Error(`Error installing ${installCommand}: ${error}`)
