@@ -356,6 +356,32 @@
 			]
 		},
 		{
+			"sourceRoute": "/mentoring/v1/cloud-services/file/getSignedUrl",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/cloud-services/file/getDownloadableUrl",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
 			"sourceRoute": "/user/v1/admin/deleteUser",
 			"type": "DELETE",
 			"priority": "MUST_HAVE",
