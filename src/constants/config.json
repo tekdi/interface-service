@@ -1319,7 +1319,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/mentors/profile",
+			"sourceRoute": "/mentoring/v1/mentors/details",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1332,7 +1332,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/mentors/profile/:id",
+			"sourceRoute": "/mentoring/v1/mentors/details/:id",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1736,6 +1736,84 @@
 		},
 		{
 			"sourceRoute": "/mentoring/v1/org-admin/getOrgPolicies",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/admin/triggerPeriodicViewRefresh",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/admin/triggerViewRebuild",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/admin/triggerPeriodicViewRefreshInternal",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/admin/triggerViewRebuildInternal",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/mentors/list",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/mentors/createdSessions",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
