@@ -276,6 +276,19 @@ exports.routesConfigs = {
 			],
 		},
 		{
+			sourceRoute: '/user/v1/cloud-services/file/getSampleCSV',
+			type: 'GET',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
 			sourceRoute: '/user/v1/admin/deleteUser',
 			type: 'DELETE',
 			priority: 'MUST_HAVE',
