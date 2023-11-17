@@ -548,6 +548,136 @@ exports.routesConfigs = {
 				},
 			],
 		},
+		{
+			sourceRoute: '/user/v1/admin/deactivateUser',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
+			sourceRoute: '/user/v1/admin/deactivateOrg/:id',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
+			sourceRoute: '/user/v1/admin/addOrgAdmin',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
+			sourceRoute: '/user/v1/org-admin/bulkUserCreate',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
+			sourceRoute: '/user/v1/org-admin/getBulkInvitesFilesList',
+			type: 'GET',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
+			sourceRoute: '/user/v1/org-admin/getRequestDetails/:id',
+			type: 'GET',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
+			sourceRoute: '/user/v1/org-admin/getRequests',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
+			sourceRoute: '/user/v1/org-admin/updateRequestStatus',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
+			sourceRoute: '/user/v1/org-admin/deactivateUser',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
+		{
+			sourceRoute: '/user/v1/notification/template',
+			type: 'POST',
+			priority: 'MUST_HAVE',
+			inSequence: false,
+			orchestrated: false,
+			targetPackages: [
+				{
+					basePackageName: 'user',
+					packageName: 'elevate-user',
+				},
+			],
+		},
 
 		{
 			sourceRoute: '/mentoring/v1/entity/create',
