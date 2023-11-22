@@ -27,9 +27,9 @@ const packageRouterCaller = async (req, res, responses, servicePackage, packages
 	const newBody = bodyValueReplacer(req.body, servicePackage.targetBody)
 	req.body = newBody
 	responses[selectedPackage.packageMeta.basePackageName] = await selectedPackage.packageRouter(req, res, responses)
-	console.log('RESPONSES: ', responses)
+	console.log('RESPONSESSSSSSSSSSSSSSSSSSSSSSSSS: ', responses)
 	const responseStatusCode = responses[selectedPackage.packageMeta.basePackageName].status
-	if (isBadResponse(responseStatusCode)) {
+	if (isBadResponse(responseStatusCode) && !res.headersSent) {
 		res.status(responseStatusCode).send(responses[selectedPackage.packageMeta.basePackageName].data)
 		return false
 	}
