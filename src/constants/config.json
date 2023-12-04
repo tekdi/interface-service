@@ -1150,6 +1150,32 @@
 			]
 		},
 		{
+			"sourceRoute": "/mentoring/v1/sessions/completed",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/sessions/completed/:id",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
 			"sourceRoute": "/mentoring/v1/sessions/getRecording",
 			"type": "GET",
 			"priority": "MUST_HAVE",
