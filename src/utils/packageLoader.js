@@ -1,11 +1,12 @@
 'use strict'
 const packageLoader = () => {
-	const packageNames = process.env.INSTALLED_PACKAGES.split(' ')
+	const packageNames = process.env.REQUIRED_PACKAGES.split(' ')
 	const packages = []
 	for (const servicePackage of packageNames) {
-		packages.push(require(servicePackage))
+		const [packageName, version] = servicePackage.split('@')
+		packages.push(require(packageName))
 	}
-	console.log(packages)
+	//console.log(packages)
 	return packages
 }
 
