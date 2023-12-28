@@ -22,9 +22,6 @@ const path = require('path')
 
 //Package Loader & Validation
 const routerPackages = require('@utils/packageLoader').packageLoader()
-
-//Package Initializer With Changes
-require('@utils/packageInitializer').packageInitializer()
 //const validatedPackages = packageValidator(routerPackages);
 const validatedPackages = routerPackages //Bypassing the validator for now
 
