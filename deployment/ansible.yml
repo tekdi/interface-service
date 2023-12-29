@@ -41,7 +41,7 @@
         update: yes
         version: "{{ gitBranch }}"
     - name: Update npm
-      shell: cd {{release_path}}/src && npm i 
+      shell: cd {{release_path}}/src && npm i && npm i redoc-cli 
 
     - name: Delete Old Folder & create folder
       shell: rm -rf {{ current_path }} &&  cd {{ project_path }} && mkdir interface
@@ -63,6 +63,11 @@
 
     - name: move gcp credentials 
       shell: mv {{ project_path }}/gcp.json  {{ current_path }}/src/
+
+    - name: generate api-doc 
+      shell: cd {{current_path}}/src && redoc-cli build -o ./api-doc/index.html ./api-doc/api-doc.yaml
+      register: apiDocResponse 
+    - debug: msg=" Api-doc {{ apiDocResponse }} "
 
     - name: Delete release folder
       shell: rm -rf  {{ release_path }}
