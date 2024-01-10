@@ -17,6 +17,7 @@ packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
 })
 
 const app = express()
+const path = require('path')
 //const packageValidator = require('./utils/packageValidator');
 
 //Package Loader & Validation
@@ -31,6 +32,9 @@ app.use(bodyParser.json({ limit: '50MB' })); */
 //Router
 const { initializeRouter } = require('@router')
 app.use(initializeRouter(validatedPackages))
+app.get(process.env.API_DOC_URL, function (req, res) {
+	res.sendFile(path.join(__dirname, './api-doc/index.html'))
+})
 /* const { initializeOrchestrationRouter } = require('./router/orchestrationRouter');
 app.use('/interface', initializeOrchestrationRouter()); */
 
