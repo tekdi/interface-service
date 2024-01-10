@@ -2357,6 +2357,19 @@
 					"packageName": "elevate-user"
 				}
 			]
+		},
+		{
+			"sourceRoute": "mentoring/v1/mentees/list",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
 		}
 	],
 	"requiredEnvs": {
