@@ -2359,7 +2359,7 @@
 			]
 		},
 		{
-			"sourceRoute": "mentoring/v1/mentees/list",
+			"sourceRoute": "/mentoring/v1/mentees/list",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -2372,7 +2372,7 @@
 			]
 		},
 		{
-			"sourceRoute": "mentoring/v1/profile/filterList",
+			"sourceRoute": "/mentoring/v1/profile/filterList",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
