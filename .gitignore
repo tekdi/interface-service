@@ -76,3 +76,5 @@ gcp1.json
 src/globalConfig.json
 
 dev-ops/report
+
+src/package-lock.json
