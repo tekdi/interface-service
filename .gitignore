@@ -61,7 +61,7 @@ public/assessment/web2
 public/tmp
 
 .env
-
+src/.env
 gcp.json
 
 gcp1.json
