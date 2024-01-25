@@ -21,7 +21,7 @@
 		"cli-table": "^0.3.11",
 		"cors": "^2.8.5",
 		"dotenv": "^16.3.1",
-		"elevate-mentoring": "^1.1.38",
+		"elevate-mentoring": "^1.1.44",
 		"elevate-package-validator": "^1.0.0",
 		"elevate-scheduler": "^1.0.4",
 		"elevate-user": "^1.1.35",
