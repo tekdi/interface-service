@@ -88,7 +88,7 @@
 			"priority": "MUST_HAVE",
 			"inSequence": true,
 			"orchestrated": true,
-			"responseMessage": "Entity type fetched successfully",
+			"responseMessage": "User logged in successfully.",
 			"targetPackages": [
 				{
 					"basePackageName": "user",
