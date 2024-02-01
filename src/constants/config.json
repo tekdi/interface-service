@@ -100,7 +100,7 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring",
 					"targetBody": [],
-					"responseBody": []
+					"responseBody": [{ "sourceField": "permissions", "targetField": "user.permissions[]" }]
 				}
 			]
 		},
