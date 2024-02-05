@@ -1823,7 +1823,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/questions-set/create",
+			"sourceRoute": "/mentoring/v1/question-set/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1836,7 +1836,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/questions-set/update",
+			"sourceRoute": "/mentoring/v1/question-set/update",
 			"type": "PATCH",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1849,7 +1849,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/questions-set/update/:id",
+			"sourceRoute": "/mentoring/v1/question-set/update/:id",
 			"type": "PATCH",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1862,7 +1862,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/questions-set/read",
+			"sourceRoute": "/mentoring/v1/question-set/read",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1875,7 +1875,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/questions-set/read/:id",
+			"sourceRoute": "/mentoring/v1/question-set/read/:id",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
