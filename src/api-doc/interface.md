@@ -1,6 +1,6 @@
 # ShikshaLokam Elevate Project Documentation
 
-## User Service
+## Interface Service
 
 ### System Requirements
 
