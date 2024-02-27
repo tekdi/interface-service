@@ -28,6 +28,10 @@ let environmentVariables = {
 		message: 'Required notification service base URL',
 		optional: false,
 	},
+	UNNATI_SERVICE_BASE_URL: {
+		message: 'Required unnati service base URL',
+		optional: false,
+	},
 	...config.requiredEnvs,
 }
 
