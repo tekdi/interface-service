@@ -36,7 +36,6 @@ doc
 .vscode
 uploadedFiles
 uploads
-package-lock.json
 
 # Optional npm cache directory
 .npm
@@ -56,14 +55,13 @@ package-lock.json
 # Ignore Mac DS_Store files
 *.DS_Store
 
-package-lock.json
 
 public/assessment/web
 public/assessment/web2
 public/tmp
 
 .env
-
+src/.env
 gcp.json
 
 gcp1.json
@@ -78,3 +76,5 @@ gcp1.json
 src/globalConfig.json
 
 dev-ops/report
+
+src/package-lock.json
