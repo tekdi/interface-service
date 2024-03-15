@@ -74,7 +74,7 @@ version= 21
 
 ```
 
-## Start the Services
+## Start the Service
 
 Navigate to the src folder of interface service and run pm2 start command:
 
