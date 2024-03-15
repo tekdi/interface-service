@@ -76,7 +76,7 @@ version= 21
 
 ## Start the Services
 
-Navigate to the src folder of interface services and run pm2 start command:
+Navigate to the src folder of interface service and run pm2 start command:
 
 ```bash
 interface-service/src$ pm2 start app.js -i 2 --name elevate-interface
