@@ -102,7 +102,10 @@
 					"targetBody": [],
 					"responseBody": [{ "sourceField": "permissions", "targetField": "user.permissions[]" }]
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "public-low"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/account/login",
@@ -323,7 +326,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "public-low"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/account/logout",
@@ -362,7 +368,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "public-low"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/user/read",
