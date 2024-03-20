@@ -22,4 +22,12 @@ exports.rateLimitConfigs = {
 		legacyHeaders: false,
 		handler: standardHandler,
 	},
+	internal: {
+		windowMs: 1 * 60 * 1000,
+		limit: 50,
+		standardHeaders: false,
+		legacyHeaders: false,
+		handler: standardHandler,
+		skipSuccessfulRequests: true,
+	},
 }
