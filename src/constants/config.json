@@ -102,7 +102,10 @@
 					"targetBody": [],
 					"responseBody": [{ "sourceField": "permissions", "targetField": "user.permissions[]" }]
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "public-low"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/account/login",
@@ -323,7 +326,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "public-low"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/account/logout",
@@ -349,7 +355,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/account/registrationOtp",
@@ -362,7 +371,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "public-low"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/user/read",
@@ -375,7 +387,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/user/read/:id",
@@ -388,7 +403,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/user/update",
@@ -414,7 +432,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/user/share/:id",
@@ -427,7 +448,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/user-role/list",
@@ -453,7 +477,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/user-role/create",
@@ -649,7 +676,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/admin/login",
@@ -714,7 +744,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/entity-type/create",
@@ -1976,7 +2009,10 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/org-admin/setOrgPolicies",
@@ -2015,7 +2051,10 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/organization/update",
@@ -2041,7 +2080,10 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/admin/triggerPeriodicViewRefresh",
@@ -2080,7 +2122,10 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/admin/triggerViewRebuildInternal",
@@ -2093,7 +2138,10 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/mentors/list",
@@ -2171,7 +2219,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/admin/addOrgAdmin",
@@ -2353,7 +2404,10 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "none"
+			}
 		},
 		{
 			"sourceRoute": "/scheduler/jobs/updateDelay",
@@ -2366,7 +2420,10 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "none"
+			}
 		},
 		{
 			"sourceRoute": "/scheduler/jobs/remove",
@@ -2379,7 +2436,10 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "none"
+			}
 		},
 		{
 			"sourceRoute": "/scheduler/jobs/list",
@@ -2392,7 +2452,10 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "none"
+			}
 		},
 		{
 			"sourceRoute": "/scheduler/jobs/purge",
@@ -2405,7 +2468,10 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "none"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/profile/create",
@@ -2548,7 +2614,10 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/org-admin/updateOrganization",
@@ -2561,7 +2630,10 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/manage-sessions/createdSessions",
@@ -2600,7 +2672,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/mentees/list",
@@ -2847,7 +2922,10 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/organization/addRelatedOrg/:org_id",
