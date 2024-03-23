@@ -28,7 +28,7 @@ let environmentVariables = {
 		message: 'Required notification service base URL',
 		optional: false,
 	},
-	PROJECT_SERVICE_BASE_URL: {
+	UNNATI_SERVICE_BASE_URL: {
 		message: 'Required project service base URL',
 		optional: false,
 	},

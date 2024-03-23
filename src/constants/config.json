@@ -2925,19 +2925,6 @@
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/details",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
 			"sourceRoute": "/unnati/v1/userProjects/tasksStatus",
 			"type": "POST",
 			"priority": "MUST_HAVE",
@@ -3017,19 +3004,6 @@
 		},
 		{
 			"sourceRoute": "/unnati/v1/files/preSignedUrls",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/files/getDownloadableUrl",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -3259,7 +3233,7 @@
 			"message": "Required mentoring service base URL",
 			"optional": false
 		},
-		"PROJECT_SERVICE_BASE_URL": {
+		"UNNATI_SERVICE_BASE_URL": {
 			"message": "Required project service base URL",
 			"optional": false
 		}
