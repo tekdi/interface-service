@@ -19,7 +19,7 @@ packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
 
 const app = express()
 const path = require('path')
-app.set('trust proxy', process.env.RATE_LIMITER_NUMBER_OF_PROXIES)
+app.set('trust proxy', parseInt(process.env.RATE_LIMITER_NUMBER_OF_PROXIES))
 
 //Package Loader & Validation
 const routerPackages = require('@utils/packageLoader').packageLoader()
