@@ -6,6 +6,7 @@ const { routeConfigInjector } = require('@middlewares/routeConfigInjector')
 const { rateLimiter } = require('@middlewares/rateLimiter')
 const bodyParser = require('body-parser')
 const { httpMethods } = require('@constants/httpMethods')
+const {jsonBodyParserWithErrors} = require('@middlewares/jsonBodyParserWithErrors')
 
 exports.initializeRouter = (packages) => {
 	try {
@@ -24,7 +25,7 @@ exports.initializeRouter = (packages) => {
 					targetPackagesInjector,
 					rateLimiter,
 					bodyParser.urlencoded({ extended: true, limit: '50MB' }),
-					bodyParser.json({ limit: '50MB' }),
+					jsonBodyParserWithErrors,
 					orchestrationController.orchestrationHandler.bind(null, packages)
 				)
 			}
