@@ -9,22 +9,22 @@ const standardHandler = (req, res) => {
 
 exports.rateLimitConfigs = {
 	'public-low': {
-		windowMs: process.env.RATE_LIMITER_PUBLIC_LOW_WINDOW,
-		limit: process.env.RATE_LIMITER_PUBLIC_LOW_LIMIT,
+		windowMs: parseInt(process.env.RATE_LIMITER_PUBLIC_LOW_WINDOW),
+		limit: parseInt(process.env.RATE_LIMITER_PUBLIC_LOW_LIMIT),
 		standardHeaders: 'draft-7',
 		legacyHeaders: false,
 		handler: standardHandler,
 	},
 	general: {
-		windowMs: process.env.RATE_LIMITER_GENERAL_WINDOW,
-		limit: process.env.RATE_LIMITER_GENERAL_LIMIT,
+		windowMs: parseInt(process.env.RATE_LIMITER_GENERAL_WINDOW),
+		limit: parseInt(process.env.RATE_LIMITER_GENERAL_LIMIT),
 		standardHeaders: 'draft-7',
 		legacyHeaders: false,
 		handler: standardHandler,
 	},
 	internal: {
-		windowMs: process.env.RATE_LIMITER_INTERNAL_WINDOW,
-		limit: process.env.RATE_LIMITER_INTERNAL_LIMIT,
+		windowMs: parseInt(process.env.RATE_LIMITER_INTERNAL_WINDOW),
+		limit: parseInt(process.env.RATE_LIMITER_INTERNAL_LIMIT),
 		standardHeaders: 'draft-7',
 		legacyHeaders: false,
 		handler: standardHandler,
