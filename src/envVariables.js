@@ -58,6 +58,10 @@ let environmentVariables = {
 		optional: true,
 		default: 50,
 	},
+	RATE_LIMITER_NUMBER_OF_PROXIES: {
+		message: 'Required number of proxies',
+		optional: false,
+	},
 	...config.requiredEnvs,
 }
 
