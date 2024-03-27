@@ -62,6 +62,10 @@ let environmentVariables = {
 		message: 'Required number of proxies',
 		optional: false,
 	},
+	RATE_LIMITER_ENABLED: {
+		message: 'Required global rate limiter enabled flag',
+		optional: false,
+	},
 	...config.requiredEnvs,
 }
 
