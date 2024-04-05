@@ -27,6 +27,11 @@ const routerPackages = require('@utils/packageLoader').packageLoader()
 const validatedPackages = routerPackages //Bypassing the validator for now
 
 app.use(cors())
+// Middleware to set Access-Control-Allow-Origin header
+app.use((req, res, next) => {
+	res.setHeader('Access-Control-Allow-Origin', process.env.ALLOWED_HOST)
+	next()
+})
 
 const { initializeRouter } = require('@router')
 app.use(initializeRouter(validatedPackages))
