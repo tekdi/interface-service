@@ -66,6 +66,11 @@ let environmentVariables = {
 		message: 'Required global rate limiter enabled flag',
 		optional: false,
 	},
+	ALLOWED_HOST: {
+		message: 'Required CORS allowed host',
+		optional: true,
+		default: '*',
+	},
 	...config.requiredEnvs,
 }
 
