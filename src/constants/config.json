@@ -3365,6 +3365,227 @@
 					"packageName": "elevate-unnati"
 				}
 			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entityTypes/bulkCreate",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entityTypes/bulkUpdate",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entityTypes/find",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entityTypes/list",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entityTypes/create",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entityTypes/update",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/bulkCreate",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/bulkUpdate",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/create",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/update",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/list",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/find",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/details",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/listByEntityType",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/subEntityList",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/listByIds",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/subEntityListBasedOnRoleAndLocation",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity-management",
+					"packageName": "elevate-entity-management"
+				}
+			]
 		}
 	],
 	"requiredEnvs": {
@@ -3383,6 +3604,7 @@
 	},
 	"services": {
 		"elevate-scheduler": "^1.0.0",
-		"elevate-unnati": "^2.0.1"
+		"elevate-unnati": "^2.0.1",
+		"elevate-entity-management": "^1.0.0"
 	}
 }
