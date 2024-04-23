@@ -59,6 +59,7 @@ const sourceFieldMapGenerator = (mappings) => {
 	mappings.map((mapping) => {
 		sourceFieldMap.set(mapping.sourceField, mapping.targetField)
 	})
+	console.log(sourceFieldMap)
 	return sourceFieldMap
 }
 

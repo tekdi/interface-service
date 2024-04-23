@@ -83,188 +83,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/interface/v1/account/login",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": true,
-			"orchestrated": true,
-			"responseMessage": "User logged in successfully.",
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user",
-					"targetBody": [],
-					"responseBody": []
-				},
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring",
-					"targetBody": [],
-					"responseBody": [{ "sourceField": "permissions", "targetField": "user.permissions[]" }]
-				}
-			],
-			"rateLimit": {
-				"type": "public-low"
-			}
-		},
-		{
 			"sourceRoute": "/user/v1/account/login",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/role-permission-mapping/list",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/permissions/create",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/permissions/list",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/permissions/update/:id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/permissions/delete/:id",
-			"type": "DELETE",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/modules/create",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/modules/update/:id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/modules/list",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/modules/delete/:id",
-			"type": "DELETE",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/role-permission-mapping/create/:role_id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/role-permission-mapping/delete/:role_id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/role-permission-mapping/list",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -326,10 +145,7 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "public-low"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/user/v1/account/logout",
@@ -355,10 +171,7 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/user/v1/account/registrationOtp",
@@ -371,10 +184,7 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "public-low"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/user/v1/user/read",
@@ -387,10 +197,7 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/user/v1/user/read/:id",
@@ -403,10 +210,7 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/user/v1/user/update",
@@ -432,10 +236,7 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/user/v1/user/share/:id",
@@ -448,13 +249,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
-			"sourceRoute": "/user/v1/user-role/list",
+			"sourceRoute": "/user/v1/userRole/list",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -466,62 +264,6 @@
 				}
 			]
 		},
-		{
-			"sourceRoute": "/user/v1/user-role/default",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
-		},
-		{
-			"sourceRoute": "/user/v1/user-role/create",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/user-role/update/:id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/user-role/delete/:id",
-			"type": "DELETE",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-
 		{
 			"sourceRoute": "/user/v1/form/create",
 			"type": "POST",
@@ -676,10 +418,7 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/user/v1/admin/login",
@@ -744,10 +483,7 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/user/v1/entity-type/create",
@@ -1856,7 +1592,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/question-set/create",
+			"sourceRoute": "/mentoring/v1/questionsSet/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1869,7 +1605,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/question-set/update",
+			"sourceRoute": "/mentoring/v1/questionsSet/update",
 			"type": "PATCH",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1882,7 +1618,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/question-set/update/:id",
+			"sourceRoute": "/mentoring/v1/questionsSet/update/:id",
 			"type": "PATCH",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1895,7 +1631,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/question-set/read",
+			"sourceRoute": "/mentoring/v1/questionsSet/read",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -1908,7 +1644,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/mentoring/v1/question-set/read/:id",
+			"sourceRoute": "/mentoring/v1/questionsSet/read/:id",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -2009,10 +1745,7 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/mentoring/v1/org-admin/setOrgPolicies",
@@ -2051,10 +1784,7 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/mentoring/v1/organization/update",
@@ -2068,22 +1798,6 @@
 					"packageName": "elevate-mentoring"
 				}
 			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/organization/eventListener",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/admin/triggerPeriodicViewRefresh",
@@ -2122,10 +1836,7 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/mentoring/v1/admin/triggerViewRebuildInternal",
@@ -2138,10 +1849,7 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/mentoring/v1/mentors/list",
@@ -2219,10 +1927,7 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/user/v1/admin/addOrgAdmin",
@@ -2404,10 +2109,7 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			],
-			"rateLimit": {
-				"type": "none"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/scheduler/jobs/updateDelay",
@@ -2420,10 +2122,7 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			],
-			"rateLimit": {
-				"type": "none"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/scheduler/jobs/remove",
@@ -2436,10 +2135,7 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			],
-			"rateLimit": {
-				"type": "none"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/scheduler/jobs/list",
@@ -2452,10 +2148,7 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			],
-			"rateLimit": {
-				"type": "none"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/scheduler/jobs/purge",
@@ -2468,10 +2161,7 @@
 					"basePackageName": "scheduler",
 					"packageName": "elevate-scheduler"
 				}
-			],
-			"rateLimit": {
-				"type": "none"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/mentoring/v1/profile/create",
@@ -2614,10 +2304,7 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
+			]
 		},
 		{
 			"sourceRoute": "/mentoring/v1/org-admin/updateOrganization",
@@ -2630,357 +2317,10 @@
 					"basePackageName": "mentoring",
 					"packageName": "elevate-mentoring"
 				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
-		},
-		{
-			"sourceRoute": "/mentoring/v1/manage-sessions/createdSessions",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/manage-sessions/downloadSessions",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
 			]
 		},
 		{
 			"sourceRoute": "/user/v1/account/search",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
-		},
-		{
-			"sourceRoute": "/mentoring/v1/mentees/list",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/profile/filterList",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/sessions/enrolledMentees/:id",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/sessions/enrolledMentees",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/permissions/create",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/permissions/list",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/permissions/update/:id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/permissions/delete/:id",
-			"type": "DELETE",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/modules/create",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/modules/update/:id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/modules/list",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/modules/delete/:id",
-			"type": "DELETE",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/role-permission-mapping/create/:role_id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/role-permission-mapping/delete/:role_id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/sessions/addMentees",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/sessions/addMentees/:id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/sessions/removeMentees",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/sessions/removeMentees/:id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/sessions/bulkUpdateMentorNames",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			],
-			"rateLimit": {
-				"type": "internal"
-			}
-		},
-		{
-			"sourceRoute": "/user/v1/organization/addRelatedOrg/:org_id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/organization/removeRelatedOrg/:org_id",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/account/changePassword",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/account/sessions",
-			"type": "GET",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/user/v1/account/validateUserSession",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
