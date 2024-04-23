@@ -3614,7 +3614,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/interface/v2/account/create",
+			"sourceRoute": "/elevate-interface/v2/account/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -3627,7 +3627,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/interface/v2/account/login",
+			"sourceRoute": "/elevate-interface/v1/account/login",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -3640,7 +3640,20 @@
 			]
 		},
 		{
-			"sourceRoute": "/interface/v2/account/update",
+			"sourceRoute": "/elevate-interface/v1/account/update",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "user",
+					"packageName": "elevate-user"
+				}
+			]
+		}
+		{
+			"sourceRoute": "/user/v2/account/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -3652,6 +3665,32 @@
 				}
 			]
 		},
+		{
+			"sourceRoute": "/user/v1/account/login",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "user",
+					"packageName": "elevate-user"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/user/v1/account/update",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "user",
+					"packageName": "elevate-user"
+				}
+			]
+		}
 	],
 	"requiredEnvs": {
 		"USER_SERVICE_BASE_URL": {
@@ -3662,14 +3701,19 @@
 			"message": "Required mentoring service base URL",
 			"optional": false
 		},
-		"UNNATI_SERVICE_BASE_URL": {
+		"PROJECT_SERVICE_BASE_URL": {
 			"message": "Required project service base URL",
 			"optional": false
+		},
+		"ENTITY-MANAGEMENT_SERVICE_BASE_URL": {
+			"message": "Required entity service base URL",
+			"optional": false
 		}
+
 	},
 	"services": {
-		"elevate-scheduler": "^1.0.0",
-		"elevate-unnati": "^2.0.1",
+		"elevate-scheduler": "^1.0.4",
+		"elevate-project" : "^1.0.1",
 		"elevate-entity-management": "^1.0.0"
 	}
 }
