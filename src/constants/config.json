@@ -3147,6 +3147,19 @@
 					"packageName": "elevate-mentoring"
 				}
 			]
+		},
+		{
+			"sourceRoute": "/selfcreationportal/v1/permissions/list",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "self_creation_portal",
+					"packageName": "elevate-self-creation-portal"
+				}
+			]
 		}
 	],
 	"requiredEnvs": {
@@ -3156,6 +3169,10 @@
 		},
 		"MENTORING_SERVICE_BASE_URL": {
 			"message": "Required mentoring service base URL",
+			"optional": false
+		},
+		"SELF_CREATION_PORTAL_SERVICE_BASE_URL" : {
+			"message": "Required Creation portal service base URL",
 			"optional": false
 		}
 	},
