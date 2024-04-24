@@ -5,13 +5,15 @@ const removeArraySuffix = (obj) => {
 	if (Array.isArray(obj)) {
 		return obj.map(removeArraySuffix)
 	} else if (typeof obj === 'object' && obj !== null) {
-		Object.keys(obj).forEach((key) => {
-			const newKey = key.endsWith('[]') ? key.slice(0, -2) : key
-			obj[newKey] = removeArraySuffix(obj[key])
-			if (newKey !== key) {
-				delete obj[key]
+		for (const key in obj) {
+			if (obj.hasOwnProperty(key)) {
+				const newKey = key.endsWith('[]') ? key.slice(0, -2) : key
+				obj[newKey] = removeArraySuffix(obj[key])
+				if (newKey !== key) {
+					delete obj[key]
+				}
 			}
-		})
+		}
 	}
 	return obj
 }
@@ -21,9 +23,11 @@ const isBadResponse = (statusCode) => statusCode >= 400 && statusCode <= 599
 const packageRouterCaller = async (req, res, responses, servicePackage, packages) => {
 	const selectedPackage = packages.find((obj) => obj.packageMeta.basePackageName === servicePackage.basePackageName)
 	req['baseUrl'] = process.env[`${selectedPackage.packageMeta.basePackageName.toUpperCase()}_SERVICE_BASE_URL`]
+	//const bodyConfig = bodyConfigGenerator(servicePackage.targetBody)
 	const newBody = bodyValueReplacer(req.body, servicePackage.targetBody)
 	req.body = newBody
 	responses[selectedPackage.packageMeta.basePackageName] = await selectedPackage.packageRouter(req, res, responses)
+	console.log('RESPONSESSSSSSSSSSSSSSSSSSSSSSSSS: ', responses)
 	const responseStatusCode = responses[selectedPackage.packageMeta.basePackageName].status
 	if (isBadResponse(responseStatusCode) && !res.headersSent) {
 		res.status(responseStatusCode).send(responses[selectedPackage.packageMeta.basePackageName].data)
@@ -34,7 +38,9 @@ const packageRouterCaller = async (req, res, responses, servicePackage, packages
 
 const orchestrationHandler = async (packages, req, res) => {
 	try {
-		const { targetPackages, inSequence, responseMessage } = req
+		const { targetPackages, inSequence, sourceRoute, responseMessage } = req
+		console.log(targetPackages, inSequence, sourceRoute)
+		console.log(packages)
 		const responses = {}
 		let asyncRequestsStatues = []
 		if (inSequence)
@@ -51,6 +57,7 @@ const orchestrationHandler = async (packages, req, res) => {
 					return packageRouterCaller(req, res, responses, servicePackage, packages)
 				})
 			)
+		console.log('RESPONSEEEEEEEEEEEEEEEEEEEEES: ', responses)
 		let response = {}
 		for (const servicePackage of targetPackages) {
 			const body = responses[servicePackage.basePackageName]?.result

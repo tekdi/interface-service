@@ -15,6 +15,7 @@ exports.orchestratorMapGenerator = (orchestratedRoutesArray) => {
 				}
 			})
 		}
+		//console.log(routesMap)
 		return routesMap
 	} catch (err) {
 		console.log(err)
