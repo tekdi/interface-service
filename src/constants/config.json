@@ -3820,7 +3820,7 @@
 					"packageName": "elevate-user"
 				}
 			]
-		}
+		},
 		{
 			"sourceRoute": "/user/v2/account/create",
 			"type": "POST",
@@ -3862,8 +3862,7 @@
 		}
 	],
 	"requiredEnvs": {
-		"
-    ": {
+		"USER_SERVICE_BASE_URL": {
 			"message": "Required user service base URL",
 			"optional": false
 		},
@@ -3874,7 +3873,7 @@
 		"SELF_CREATION_PORTAL_SERVICE_BASE_URL" : {
 			"message": "Required Creation portal service base URL",
 			"optional": false
-		}
+		},
 		"PROJECT_SERVICE_BASE_URL": {
 			"message": "Required project service base URL",
 			"optional": false
