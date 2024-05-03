@@ -3198,7 +3198,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/selfcreationportal/v1/permissions/list",
+			"sourceRoute": "/scp/v1/permissions/list",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -3211,327 +3211,327 @@
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/details",
+			"sourceRoute": "/project/v1/userProjects/details",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/sync",
+			"sourceRoute": "/project/v1/userProjects/sync",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/tasksStatus",
+			"sourceRoute": "/project/v1/userProjects/tasksStatus",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/add",
+			"sourceRoute": "/project/v1/userProjects/add",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/userAssigned",
+			"sourceRoute": "/project/v1/userProjects/userAssigned",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/share",
+			"sourceRoute": "/project/v1/userProjects/share",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/importedProjects",
+			"sourceRoute": "/project/v1/userProjects/importedProjects",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/list",
+			"sourceRoute": "/project/v1/userProjects/list",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/files/preSignedUrls",
+			"sourceRoute": "/project/v1/files/preSignedUrls",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/files/getDownloadableUrl",
+			"sourceRoute": "/project/v1/files/getDownloadableUrl",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/dataPipeline/userProject",
+			"sourceRoute": "/project/v1/dataPipeline/userProject",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templates/bulkCreate",
+			"sourceRoute": "/project/v1/project/templates/bulkCreate",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templates/bulkUpdate",
+			"sourceRoute": "/project/v1/project/templates/bulkUpdate",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templates/importProjectTemplate",
+			"sourceRoute": "/project/v1/project/templates/importProjectTemplate",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templates/listByIds",
+			"sourceRoute": "/project/v1/project/templates/listByIds",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templates/details",
+			"sourceRoute": "/project/v1/project/templates/details",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templates/update",
+			"sourceRoute": "/project/v1/project/templates/update",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templates/list",
+			"sourceRoute": "/project/v1/project/templates/list",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templateTasks/bulkCreate",
+			"sourceRoute": "/project/v1/project/templateTasks/bulkCreate",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templateTasks/bulkUpdate",
+			"sourceRoute": "/project/v1/project/templateTasks/bulkUpdate",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templateTasks/update",
+			"sourceRoute": "/project/v1/project/templateTasks/update",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/library/categories/projects",
+			"sourceRoute": "/project/v1/library/categories/projects",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/library/categories/create",
+			"sourceRoute": "/project/v1/library/categories/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/library/categories/update",
+			"sourceRoute": "/project/v1/library/categories/update",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/library/categories/list",
+			"sourceRoute": "/project/v1/library/categories/list",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
