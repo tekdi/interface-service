@@ -3042,327 +3042,496 @@
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/details",
+			"sourceRoute": "/user/v1/account/searchByEmailIds",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "user",
+					"packageName": "elevate-user"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/sync",
+			"sourceRoute": "/mentoring/v1/org-admin/bulkSessionCreate",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/tasksStatus",
+			"sourceRoute": "/mentoring/v1/availability/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/add",
-			"type": "POST",
+			"sourceRoute": "/mentoring/v1/availability/update",
+			"type": "PATCH",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/userAssigned",
-			"type": "POST",
+			"sourceRoute": "/mentoring/v1/availability/update/:id",
+			"type": "PATCH",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/share",
+			"sourceRoute": "/mentoring/v1/availability/delete",
+			"type": "DELETE",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/availability/delete/:id",
+			"type": "DELETE",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/availability/read",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/importedProjects",
+			"sourceRoute": "/mentoring/v1/availability/read/:id",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/userProjects/list",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/files/preSignedUrls",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/files/getDownloadableUrl",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/dataPipeline/userProject",
+			"sourceRoute": "/mentoring/v1/availability/isAvailable",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templates/bulkCreate",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/project/templates/bulkUpdate",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/project/templates/importProjectTemplate",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/project/templates/listByIds",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/project/templates/details",
+			"sourceRoute": "/mentoring/v1/availability/isAvailable/:id",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templates/update",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/project/templates/list",
+			"sourceRoute": "/mentoring/v1/availability/users",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/project/templateTasks/bulkCreate",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/project/templateTasks/bulkUpdate",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/project/templateTasks/update",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/unnati/v1/library/categories/projects",
+			"sourceRoute": "/scp/v1/permissions/list",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "self_creation_portal",
+					"packageName": "elevate-self-creation-portal"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/library/categories/create",
+			"sourceRoute": "/project/v1/userProjects/details",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/library/categories/update",
+			"sourceRoute": "/project/v1/userProjects/sync",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
 		{
-			"sourceRoute": "/unnati/v1/library/categories/list",
+			"sourceRoute": "/project/v1/userProjects/tasksStatus",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/userProjects/add",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/userProjects/userAssigned",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/userProjects/share",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
 			"targetPackages": [
 				{
-					"basePackageName": "unnati",
-					"packageName": "elevate-unnati"
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/userProjects/importedProjects",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/userProjects/list",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/files/preSignedUrls",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/files/getDownloadableUrl",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/dataPipeline/userProject",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templates/bulkCreate",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templates/bulkUpdate",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templates/importProjectTemplate",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templates/listByIds",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templates/details",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templates/update",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templates/list",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templateTasks/bulkCreate",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templateTasks/bulkUpdate",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/project/templateTasks/update",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/library/categories/projects",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/library/categories/create",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/library/categories/update",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/library/categories/list",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
 				}
 			]
 		},
@@ -3767,11 +3936,15 @@
 			"message": "Required mentoring service base URL",
 			"optional": false
 		},
+		"SELF_CREATION_PORTAL_SERVICE_BASE_URL" : {
+			"message": "Required Creation portal service base URL",
+			"optional": false
+		},
 		"PROJECT_SERVICE_BASE_URL": {
 			"message": "Required project service base URL",
 			"optional": false
 		},
-		"ENTITY-MANAGEMENT_SERVICE_BASE_URL": {
+		"ENTITY_MANAGEMENT_SERVICE_BASE_URL": {
 			"message": "Required entity service base URL",
 			"optional": false
 		},
