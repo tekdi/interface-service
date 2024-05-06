@@ -3886,6 +3886,6 @@
 	"services": {
 		"elevate-scheduler": "^1.0.4",
 		"elevate-project" : "^1.0.1",
-		"elevate-entity-management": "^1.0.0"
+		"elevate-entity-management": "^1.0.1"
 	}
 }
