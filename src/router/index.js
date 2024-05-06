@@ -18,6 +18,8 @@ exports.initializeRouter = (packages) => {
 			const method = httpMethods[route.type]
 			if (!route.orchestrated) {
 				const basePackageName = route.targetPackages[0].basePackageName
+				console.log("yeah ++++++ :",basePackageName)
+				console.log("obj.packageMeta : ",obj.packageMeta)
 				const servicePackage = packages.find((obj) => obj.packageMeta.basePackageName === basePackageName)
 				router[method](route.sourceRoute, routeConfigInjector, rateLimiter, servicePackage.packageRouter)
 			} else {
