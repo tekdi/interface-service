@@ -3640,7 +3640,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/entity-management/v1/entities/create",
+			"sourceRoute": "/entity-management/v1/entities/add",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -4042,7 +4042,216 @@
 					"packageName": "elevate-survey"
 				}
 			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/create",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/update",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/list",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/forUserRoleAndLocation",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/detailsBasedOnRoleAndLocation",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/addRolesInScope",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/addEntitiesInScope",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/removeRolesInScope",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/targetedSolutions",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/fetchLink",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/verifyLink",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/verifySolution",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/getDetails",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/solutions/removeEntitiesInScope",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/project/v1/userProjects/importFromLibrary",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/listByLocationIds",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity_management",
+					"packageName": "elevate-entity-management"
+				}
+			]
 		}
+		
 	],
 	"requiredEnvs": {
 		"USER_SERVICE_BASE_URL": {
