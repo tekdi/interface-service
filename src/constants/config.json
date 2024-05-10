@@ -4789,7 +4789,7 @@
 		},
 		{
 			"sourceRoute": "/project/v1/forms/read",
-			"type": "GET",
+			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
@@ -4803,7 +4803,7 @@
 		},
 		{
 			"sourceRoute": "/project/v1/forms/read/:id",
-			"type": "GET",
+			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
