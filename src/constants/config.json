@@ -4082,7 +4082,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/elevate-interface/v1/account/login",
+			"sourceRoute": "/elevate-user/v2/account/login",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -4096,7 +4096,7 @@
 		},
 
 		{
-			"sourceRoute": "/elevate-interface/v1/account/update",
+			"sourceRoute": "/elevate-user/v2/account/update",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -4109,7 +4109,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/user/v2/account/create",
+			"sourceRoute": "/elevate-user/v2/account/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
