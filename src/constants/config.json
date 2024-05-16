@@ -3380,7 +3380,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/project/v1/files/preSignedUrls",
+			"sourceRoute": "/project/v1/cloud-services/files/preSignedUrls",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -3393,7 +3393,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/project/v1/files/getDownloadableUrl",
+			"sourceRoute": "/project/v1/cloud-services/files/getDownloadableUrl",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
