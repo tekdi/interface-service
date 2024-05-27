@@ -4868,7 +4868,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/scp/v1/forms/create",
+			"sourceRoute": "/scp/v1/form/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -4882,7 +4882,7 @@
 			
 		},
 		{
-			"sourceRoute": "/scp/v1/forms/update",
+			"sourceRoute": "/scp/v1/form/update",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -4896,7 +4896,7 @@
 			
 		},
 		{
-			"sourceRoute": "/scp/v1/forms/update/:id",
+			"sourceRoute": "/scp/v1/form/update/:id",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -4910,7 +4910,7 @@
 			
 		},
 		{
-			"sourceRoute": "/scp/v1/forms/read",
+			"sourceRoute": "/scp/v1/form/read",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -4924,7 +4924,7 @@
 			
 		},
 		{
-			"sourceRoute": "/scp/v1/forms/read/:id",
+			"sourceRoute": "/scp/v1/form/read/:id",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
