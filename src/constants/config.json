@@ -5014,6 +5014,90 @@
 					"packageName": "elevate-self-creation-portal"
 				}
 			]
+		},
+		{
+			"sourceRoute": "/project/v1/admin/dbFind",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages":[
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+			
+		},
+		{
+			"sourceRoute": "/project/v1/admin/dbFind/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages":[
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+			
+		},
+		{
+			"sourceRoute": "/project/v1/reports/entity",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages":[
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+			
+		},
+		{
+			"sourceRoute": "/project/v1/reports/entity/:id",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages":[
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+			
+		},
+		{
+			"sourceRoute": "/project/v1/reports/detailView",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages":[
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+			
+		},
+		{
+			"sourceRoute": "/project/v1/reports/detailView/:id",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages":[
+				{
+					"basePackageName": "project",
+					"packageName": "elevate-project"
+				}
+			]
+			
 		}	
 	],
 	"requiredEnvs": {
