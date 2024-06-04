@@ -5400,6 +5400,22 @@
 			]
 		},
 		{
+			"sourceRoute": "/elevate-user/v1/organization/read",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "user",
+					"packageName": "elevate-user"
+				}
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
+		},
+		{
 			"sourceRoute": "/scp/v1/permissions/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
