@@ -5567,7 +5567,7 @@
 			"message": "Required entity service base URL",
 			"optional": false
 		},
-		"SURVEY_SERVICE_BASE_URL": {
+		"SAMIKSHA_SERVICE_BASE_URL": {
 			"message": "Required survey service base URL",
 			"optional": false
 		}
