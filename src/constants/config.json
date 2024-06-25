@@ -108,6 +108,23 @@
 			}
 		},
 		{
+			"sourceRoute": "/interface/v1/profile/read",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"responseMessage": "User Profile Fetched Successfully.",
+			"requiresCustomHandling": true,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "kb-mentoring",
+					"targetBody": [],
+					"responseBody": []
+				}
+			]
+		},
+		{
 			"sourceRoute": "/user/v1/account/login",
 			"type": "POST",
 			"priority": "MUST_HAVE",
@@ -398,6 +415,7 @@
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
+			"requiresCustomHandling": true,
 			"targetPackages": [
 				{
 					"basePackageName": "user",
@@ -2477,19 +2495,6 @@
 		{
 			"sourceRoute": "/mentoring/v1/profile/create",
 			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "mentoring",
-					"packageName": "elevate-mentoring"
-				}
-			]
-		},
-		{
-			"sourceRoute": "/mentoring/v1/profile/read",
-			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,

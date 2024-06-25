@@ -27,8 +27,8 @@
 		"elevate-user": "^1.1.45",
 		"express": "^4.18.2",
 		"express-rate-limit": "^7.2.0",
-		"kb-mentoring": "^1.1.49",
-		"kb-user": "^1.1.64",
+		"kb-mentoring": "^1.1.50",
+		"kb-user": "^1.1.65",
 		"module-alias": "^2.2.3"
 	},
 	"devDependencies": {
