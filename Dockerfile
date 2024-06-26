@@ -7,7 +7,7 @@ WORKDIR /var/src/
 COPY ./src/package.json .
 
 #Install node packages
-RUN npm install --unsafe-perm || cat npm-debug.log
+RUN npm install --unsafe-perm
 #Copy all files 
 COPY ./src .
 
