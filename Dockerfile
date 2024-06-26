@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:17
 
 #Set working directory
 WORKDIR /var/src/
