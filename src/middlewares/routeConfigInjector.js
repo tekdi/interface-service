@@ -15,5 +15,6 @@ exports.routeConfigInjector = (req, res, next) => {
 	req['orchestrated'] = routeConfig.orchestrated
 	req['sourceRoute'] = routeConfig.sourceRoute
 	req['rateLimit'] = routeConfig.rateLimit
+    req['requiresCustomHandling'] = routeConfig.requiresCustomHandling || false
 	next()
 }

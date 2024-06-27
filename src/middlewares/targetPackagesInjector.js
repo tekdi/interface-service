@@ -9,5 +9,6 @@ exports.targetPackagesInjector = (req, res, next) => {
 	req['orchestrated'] = routeConfig.orchestrated
 	req['responseMessage'] = routeConfig.responseMessage
 	req['rateLimit'] = routeConfig.rateLimit
+    req['requiresCustomHandling'] = routeConfig.requiresCustomHandling || false
 	next()
 }
