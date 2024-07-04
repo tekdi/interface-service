@@ -931,7 +931,19 @@
 				}
 			]
 		},
-
+		{
+			"sourceRoute": "/user/v1/entity/list",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "user",
+					"packageName": "elevate-user"
+				}
+			]
+		},
 		{
 			"sourceRoute": "/mentoring/v1/entity/create",
 			"type": "POST",
@@ -987,6 +999,19 @@
 		{
 			"sourceRoute": "/mentoring/v1/entity/update/:id",
 			"type": "PUT",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "mentoring",
+					"packageName": "elevate-mentoring"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/mentoring/v1/entity/list",
+			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
@@ -3003,7 +3028,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/user/v1/account/validatingEmailIds",
@@ -3016,7 +3044,10 @@
 					"basePackageName": "user",
 					"packageName": "elevate-user"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/mentoring/v1/sessions/bulkSessionCreate",
