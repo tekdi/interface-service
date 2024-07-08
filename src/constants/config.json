@@ -5937,6 +5937,19 @@
 					"packageName": "elevate-self-creation-portal"
 				}
 			]
+		},
+		{
+			"sourceRoute": "/scp/v1/projects/submitForReview",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "self_creation_portal",
+					"packageName": "elevate-self-creation-portal"
+				}
+			]
 		}
 	],
 	"requiredEnvs": {
