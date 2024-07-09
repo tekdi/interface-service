@@ -6,7 +6,7 @@ const { routeConfigInjector } = require('@middlewares/routeConfigInjector')
 const { rateLimiter } = require('@middlewares/rateLimiter')
 const bodyParser = require('body-parser')
 const { httpMethods } = require('@constants/httpMethods')
-const {jsonBodyParserWithErrors} = require('@middlewares/jsonBodyParserWithErrors')
+const { jsonBodyParserWithErrors } = require('@middlewares/jsonBodyParserWithErrors')
 
 exports.initializeRouter = (packages) => {
 	try {

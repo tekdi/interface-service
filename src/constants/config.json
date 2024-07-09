@@ -118,7 +118,7 @@
 			"targetPackages": [
 				{
 					"basePackageName": "mentoring",
-					"packageName": "kb-mentoring",
+					"packageName": "sunbird-mentoring",
 					"targetBody": [],
 					"responseBody": []
 				}

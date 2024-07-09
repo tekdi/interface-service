@@ -12,10 +12,10 @@ if (!environmentData.success) {
 }
 require('./init')
 
-packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
+/* packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
 	console.error(`An error occurred in package installer: ${error}`)
 	process.exit()
-})
+}) */
 
 const app = express()
 const path = require('path')
