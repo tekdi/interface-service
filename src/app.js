@@ -5,6 +5,9 @@ const cors = require('cors')
 require('dotenv').config({ path: './.env' })
 const packageInstaller = require('./utils/packageInstaller')
 
+const { runCombineRoutes } = require('./scripts/combineRoutesConfigs')
+runCombineRoutes()
+
 let environmentData = require('./envVariables')()
 if (!environmentData.success) {
 	console.error('Server could not start . Not all environment variable is provided')
