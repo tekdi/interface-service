@@ -5,8 +5,16 @@ const cors = require('cors')
 require('dotenv').config({ path: './.env' })
 const packageInstaller = require('./utils/packageInstaller')
 
+packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
+	console.error(`An error occurred in package installer: ${error}`)
+	process.exit()
+})
+
 const { runCombineRoutes } = require('./scripts/combineRoutesConfigs')
 runCombineRoutes()
+
+const dependencyManager = require('@helpers/dependencyManager')
+dependencyManager()
 
 let environmentData = require('./envVariables')()
 if (!environmentData.success) {
@@ -14,11 +22,6 @@ if (!environmentData.success) {
 	process.exit()
 }
 require('./init')
-
-packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
-	console.error(`An error occurred in package installer: ${error}`)
-	process.exit()
-})
 
 const app = express()
 const path = require('path')
