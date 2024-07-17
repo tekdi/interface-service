@@ -4408,6 +4408,19 @@
 			]
 		},
 		{
+			"sourceRoute": "/samiksha/v1/admin/createIndex/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
 			"sourceRoute": "/samiksha/v1/polls/create",
 			"type": "POST",
 			"priority": "MUST_HAVE",
@@ -4475,6 +4488,305 @@
 		{
 			"sourceRoute": "/samiksha/v1/files/getDownloadableUrl",
 			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/create",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/details/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/verifyLink/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/fetchLink/:id",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/update/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/getDetails/:id",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/list",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/isTargetedBasedOnUserProfile/:id",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/detailsBasedOnRoleAndLocation/:id",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/forUserRoleAndLocation",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/addEntitiesInScope/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/addRolesInScope/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+        {
+			"sourceRoute": "/samiksha/v1/solutions/removeEntitiesInScope/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/solutions/removeRolesInScope/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/programs/addEntitiesInScope/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/programs/addRolesInScope/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+        {
+			"sourceRoute": "/samiksha/v1/programs/removeEntitiesInScope/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/programs/removeRolesInScope/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/programs/join/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/programs/create",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/programs/update/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/programs/details/:id",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/samiksha/v1/programs/list",
+			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
