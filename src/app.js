@@ -5,11 +5,11 @@ const cors = require('cors')
 require('dotenv').config({ path: './.env' })
 const packageInstaller = require('./utils/packageInstaller')
 
-packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
+/* packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
 	console.error(`An error occurred in package installer: ${error}`)
 	process.exit()
 })
-
+ */
 const { runCombineRoutes } = require('./scripts/combineRoutesConfigs')
 runCombineRoutes()
 
