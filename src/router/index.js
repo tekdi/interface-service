@@ -25,7 +25,7 @@ exports.initializeRouter = (packages) => {
 
 			if (!servicePackage) throw new Error(`Package with basePackageName ${basePackageName} not found`)
 
-			if (orchestrated) {
+			if (orchestrated)
 				router[method](
 					sourceRoute,
 					targetPackagesInjector,
@@ -34,7 +34,7 @@ exports.initializeRouter = (packages) => {
 					jsonBodyParserWithErrors,
 					orchestrationController.orchestrationHandler.bind(null, packages)
 				)
-			} else if (requiresCustomHandling) {
+			else if (requiresCustomHandling)
 				router[method](
 					sourceRoute,
 					routeConfigInjector,
@@ -43,9 +43,7 @@ exports.initializeRouter = (packages) => {
 					jsonBodyParserWithErrors,
 					servicePackage.packageRouter
 				)
-			} else {
-				router[method](sourceRoute, routeConfigInjector, rateLimiter, servicePackage.packageRouter)
-			}
+			else router[method](sourceRoute, routeConfigInjector, rateLimiter, servicePackage.packageRouter)
 		})
 
 		return router
