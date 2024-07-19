@@ -518,6 +518,19 @@
 			]
 		},
 		{
+			"sourceRoute": "/user/v1/user-role/read",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "user",
+					"packageName": "elevate-user"
+				}
+			]
+		},
+		{
 			"sourceRoute": "/user/v1/user-role/default",
 			"type": "GET",
 			"priority": "MUST_HAVE",
@@ -3824,6 +3837,19 @@
 		{
 			"sourceRoute": "/entity-management/v1/entities/bulkCreate",
 			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity_management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/entities/targetedRoles/:id",
+			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
