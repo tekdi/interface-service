@@ -7,7 +7,7 @@ const data = JSON.parse(fs.readFileSync(inputFile, 'utf8'))
 
 const routes = data.routes
 
-const outputDir = '../constants/routesConfigs'
+const outputDir = '../configs/routesConfigs'
 if (!fs.existsSync(outputDir)) {
 	fs.mkdirSync(outputDir)
 }

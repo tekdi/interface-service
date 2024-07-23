@@ -10,7 +10,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "user",
-                    "packageName": "sunbird-user",
+                    "packageName": "elevate-user",
                     "targetBody": [],
                     "responseBody": [
                         {
@@ -25,7 +25,7 @@
                 },
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring",
+                    "packageName": "elevate-mentoring",
                     "targetBody": [],
                     "responseBody": [
                         {
@@ -50,7 +50,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "user",
-                    "packageName": "sunbird-user",
+                    "packageName": "elevate-user",
                     "targetBody": [],
                     "responseBody": [
                         {
@@ -73,7 +73,7 @@
                 },
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring",
+                    "packageName": "elevate-mentoring",
                     "targetBody": [],
                     "responseBody": [
                         {
@@ -106,7 +106,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "user",
-                    "packageName": "sunbird-user",
+                    "packageName": "elevate-user",
                     "targetBody": [],
                     "responseBody": [
                         {
@@ -117,7 +117,7 @@
                 },
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring",
+                    "packageName": "elevate-mentoring",
                     "targetBody": [],
                     "responseBody": [
                         {
@@ -138,13 +138,13 @@
             "targetPackages": [
                 {
                     "basePackageName": "user",
-                    "packageName": "sunbird-user",
+                    "packageName": "elevate-user",
                     "targetBody": [],
                     "responseBody": []
                 },
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring",
+                    "packageName": "elevate-mentoring",
                     "targetBody": [],
                     "responseBody": [
                         {

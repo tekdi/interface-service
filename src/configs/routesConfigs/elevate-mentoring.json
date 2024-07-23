@@ -1,23 +1,6 @@
 {
     "routes": [
         {
-            "sourceRoute": "/interface/v1/profile/read",
-            "type": "GET",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "responseMessage": "User Profile Fetched Successfully.",
-            "requiresCustomHandling": true,
-            "targetPackages": [
-                {
-                    "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring",
-                    "targetBody": [],
-                    "responseBody": []
-                }
-            ]
-        },
-        {
             "sourceRoute": "/mentoring/v1/role-permission-mapping/list",
             "type": "POST",
             "priority": "MUST_HAVE",
@@ -26,7 +9,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -39,7 +22,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -52,7 +35,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -65,7 +48,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -78,7 +61,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -91,7 +74,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -104,7 +87,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -117,7 +100,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -130,7 +113,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -143,7 +126,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -156,7 +139,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -169,7 +152,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -182,7 +165,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -195,7 +178,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -208,7 +191,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -221,7 +204,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -234,7 +217,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -247,7 +230,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -260,7 +243,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -273,7 +256,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -286,7 +269,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -299,7 +282,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -312,7 +295,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -325,7 +308,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -338,7 +321,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -351,7 +334,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -364,7 +347,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -377,7 +360,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -390,7 +373,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -403,7 +386,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -416,7 +399,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -429,7 +412,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -442,7 +425,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -455,7 +438,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -468,7 +451,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -481,7 +464,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -494,7 +477,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -507,7 +490,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -520,7 +503,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -533,7 +516,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -546,7 +529,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -559,7 +542,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -572,7 +555,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -585,7 +568,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -598,7 +581,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -611,7 +594,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -624,7 +607,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -637,7 +620,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -650,7 +633,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -663,7 +646,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -676,7 +659,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -689,7 +672,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -702,7 +685,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -715,7 +698,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -728,7 +711,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -741,7 +724,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -754,7 +737,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -767,7 +750,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -780,7 +763,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -793,7 +776,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -806,7 +789,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -819,7 +802,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -832,7 +815,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -845,7 +828,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -858,7 +841,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -871,7 +854,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -884,7 +867,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -897,7 +880,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -910,7 +893,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -923,7 +906,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -936,7 +919,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -949,7 +932,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -962,7 +945,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -975,7 +958,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -988,7 +971,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1001,7 +984,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1014,7 +997,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1027,7 +1010,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1040,7 +1023,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1053,7 +1036,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1066,7 +1049,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1079,7 +1062,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1092,7 +1075,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1105,7 +1088,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1118,7 +1101,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1131,7 +1114,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1144,7 +1127,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ],
             "rateLimit": {
@@ -1160,7 +1143,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1173,7 +1156,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1186,7 +1169,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ],
             "rateLimit": {
@@ -1202,7 +1185,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1215,7 +1198,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ],
             "rateLimit": {
@@ -1231,7 +1214,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1244,7 +1227,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1257,7 +1240,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ],
             "rateLimit": {
@@ -1273,7 +1256,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ],
             "rateLimit": {
@@ -1289,7 +1272,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1302,7 +1285,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1315,7 +1298,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1328,7 +1311,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1341,7 +1324,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1354,7 +1337,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1367,7 +1350,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1380,7 +1363,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1393,7 +1376,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1406,7 +1389,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1419,7 +1402,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ],
             "rateLimit": {
@@ -1435,7 +1418,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ],
             "rateLimit": {
@@ -1451,7 +1434,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1464,7 +1447,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1477,7 +1460,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1490,7 +1473,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1503,7 +1486,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1516,7 +1499,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1529,7 +1512,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1542,7 +1525,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1555,7 +1538,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1568,7 +1551,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1581,7 +1564,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1594,7 +1577,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1607,7 +1590,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1620,7 +1603,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1633,7 +1616,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1646,7 +1629,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1659,7 +1642,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1672,7 +1655,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1685,7 +1668,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1698,7 +1681,7 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ]
         },
@@ -1711,12 +1694,181 @@
             "targetPackages": [
                 {
                     "basePackageName": "mentoring",
-                    "packageName": "sunbird-mentoring"
+                    "packageName": "elevate-mentoring"
                 }
             ],
             "rateLimit": {
                 "type": "internal"
             }
+        },
+        {
+            "sourceRoute": "/mentoring/v1/sessions/bulkSessionCreate",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/sessions/getSampleCSV",
+            "type": "GET",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/org-admin/uploadSampleCSV",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/create",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/update",
+            "type": "PATCH",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/update/:id",
+            "type": "PATCH",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/delete",
+            "type": "DELETE",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/delete/:id",
+            "type": "DELETE",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/read",
+            "type": "GET",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/read/:id",
+            "type": "GET",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/isAvailable",
+            "type": "GET",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/isAvailable/:id",
+            "type": "GET",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/mentoring/v1/availability/users",
+            "type": "GET",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "mentoring",
+                    "packageName": "elevate-mentoring"
+                }
+            ]
         }
     ]
 }
