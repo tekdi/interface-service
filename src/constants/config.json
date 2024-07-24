@@ -6562,6 +6562,19 @@
 					"packageName": "elevate-user"
 				}
 			]
+		},
+		{
+			"sourceRoute": "/elevate-user/v1/account/validateUserSession",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "user",
+					"packageName": "elevate-user"
+				}
+			]
 		}
 	],
 	"requiredEnvs": {
