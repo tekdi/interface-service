@@ -519,7 +519,7 @@
 		},
 		{
 			"sourceRoute": "/user/v1/user-role/readUserRolesBasedOnEntityType",
-			"type": "GET",
+			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
