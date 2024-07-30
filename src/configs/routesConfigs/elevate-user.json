@@ -230,6 +230,7 @@
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
+            "requiresCustomHandling": true,
             "targetPackages": [
                 {
                     "basePackageName": "user",
@@ -262,6 +263,7 @@
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
+            "requiresCustomHandling": true,
             "targetPackages": [
                 {
                     "basePackageName": "user",
@@ -278,6 +280,7 @@
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
+            "requiresCustomHandling": true,
             "targetPackages": [
                 {
                     "basePackageName": "user",
@@ -790,6 +793,7 @@
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
+            "requiresCustomHandling": true,
             "targetPackages": [
                 {
                     "basePackageName": "user",
@@ -1108,6 +1112,7 @@
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
+            "requiresCustomHandling": true,
             "targetPackages": [
                 {
                     "basePackageName": "user",
