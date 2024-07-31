@@ -518,19 +518,6 @@
 			]
 		},
 		{
-			"sourceRoute": "/user/v1/user-role/readUserRolesBasedOnEntityType",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "user",
-					"packageName": "elevate-user"
-				}
-			]
-		},
-		{
 			"sourceRoute": "/user/v1/user-role/default",
 			"type": "GET",
 			"priority": "MUST_HAVE",
@@ -4097,6 +4084,58 @@
 		{
 			"sourceRoute": "/entity-management/v1/entities/relatedEntities/:id",
 			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity_management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/userRoleExtension/create",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity_management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/userRoleExtension/update/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity_management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/userRoleExtension/find",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "entity_management",
+					"packageName": "elevate-entity-management"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/entity-management/v1/userRoleExtension/delete/:id",
+			"type": "DELETE",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
 			"orchestrated": false,
