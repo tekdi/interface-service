@@ -6668,7 +6668,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/user/v1/comments/update",
+			"sourceRoute": "/scp/v1/comments/update",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
