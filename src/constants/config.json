@@ -6692,6 +6692,45 @@
 					"packageName": "elevate-self-creation-portal"
 				}
 			]
+		},
+		{
+			"sourceRoute": "/scp/v1/reviews/update/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "self_creation_portal",
+					"packageName": "elevate-self-creation-portal"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/scp/v1/reviews/approve/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "self_creation_portal",
+					"packageName": "elevate-self-creation-portal"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/scp/v1/reviews/rejectOrReport/:id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "self_creation_portal",
+					"packageName": "elevate-self-creation-portal"
+				}
+			]
 		}
 	],
 	"requiredEnvs": {
