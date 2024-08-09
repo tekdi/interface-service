@@ -6105,6 +6105,19 @@
 			]
 		},
 		{
+			"sourceRoute": "/scp/v1/projects/details/",
+			"type": "GET",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "self_creation_portal",
+					"packageName": "elevate-self-creation-portal"
+				}
+			]
+		},
+		{
 			"sourceRoute": "/scp/v1/projects/details/:id",
 			"type": "GET",
 			"priority": "MUST_HAVE",
@@ -6786,6 +6799,19 @@
 		},
 		{
 			"sourceRoute": "/scp/v1/projects/submitForReview/:resource_id",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "self_creation_portal",
+					"packageName": "elevate-self-creation-portal"
+				}
+			]
+		},
+		{
+			"sourceRoute": "/scp/v1/projects/submitForReview/",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
