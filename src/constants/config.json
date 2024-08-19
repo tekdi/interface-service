@@ -5136,6 +5136,19 @@
 			]
 		},
 		{
+			"sourceRoute": "/samiksha/v1/solutions/targetedSolutions",
+			"type": "POST",
+			"priority": "MUST_HAVE",
+			"inSequence": false,
+			"orchestrated": false,
+			"targetPackages": [
+				{
+					"basePackageName": "samiksha",
+					"packageName": "elevate-survey"
+				}
+			]
+		},
+		{
 			"sourceRoute": "/samiksha/v1/programs/addEntitiesInScope",
 			"type": "POST",
 			"priority": "MUST_HAVE",
