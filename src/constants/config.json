@@ -6779,7 +6779,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/elevate-user/v1/admin/triggerViewRebuild",
+			"sourceRoute": "/user/v1/admin/triggerViewRebuild",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -6792,7 +6792,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/elevate-user/v1/admin/triggerPeriodicViewRefreshInternal",
+			"sourceRoute": "/user/v1/admin/triggerPeriodicViewRefreshInternal",
 			"type": "GET",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
