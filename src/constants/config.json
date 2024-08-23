@@ -6443,19 +6443,6 @@
 			]
 		},
 		{
-			"sourceRoute": "/scp/v1/cloud-services/file/fetchJsonFromCloud",
-			"type": "POST",
-			"priority": "MUST_HAVE",
-			"inSequence": false,
-			"orchestrated": false,
-			"targetPackages": [
-				{
-					"basePackageName": "self_creation_portal",
-					"packageName": "elevate-self-creation-portal"
-				}
-			]
-		},
-		{
 			"sourceRoute": "/scp/v1/projects/reviewerList",
 			"type": "GET",
 			"priority": "MUST_HAVE",
@@ -6466,7 +6453,10 @@
 					"basePackageName": "self_creation_portal",
 					"packageName": "elevate-self-creation-portal"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/elevate-user/v1/account/registrationOtp",
@@ -6624,7 +6614,10 @@
 					"basePackageName": "self_creation_portal",
 					"packageName": "elevate-self-creation-portal"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/scp/v1/permissions/update/:id",
@@ -6637,7 +6630,10 @@
 					"basePackageName": "self_creation_portal",
 					"packageName": "elevate-self-creation-portal"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/scp/v1/permissions/getPermissions",
@@ -6663,7 +6659,10 @@
 					"basePackageName": "self_creation_portal",
 					"packageName": "elevate-self-creation-portal"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/scp/v1/permissions/list",
@@ -6689,7 +6688,10 @@
 					"basePackageName": "self_creation_portal",
 					"packageName": "elevate-self-creation-portal"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/scp/v1/modules/update/:id",
@@ -6702,7 +6704,10 @@
 					"basePackageName": "self_creation_portal",
 					"packageName": "elevate-self-creation-portal"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/scp/v1/modules/list",
@@ -6728,7 +6733,10 @@
 					"basePackageName": "self_creation_portal",
 					"packageName": "elevate-self-creation-portal"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/scp/v1/certificate/list",
@@ -7081,7 +7089,10 @@
 					"basePackageName": "self_creation_portal",
 					"packageName": "elevate-self-creation-portal"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/scp/v1/role-permission-mapping/delete/:role_id",
@@ -7094,7 +7105,10 @@
 					"basePackageName": "self_creation_portal",
 					"packageName": "elevate-self-creation-portal"
 				}
-			]
+			],
+			"rateLimit": {
+				"type": "internal"
+			}
 		},
 		{
 			"sourceRoute": "/scp/v1/role-permission-mapping/list",
