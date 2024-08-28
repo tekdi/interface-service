@@ -7368,7 +7368,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/project/v1/cloud-services/file/getSignedUrl",
+			"sourceRoute": "/scp/v1/cloud-services/file/getSignedUrl",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
