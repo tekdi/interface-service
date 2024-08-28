@@ -7355,7 +7355,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/scp/v1/cloud-services/files/getDownloadableUrl",
+			"sourceRoute": "/scp/v1/cloud-services/file/getDownloadableUrl",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
@@ -7368,7 +7368,7 @@
 			]
 		},
 		{
-			"sourceRoute": "/project/v1/cloud-services/files/getSignedUrl",
+			"sourceRoute": "/project/v1/cloud-services/file/getSignedUrl",
 			"type": "POST",
 			"priority": "MUST_HAVE",
 			"inSequence": false,
