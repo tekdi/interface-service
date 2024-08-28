@@ -1123,20 +1123,6 @@
             }
         },
         {
-            "sourceRoute": "/user/v1/account/searchByEmailIds",
-            "type": "POST",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "requiresCustomHandling": true,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "elevate-user"
-                }
-            ]
-        },
-        {
             "sourceRoute": "/user/v1/account/validatingEmailIds",
             "type": "POST",
             "priority": "MUST_HAVE",
@@ -1177,19 +1163,6 @@
             ]
         },
         {
-            "sourceRoute": "/user/v1/org-admin/updateUser/:id",
-            "type": "POST",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "elevate-user"
-                }
-            ]
-        },
-        {
             "sourceRoute": "/user/v1/admin/triggerPeriodicViewRefresh",
             "type": "GET",
             "priority": "MUST_HAVE",
@@ -1214,38 +1187,6 @@
                     "packageName": "elevate-user"
                 }
             ]
-        },
-        {
-            "sourceRoute": "/user/v1/admin/triggerPeriodicViewRefreshInternal",
-            "type": "GET",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "elevate-user"
-                }
-            ],
-            "rateLimit": {
-                "type": "internal"
-            }
-        },
-        {
-            "sourceRoute": "/user/v1/admin/triggerViewRebuildInternal",
-            "type": "GET",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "elevate-user"
-                }
-            ],
-            "rateLimit": {
-                "type": "internal"
-            }
         }
     ]
 }
