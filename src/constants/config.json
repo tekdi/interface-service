@@ -7405,7 +7405,7 @@
 					"packageName": "elevate-self-creation-portal"
 				}
 			]
-		},
+		}
 	],
 	"requiredEnvs": {
 		"USER_SERVICE_BASE_URL": {
