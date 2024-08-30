@@ -499,13 +499,11 @@
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
-            "orchestrated": true,
+            "orchestrated": false,
             "targetPackages": [
                 {
                     "basePackageName": "self_creation_portal",
-                    "packageName": "elevate-self-creation-portal",
-                    "targetBody": [],
-                    "responseBody": []
+                    "packageName": "elevate-self-creation-portal"
                 }
             ]
         },
