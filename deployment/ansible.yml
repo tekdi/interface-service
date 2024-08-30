@@ -17,7 +17,7 @@
     - name: Create release folder
       set_fact:
         release_path: "{{ project_path }}/releases/{{ lookup('pipe','date +%Y%m%d%H%M%S') }}"
-        current_path: "{{ project_path }}/{{ directoryName }}
+        current_path: "{{ project_path }}/{{ directoryName }}"
     
     - name: Retrieve current release folder
       command: readlink -f {{ directoryName }}
