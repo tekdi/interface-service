@@ -1,7 +1,7 @@
 {
     "routes": [
         {
-            "sourceRoute": "/samiksha/v1/admin/createIndex/solutions",
+            "sourceRoute": "/survey/v1/admin/createIndex/solutions",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -14,7 +14,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/admin/createIndex/:id",
+            "sourceRoute": "/survey/v1/admin/createIndex/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -27,7 +27,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/polls/create",
+            "sourceRoute": "/survey/v1/polls/create",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/polls/list",
+            "sourceRoute": "/survey/v1/polls/list",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -53,7 +53,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/polls/getPollQuestions/:id",
+            "sourceRoute": "/survey/v1/polls/getPollQuestions/:id",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -66,7 +66,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/pollSubmissions/make/:id",
+            "sourceRoute": "/survey/v1/pollSubmissions/make/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -79,7 +79,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/files/preSignedUrls",
+            "sourceRoute": "/survey/v1/files/preSignedUrls",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -92,7 +92,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/files/getDownloadableUrl",
+            "sourceRoute": "/survey/v1/files/getDownloadableUrl",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -105,7 +105,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/create",
+            "sourceRoute": "/survey/v1/solutions/create",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -118,7 +118,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/details",
+            "sourceRoute": "/survey/v1/solutions/details",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -131,7 +131,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/details/:id",
+            "sourceRoute": "/survey/v1/solutions/details/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -144,7 +144,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/verifyLink",
+            "sourceRoute": "/survey/v1/solutions/verifyLink",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -157,7 +157,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/verifyLink/:id",
+            "sourceRoute": "/survey/v1/solutions/verifyLink/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -170,7 +170,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/fetchLink",
+            "sourceRoute": "/survey/v1/solutions/fetchLink",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -183,7 +183,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/fetchLink/:id",
+            "sourceRoute": "/survey/v1/solutions/fetchLink/:id",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -196,7 +196,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/update",
+            "sourceRoute": "/survey/v1/solutions/update",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -209,7 +209,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/update/:id",
+            "sourceRoute": "/survey/v1/solutions/update/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -222,7 +222,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/getDetails",
+            "sourceRoute": "/survey/v1/solutions/getDetails",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -235,7 +235,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/getDetails/:id",
+            "sourceRoute": "/survey/v1/solutions/getDetails/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -248,7 +248,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/list",
+            "sourceRoute": "/survey/v1/solutions/list",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -261,7 +261,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/isTargetedBasedOnUserProfile",
+            "sourceRoute": "/survey/v1/solutions/isTargetedBasedOnUserProfile",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -274,7 +274,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/isTargetedBasedOnUserProfile/:id",
+            "sourceRoute": "/survey/v1/solutions/isTargetedBasedOnUserProfile/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -287,7 +287,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/detailsBasedOnRoleAndLocation",
+            "sourceRoute": "/survey/v1/solutions/detailsBasedOnRoleAndLocation",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -300,7 +300,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/detailsBasedOnRoleAndLocation/:id",
+            "sourceRoute": "/survey/v1/solutions/detailsBasedOnRoleAndLocation/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -313,7 +313,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/forUserRoleAndLocation",
+            "sourceRoute": "/survey/v1/solutions/forUserRoleAndLocation",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -326,7 +326,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/addEntitiesInScope",
+            "sourceRoute": "/survey/v1/solutions/addEntitiesInScope",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -339,7 +339,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/addEntitiesInScope/:id",
+            "sourceRoute": "/survey/v1/solutions/addEntitiesInScope/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -352,7 +352,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/addRolesInScope",
+            "sourceRoute": "/survey/v1/solutions/addRolesInScope",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -365,7 +365,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/addRolesInScope/:id",
+            "sourceRoute": "/survey/v1/solutions/addRolesInScope/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -378,7 +378,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/removeEntitiesInScope",
+            "sourceRoute": "/survey/v1/solutions/removeEntitiesInScope",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -391,7 +391,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/removeEntitiesInScope/:id",
+            "sourceRoute": "/survey/v1/solutions/removeEntitiesInScope/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -404,7 +404,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/removeRolesInScope",
+            "sourceRoute": "/survey/v1/solutions/removeRolesInScope",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -417,7 +417,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/removeRolesInScope/:id",
+            "sourceRoute": "/survey/v1/solutions/removeRolesInScope/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -430,7 +430,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/solutions/targetedSolutions",
+            "sourceRoute": "/survey/v1/solutions/targetedSolutions",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -443,7 +443,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/addEntitiesInScope",
+            "sourceRoute": "/survey/v1/programs/addEntitiesInScope",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -456,7 +456,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/addEntitiesInScope/:id",
+            "sourceRoute": "/survey/v1/programs/addEntitiesInScope/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -469,7 +469,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/addRolesInScope",
+            "sourceRoute": "/survey/v1/programs/addRolesInScope",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -482,7 +482,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/addRolesInScope/:id",
+            "sourceRoute": "/survey/v1/programs/addRolesInScope/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -495,7 +495,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/removeEntitiesInScope",
+            "sourceRoute": "/survey/v1/programs/removeEntitiesInScope",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -508,7 +508,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/removeEntitiesInScope/:id",
+            "sourceRoute": "/survey/v1/programs/removeEntitiesInScope/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -521,7 +521,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/removeRolesInScope",
+            "sourceRoute": "/survey/v1/programs/removeRolesInScope",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -534,7 +534,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/removeRolesInScope/:id",
+            "sourceRoute": "/survey/v1/programs/removeRolesInScope/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -547,7 +547,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/join",
+            "sourceRoute": "/survey/v1/programs/join",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -560,7 +560,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/join/:id",
+            "sourceRoute": "/survey/v1/programs/join/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -573,7 +573,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/create",
+            "sourceRoute": "/survey/v1/programs/create",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -586,7 +586,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/update",
+            "sourceRoute": "/survey/v1/programs/update",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -599,7 +599,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/update/:id",
+            "sourceRoute": "/survey/v1/programs/update/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -612,7 +612,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/details",
+            "sourceRoute": "/survey/v1/programs/details",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -625,7 +625,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/details/:id",
+            "sourceRoute": "/survey/v1/programs/details/:id",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -638,7 +638,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/programs/list",
+            "sourceRoute": "/survey/v1/programs/list",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -651,7 +651,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/importSurveryTemplateToSolution/:id",
+            "sourceRoute": "/survey/v1/surveys/importSurveryTemplateToSolution/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -664,7 +664,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/importSurveryTemplateToSolution",
+            "sourceRoute": "/survey/v1/surveys/importSurveryTemplateToSolution",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -677,7 +677,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/getLink/:id",
+            "sourceRoute": "/survey/v1/surveys/getLink/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -690,7 +690,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/getLink/",
+            "sourceRoute": "/survey/v1/surveys/getLink/",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -703,7 +703,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/createSolutionTemplate",
+            "sourceRoute": "/survey/v1/surveys/createSolutionTemplate",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -716,7 +716,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/mapSurverySolutionToProgram/:id",
+            "sourceRoute": "/survey/v1/surveys/mapSurverySolutionToProgram/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -729,7 +729,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/mapSurverySolutionToProgram",
+            "sourceRoute": "/survey/v1/surveys/mapSurverySolutionToProgram",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -742,7 +742,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/userAssigned",
+            "sourceRoute": "/survey/v1/surveys/userAssigned",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -755,7 +755,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/details/:id",
+            "sourceRoute": "/survey/v1/surveys/details/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -768,7 +768,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveys/details/",
+            "sourceRoute": "/survey/v1/surveys/details/",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -781,7 +781,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveySubmissions/update/:id",
+            "sourceRoute": "/survey/v1/surveySubmissions/update/:id",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -794,7 +794,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveySubmissions/update",
+            "sourceRoute": "/survey/v1/surveySubmissions/update",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -807,7 +807,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveySubmissions/getStatus/:id",
+            "sourceRoute": "/survey/v1/surveySubmissions/getStatus/:id",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -820,7 +820,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveySubmissions/getStatus",
+            "sourceRoute": "/survey/v1/surveySubmissions/getStatus",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -833,7 +833,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveySubmissions/list",
+            "sourceRoute": "/survey/v1/surveySubmissions/list",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -846,7 +846,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveySubmissions/isAllowed/:id",
+            "sourceRoute": "/survey/v1/surveySubmissions/isAllowed/:id",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -859,7 +859,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/surveySubmissions/isAllowed",
+            "sourceRoute": "/survey/v1/surveySubmissions/isAllowed",
             "type": "GET",
             "priority": "MUST_HAVE",
             "inSequence": false,
@@ -872,7 +872,7 @@
             ]
         },
         {
-            "sourceRoute": "/samiksha/v1/questions/bulkCreate",
+            "sourceRoute": "/survey/v1/questions/bulkCreate",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
