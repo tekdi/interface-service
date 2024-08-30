@@ -7,6 +7,14 @@
 		"MENTORING_SERVICE_BASE_URL": {
 			"message": "Required mentoring service base URL",
 			"optional": false
+		},
+		"SURVEY_SERVICE_BASE_URL": {
+			"message": "Required survey service base URL",
+			"optional": false
+		},
+		"SELF_CREATION_PORTAL_SERVICE_BASE_URL": {
+			"message": "Required mentoring service base URL",
+			"optional": false
 		}
 	}
 }
