@@ -10,11 +10,15 @@
 		},
 		"SURVEY_SERVICE_BASE_URL": {
 			"message": "Required survey service base URL",
-			"optional": false
+			"optional": true
+		},
+		"PROJECT_SERVICE_BASE_URL": {
+			"message": "Required project service base URL",
+			"optional": true
 		},
 		"SELF_CREATION_PORTAL_SERVICE_BASE_URL": {
 			"message": "Required mentoring service base URL",
-			"optional": false
+			"optional": true
 		}
 	}
 }
