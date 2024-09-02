@@ -10,6 +10,10 @@ packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
 	process.exit()
 })
 
+// run script to fetch configs from corresponding service and create it in desired format 
+const { runFetchRoutes } = require('./scripts/fetchRouteConfigs')
+runFetchRoutes()
+
 const { runCombineRoutes } = require('./scripts/combineRoutesConfigs')
 runCombineRoutes()
 

@@ -71,6 +71,10 @@ let environmentVariables = {
 		optional: true,
 		default: '*',
 	},
+	ROUTE_CONFIGS: {
+		message: 'Required ROUTE_CONFIGS urls',
+		optional: false,
+	},
 	...requiredEnvs.requiredEnvs,
 }
 
