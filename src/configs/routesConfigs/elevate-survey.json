@@ -768,7 +768,7 @@
             ]
         },
         {
-            "sourceRoute": "/survey/v1/surveys/details/",
+            "sourceRoute": "/survey/v1/surveys/details",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
