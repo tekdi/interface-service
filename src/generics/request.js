@@ -7,14 +7,14 @@ const request = require('request');
  * @param {boolean} internal_access_token - Optional. Indicates whether to use the internal access token.
  * @returns {Promise<object>} - A promise that resolves to the fetched result object.
  */
-var get = function (url, token = '', internal_access_token = false) {
+var get = function (url, token = '', internal_access_token = '') {
     return new Promise((resolve, reject) => {
         try {
             let headers = {
                 'content-type': 'application/json',
             };
             if (internal_access_token) {
-                headers['internal_access_token'] = process.env.INTERNAL_ACCESS_TOKEN;
+                headers['internal_access_token'] = internal_access_token;
             }
 
             if (token) {
