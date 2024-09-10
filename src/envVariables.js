@@ -71,8 +71,8 @@ let environmentVariables = {
 		optional: true,
 		default: '*',
 	},
-	ROUTE_CONFIGS: {
-		message: 'Required ROUTE_CONFIGS urls',
+	ROUTE_CONFIG_JSON_URLS_PATHS: {
+		message: 'Required ROUTE_CONFIG_JSON_URLS_PATHS urls',
 		optional: false,
 	},
 	...requiredEnvs.requiredEnvs,
