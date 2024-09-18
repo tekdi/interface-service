@@ -10,10 +10,13 @@
 
 // import requirements 
 const request = require('../generics/request.js')
+const schema = require('../constants/routeSchema.js')
 const fs = require('fs').promises
 const path = require('path')
 const { execSync } = require('child_process')
 const _ = require('lodash');
+const Ajv = require("ajv"); // for validating schema
+const ajv = new Ajv();
 
 const currentDirectory = process.cwd(); //fetch the current working directory 
 // output dir to create files 
@@ -45,7 +48,7 @@ async function constructJson(url) {
         if(isAValidUrl(url)){
             // get the data in json format 
             routeJson = await request.get(url)
-
+            
             routeJson.success = routeJson?.data.routes.length > 0 && isValidJson(routeJson) ? true : false
         }else if(await isAValidJsonPath(url)){
             // load the json file from mentioned location
@@ -69,10 +72,10 @@ async function constructJson(url) {
             routeJson.data.routes.map(async (routeDetails) => {
                 if (!routeDetails.orchestrated) {
                     // if the api is not orchestrated , write it in the package specific file 
-                    if(!isADuplicateRoute(routeDetails, fileData.routes)) fileData.routes.push(routeDetails)
+                    if(!isADuplicateRoute(routeDetails, fileData.routes) && await isAValidSchema(routeDetails , schema.passThroughRouteSchema)) fileData.routes.push(routeDetails)
                 }
                 else {
-                    orchestratedFileData.routes.push(routeDetails)
+                    if(await isAValidSchema(routeDetails , schema.orchestratedRouteSchema)) orchestratedFileData.routes.push(routeDetails)
                 }
             })
             // Ensure the directory exists
@@ -105,7 +108,6 @@ const handleOrchestratedFile = async (newRoutes) => {
         let routes = []
         try{
             routes = JSON.parse(existingRoutes).routes || []
-            console.log("Existing routes : " , routes.length)
         }catch(error){
             routes = []
         }
@@ -158,6 +160,7 @@ function runFetchRoutes() {
         console.error('Error occurred while running the script:', error)
     }
 }
+
 function isAValidUrl(path) {
     try {
         new URL(path);
@@ -166,7 +169,21 @@ function isAValidUrl(path) {
         return false; // Input is not a valid URL
     }
 }
+async function isAValidSchema(newRoute, schema) {
+    try{
+        // Compile the schema
+        const validate = ajv.compile(schema);
+    
+        // Validate the data
+        const valid = validate(newRoute);
+        // Output the result
+        if (valid) return true
+        return false
+    }catch(error){
+        return false
+    }
 
+}
 async function isAValidJsonPath(uri) {
     try {
          // Resolve the absolute path
@@ -196,9 +213,10 @@ async function loadJsonFile(filePath) {
 
 function isValidJson(jsonString) {
     try {
-        JSON.parse(jsonString); // Attempt to parse the JSON string
+        typeof jsonString === "string" ? JSON.parse(jsonString) : "" ; // Attempt to parse the JSON string
         return true; // If parsing succeeds, it's a valid JSON
     } catch (error) {
+        console.log("ERROR : : : ", error)
         return false; // If an error occurs during parsing, it's not a valid JSON
     }
 }

@@ -36,8 +36,11 @@ var get = function (url, token = '', internal_access_token = '') {
                 } else {
                     let body = response.body;
                     try {
-                        result.data = JSON.parse(body);
+                        console.log("typeof body : : " , typeof body)
+                        console.log("body : : " , body)
+                        result.data = typeof body === "string" ? JSON.parse(body) : body ; // Attempt to parse the JSON string JSON.parse(body);
                     } catch (jsonError) {
+                        console.log('Error parsing JSON : ',jsonError)
                         result.success = false;
                         result.error = 'Error parsing JSON';
                     }
