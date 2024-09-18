@@ -1,14 +1,25 @@
 'use strict'
+
+/**
+ * name : fetchRouteConfigs.js
+ * author : Adithya Dinesh
+ * created-date : 04-Sep-2024
+ * Description : Fetches routes from each service as provided in the .env file and creates routes config for each services. 
+ * Seperates all orchestrated calls in a different file.
+ */
+
+// import requirements 
 const request = require('../generics/request.js')
 const fs = require('fs').promises
 const path = require('path')
 const { execSync } = require('child_process')
 const _ = require('lodash');
 
+const currentDirectory = process.cwd(); //fetch the current working directory 
 // output dir to create files 
-const outputDir = path.join('./configs','routesConfigs')
-const orchestratedFile = path.join(outputDir , '/orchestrated.json')
-let orchestratedFileUpdatedFlag = false
+const outputDir = path.join(currentDirectory,'configs','routesConfigs') //join path to routesConfigs folder
+const orchestratedFile = path.join(outputDir , 'orchestrated.json') //join path to orchestrated.json file
+let orchestratedFileUpdatedFlag = false // flag to check any updates in the orchestrated file
 /**
  * Main fuction which fetches the routes from env file and creates json file in './configs/routesConfigs'
  */
@@ -16,6 +27,7 @@ function fetchRoutes() {
     // fetch routes config file from env and split
     const fetchRouteUrls = process.env.ROUTE_CONFIG_JSON_URLS_PATHS.split(",")
 
+    // iterate through each urls and construct 
     fetchRouteUrls.map(async (fetchUrl) => {
         if (fetchUrl != '') {
             await constructJson(fetchUrl)
@@ -33,18 +45,20 @@ async function constructJson(url) {
         if(isAValidUrl(url)){
             // get the data in json format 
             routeJson = await request.get(url)
-            // if(!isValidJson(routeJson?.data.toString()))  throw `Error : Config invalid! Config path : ${url}` 
-            routeJson.success = routeJson?.data.routes.length > 0 ? true : false
+
+            routeJson.success = routeJson?.data.routes.length > 0 && isValidJson(routeJson) ? true : false
         }else if(await isAValidJsonPath(url)){
             // load the json file from mentioned location
             routeJson.data = await loadJsonFile(url);
-            // console.log("routeJson?.data : ",routeJson?.data)
-            // if (!isValidJson(routeJson?.data.toString())) throw `Error : config invalid! Config path : ${url}`
-            routeJson.success = routeJson?.data.routes.length > 0 ? true : false
+            
+            routeJson.success = routeJson?.data.routes.length > 0  && isValidJson(routeJson) ? true : false
         }else{
             routeJson.success = false
         }
         let fileData = {
+            routes: []
+        }
+        let orchestratedFileData = {
             routes: []
         }
         let outputFile = ""
@@ -55,16 +69,10 @@ async function constructJson(url) {
             routeJson.data.routes.map(async (routeDetails) => {
                 if (!routeDetails.orchestrated) {
                     // if the api is not orchestrated , write it in the package specific file 
-                    // if(!isADuplicateRoute(routeDetails, fileData.routes)) fileData.routes.push(routeDetails)
-                    
-                    // Function to check if an object is present in an array using Lodash
-                    // const isDuplicate = _.some(existingItems, item => _.isEqual(item, newItem));
-                    if(!_.some(fileData.routes, item => _.isEqual(item, routeDetails))) fileData.routes.push(routeDetails)
-
+                    if(!isADuplicateRoute(routeDetails, fileData.routes)) fileData.routes.push(routeDetails)
                 }
                 else {
-                    // if the api is orchestrated , append it to the orchestrated file 
-                    await handleOrchestratedFile(routeDetails)
+                    orchestratedFileData.routes.push(routeDetails)
                 }
             })
             // Ensure the directory exists
@@ -73,6 +81,9 @@ async function constructJson(url) {
 
             // Write the JSON file (creates or overwrites the file)
             await fs.writeFile(outputFile, JSON.stringify(fileData, null, 4));
+
+            if(orchestratedFileData.routes.length > 0) await handleOrchestratedFile(orchestratedFileData.routes)
+
             console.log(`File generated : ' ${outputFile} '.`);
             if(orchestratedFileUpdatedFlag) console.log(`Orchestrated File Updated for package : ' ${outputFile.split('.json')[0]} '.`)
             orchestratedFileUpdatedFlag = false
@@ -87,80 +98,56 @@ async function constructJson(url) {
  * Handles orchestrated calls, opens the orchestrated.json file and w
  * @param {string} url - The URL to fetch.
  */
-async function handleOrchestratedFile(newRoute) {
+const handleOrchestratedFile = async (newRoutes) => {
     try {
-        console.log("PATH : ",orchestratedFile)
         const existingRoutes = await fs.readFile(orchestratedFile, 'utf8')
+        let fileWriteFlag = false
         let routes = []
         try{
             routes = JSON.parse(existingRoutes).routes || []
+            console.log("Existing routes : " , routes.length)
         }catch(error){
             routes = []
         }
-        // isADuplicateRoute(newRoute, routes) ? console.log("isADuplicateRoute : ",isADuplicateRoute(newRoute, routes) , newRoute , routes) : console.log(" ")
-        // if (!isADuplicateRoute(newRoute, routes)) {
-        //     routes.push(newRoute)
-        //     orchestratedFileUpdatedFlag = true
-        //     await fs.writeFile(orchestratedFile, JSON.stringify({routes}, null, 4));
-        // }
-        const isDuplicate = _.some(existingItems, item => _.isEqual(item, newItem))
-        console.log("isDuplicate : " , isDuplicate)
-        if (!isDuplicate) {
-            routes.push(newRoute)
-            orchestratedFileUpdatedFlag = true
-            await fs.writeFile(orchestratedFile, JSON.stringify({routes}, null, 4));
-        }
+
+        newRoutes.map(async (routeDetails) => {
+            if (!isADuplicateRoute(routeDetails, routes)) { 
+                routes.push(routeDetails)
+                fileWriteFlag = true
+            }
+        })
+
+        if(fileWriteFlag) await fs.writeFile(orchestratedFile, JSON.stringify({routes}, null, 4));
 
     } catch (error) {
         if (error.code === 'ENOENT') {
-            // if the file is not created , create an empty file
-            await fs.writeFile(orchestratedFile, JSON.stringify({ routes: [] }, null, 4));
+            // if the file is not created , create
+            await fs.writeFile(orchestratedFile, JSON.stringify({ routes: newRoutes }, null, 4));
             console.log(`File generated : ' ${orchestratedFile} '`);
-            await handleOrchestratedFile(newRoute)
         }else{
             console.log("-----> error : ", error)
         }
     }
 }
-// Function to check if a file is valid
-async function isFileValid(filePath) {
-    try {
-        // Resolve the absolute path of the file
-        const absolutePath = path.resolve(filePath);
 
-        // Check if the file exists and is readable
-        const stats = await fs.lstat(absolutePath);
-
-        // Check if the path points to a regular file (not a directory)
-        return stats.isFile();
-    } catch (error) {
-        // If an error occurs, the file is not valid
-        console.error('Error checking file:', error.message);
-        return false;
-    }
-}
 // Function to check for duplicates in the routes
 function isADuplicateRoute(newItem, existingItems) {
     try {
-        return existingItems.some(item =>
+        return _.some(existingItems, item => 
             item.sourceRoute === newItem.sourceRoute &&
             item.type === newItem.type &&
             item.priority === newItem.priority &&
             item.inSequence === newItem.inSequence &&
             item.orchestrated === newItem.orchestrated &&
-            deepEqual(item.targetPackages, newItem.targetPackages) &&
-            (item.responseMessage === newItem.responseMessage || !item.responseMessage && !newItem.responseMessage) &&
-            (JSON.stringify(item.rateLimit) === JSON.stringify(newItem.rateLimit) || (!item.rateLimit && !newItem.rateLimit))
+            _.isEqual(item.targetPackages, newItem.targetPackages) &&
+            _.isEqual(item.responseMessage, newItem.responseMessage) &&
+            _.isEqual(item.rateLimit, newItem.rateLimit)
         );
     } catch (error) {
         if (error.name === 'TypeError') return false;
     }
 }
 
-// Helper function for deep comparison
-function deepEqual(obj1, obj2) {
-    return JSON.stringify(obj1) === JSON.stringify(obj2);
-}
 function runFetchRoutes() {
     try {
         execSync('node -e "require(\'./scripts/fetchRouteConfigs.js\').fetchRoutes()"', {
