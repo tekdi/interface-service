@@ -20,64 +20,68 @@ const ajv = new Ajv();
 
 const currentDirectory = process.cwd(); //fetch the current working directory 
 // output dir to create files 
-const outputDir = path.join(currentDirectory,'configs','routesConfigs') //join path to routesConfigs folder
-const orchestratedFile = path.join(outputDir , 'orchestrated.json') //join path to orchestrated.json file
-let orchestratedFileUpdatedFlag = false // flag to check any updates in the orchestrated file
+const outputDir = path.join(currentDirectory, 'configs', 'routesConfigs') //join path to routesConfigs folder
+const orchestratedFile = path.join(outputDir, 'orchestrated.json') //join path to orchestrated.json file
+
+let orchestratedFileData = {
+    routes: []
+}
+
 /**
  * Main fuction which fetches the routes from env file and creates json file in './configs/routesConfigs'
  */
-function fetchRoutes() {
+async function fetchRoutes() {
     // fetch routes config file from env and split
     const fetchRouteUrls = process.env.ROUTE_CONFIG_JSON_URLS_PATHS.split(",")
+    // Create an array of promises
+    const promises = fetchRouteUrls
+        .filter(fetchUrl => fetchUrl !== '')  // Filter out empty URLs
+        .map(fetchUrl => constructJson(fetchUrl));  // Map each URL to a promise
 
-    // iterate through each urls and construct 
-    fetchRouteUrls.map(async (fetchUrl) => {
-        if (fetchUrl != '') {
-            await constructJson(fetchUrl)
-        }
-    })
+    // Wait for all promises to complete
+    await Promise.all(promises);
+    // write all the orchestrated routes to the file 
+    if (orchestratedFileData.routes.length > 0) await handleOrchestratedRoutes(orchestratedFileData.routes)
 }
 /**
  * Construct the json file in required format and writes it into file
- * @param {string} url - The URL to fetch.
+ * @param {String} url - The URL to fetch.
  */
 async function constructJson(url) {
     try {
-        let routeJson = {}
+        let jsonData = {}
 
-        if(isAValidUrl(url)){
+        if (isAValidUrl(url)) {
             // get the data in json format 
-            routeJson = await request.get(url)
-            
-            routeJson.success = routeJson?.data.routes.length > 0 && isValidJson(routeJson) ? true : false
-        }else if(await isAValidJsonPath(url)){
+            jsonData = await request.get(url)
+        } else if (await isAValidJsonPath(url)) {
             // load the json file from mentioned location
-            routeJson.data = await loadJsonFile(url);
-            
-            routeJson.success = routeJson?.data.routes.length > 0  && isValidJson(routeJson) ? true : false
-        }else{
-            routeJson.success = false
+            jsonData.data = await loadJsonFile(url);
         }
+
+        jsonData.success = jsonData?.data.routes.length > 0 && isValidJson(jsonData) ? true : false
+
         let fileData = {
             routes: []
         }
-        let orchestratedFileData = {
-            routes: []
-        }
-        let outputFile = ""
-        if (routeJson.success) {
-            // extract base package name to create json file 
-            outputFile = path.join(outputDir, routeJson.data.routes[0]?.targetPackages[0]?.packageName + '.json')
+        
 
-            routeJson.data.routes.map(async (routeDetails) => {
-                if (!routeDetails.orchestrated) {
-                    // if the api is not orchestrated , write it in the package specific file 
-                    if(!isADuplicateRoute(routeDetails, fileData.routes) && await isAValidSchema(routeDetails , schema.passThroughRouteSchema)) fileData.routes.push(routeDetails)
+        if (jsonData.success) {
+            // extract base package name to create json file 
+            const outputFile = path.join(outputDir, jsonData.data.routes[0]?.targetPackages[0]?.packageName + '.json')
+
+            jsonData.data.routes.forEach(async (eachRoute) => {
+                if (!eachRoute.orchestrated) {
+                    // If the API is not orchestrated, write it in the package-specific file
+                    if (!isADuplicateRoute(eachRoute, fileData.routes) && await isAValidSchema(eachRoute, schema.passThroughRouteSchema)) {
+                        fileData.routes.push(eachRoute);
+                    }
+                } else {
+                    if (await isAValidSchema(eachRoute, schema.orchestratedRouteSchema)) {
+                        orchestratedFileData.routes.push(eachRoute);
+                    }
                 }
-                else {
-                    if(await isAValidSchema(routeDetails , schema.orchestratedRouteSchema)) orchestratedFileData.routes.push(routeDetails)
-                }
-            })
+            });
             // Ensure the directory exists
             const dir = path.dirname(outputDir);
             await fs.mkdir(dir, { recursive: true });
@@ -85,48 +89,44 @@ async function constructJson(url) {
             // Write the JSON file (creates or overwrites the file)
             await fs.writeFile(outputFile, JSON.stringify(fileData, null, 4));
 
-            if(orchestratedFileData.routes.length > 0) await handleOrchestratedFile(orchestratedFileData.routes)
-
             console.log(`File generated : ' ${outputFile} '.`);
-            if(orchestratedFileUpdatedFlag) console.log(`Orchestrated File Updated for package : ' ${outputFile.split('.json')[0]} '.`)
-            orchestratedFileUpdatedFlag = false
         }
-        
+
     } catch (error) {
         console.log(error)
     }
 
 }
 /**
- * Handles orchestrated calls, opens the orchestrated.json file and w
- * @param {string} url - The URL to fetch.
+ * Handles orchestrated calls, opens the orchestrated.json file , checks for duplicate and writes into the file.
+ * @param {Object} newRoutes - New routes object
  */
-const handleOrchestratedFile = async (newRoutes) => {
+const handleOrchestratedRoutes = async (newRoutes) => {
     try {
         const existingRoutes = await fs.readFile(orchestratedFile, 'utf8')
         let fileWriteFlag = false
         let routes = []
-        try{
+        try {
             routes = JSON.parse(existingRoutes).routes || []
-        }catch(error){
+        } catch (error) {
             routes = []
         }
 
-        newRoutes.map(async (routeDetails) => {
-            if (!isADuplicateRoute(routeDetails, routes)) { 
+        newRoutes.forEach(async (routeDetails) => {
+            if (!isADuplicateRoute(routeDetails, routes)) {
                 routes.push(routeDetails)
                 fileWriteFlag = true
             }
         })
 
-        if(fileWriteFlag) await fs.writeFile(orchestratedFile, JSON.stringify({routes}, null, 4));
+        if (fileWriteFlag) await fs.writeFile(orchestratedFile, JSON.stringify({ routes }, null, 4));
 
     } catch (error) {
         if (error.code === 'ENOENT') {
             // if the file is not created , create
             await fs.writeFile(orchestratedFile, JSON.stringify({ routes: newRoutes }, null, 4));
             console.log(`File generated : ' ${orchestratedFile} '`);
-        }else{
+        } else {
             console.log("-----> error : ", error)
         }
     }
@@ -135,7 +135,7 @@ const handleOrchestratedFile = async (newRoutes) => {
 // Function to check for duplicates in the routes
 function isADuplicateRoute(newItem, existingItems) {
     try {
-        return _.some(existingItems, item => 
+        return _.some(existingItems, item =>
             item.sourceRoute === newItem.sourceRoute &&
             item.type === newItem.type &&
             item.priority === newItem.priority &&
@@ -150,6 +150,9 @@ function isADuplicateRoute(newItem, existingItems) {
     }
 }
 
+/**
+ * Executes the functions in the script.
+ */
 function runFetchRoutes() {
     try {
         execSync('node -e "require(\'./scripts/fetchRouteConfigs.js\').fetchRoutes()"', {
@@ -161,6 +164,10 @@ function runFetchRoutes() {
     }
 }
 
+/**
+ * Checks if the provided string is a valid URL or not
+ * @param {String} path - URL path
+ */
 function isAValidUrl(path) {
     try {
         new URL(path);
@@ -169,38 +176,57 @@ function isAValidUrl(path) {
         return false; // Input is not a valid URL
     }
 }
+
+/**
+ * Checks if the provided Json object is matching the pre set schema.
+ * @param {Object} newRoute - New routes object
+ * @param {Object} schema - Pre-set schema
+ */
 async function isAValidSchema(newRoute, schema) {
-    try{
+    try {
         // Compile the schema
         const validate = ajv.compile(schema);
-    
+
         // Validate the data
         const valid = validate(newRoute);
         // Output the result
         if (valid) return true
+
+        console.log("Invalid Schema <Route Ignored> : ", newRoute)
+
         return false
-    }catch(error){
+    } catch (error) {
         return false
     }
 
 }
+
+/**
+ * Checks if the provided string is a valid path or not
+ * @param {String} uri - File path
+ */
 async function isAValidJsonPath(uri) {
     try {
-         // Resolve the absolute path
-         const absolutePath = path.resolve(uri);
+        // Resolve the absolute path
+        const absolutePath = path.resolve(uri);
 
-         // Check if the path exists and is a file
-         const stats = await fs.lstat(absolutePath);
- 
-         // Check if the file has a .json extension
-         const isJsonFile = path.extname(absolutePath).toLowerCase() === '.json';
- 
-         return stats.isFile() && isJsonFile;
+        // Check if the path exists and is a file
+        const stats = await fs.lstat(absolutePath);
+
+        // Check if the file has a .json extension
+        const isJsonFile = path.extname(absolutePath).toLowerCase() === '.json';
+
+        return stats.isFile() && isJsonFile;
     } catch (error) {
         // If an error occurs, it's not a valid local path or file
         return false;
     }
 }
+
+/**
+ * Loads the json data from the file
+ * @param {String} filePath - File path
+ */
 async function loadJsonFile(filePath) {
     try {
         const fileContent = await fs.readFile(filePath, 'utf8');
@@ -211,9 +237,14 @@ async function loadJsonFile(filePath) {
     }
 }
 
+/**
+ * Checks if the provided json is valid or not
+ * @param {Object} jsonString - Json object
+ */
+
 function isValidJson(jsonString) {
     try {
-        typeof jsonString === "string" ? JSON.parse(jsonString) : "" ; // Attempt to parse the JSON string
+        typeof jsonString === "string" ? JSON.parse(jsonString) : ""; // Attempt to parse the JSON string
         return true; // If parsing succeeds, it's a valid JSON
     } catch (error) {
         console.log("ERROR : : : ", error)

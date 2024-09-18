@@ -16,9 +16,13 @@
 			"message": "Required project service base URL",
 			"optional": true
 		},
-		"SELF_CREATION_PORTAL_SERVICE_BASE_URL": {
+		"SELF-CREATION-PORTAL_SERVICE_BASE_URL": {
 			"message": "Required mentoring service base URL",
 			"optional": true
+		},
+		"REQUIRED_BASE_PACKAGES" : {
+			"message": "Required Base package names",
+			"optional": false
 		}
 	}
 }
