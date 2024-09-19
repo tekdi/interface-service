@@ -169,7 +169,7 @@ function isAValidUrl(path) {
         new URL(path);
         return true; // Input is a valid URL
     } catch (e) {
-        return false; // Input is not a valid URL
+        throw { message : `Invalid URL : ${path} ` }
     }
 }
 
