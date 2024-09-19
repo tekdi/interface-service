@@ -75,6 +75,10 @@ let environmentVariables = {
 		message: 'Required ROUTE_CONFIG_JSON_URLS_PATHS urls',
 		optional: false,
 	},
+	REQUIRED_BASE_PACKAGES : {
+		message: "Required Base package names",
+		optional: false
+	},
 	...requiredEnvs.requiredEnvs,
 }
 

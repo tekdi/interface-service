@@ -30,19 +30,28 @@ let orchestratedFileData = {
 /**
  * Main fuction which fetches the routes from env file and creates json file in './configs/routesConfigs'
  */
-async function fetchRoutes() {
-    // fetch routes config file from env and split
-    const fetchRouteUrls = process.env.ROUTE_CONFIG_JSON_URLS_PATHS.split(",")
-    // Create an array of promises
-    const promises = fetchRouteUrls
-        .filter(fetchUrl => fetchUrl !== '')  // Filter out empty URLs
-        .map(fetchUrl => constructJson(fetchUrl));  // Map each URL to a promise
+async function fetchRouteConfigs() {
+    try {
+        // Fetch routes config file from env and split
+        const fetchRouteUrls = process.env.ROUTE_CONFIG_JSON_URLS_PATHS.split(",");
+        
+        // Loop through the URLs one by one
+        for (const fetchUrl of fetchRouteUrls) {
+            if (fetchUrl !== '') {
+                await constructJson(fetchUrl);  // Wait for each URL to be processed sequentially
+            }
+        }
 
-    // Wait for all promises to complete
-    await Promise.all(promises);
-    // write all the orchestrated routes to the file 
-    if (orchestratedFileData.routes.length > 0) await handleOrchestratedRoutes(orchestratedFileData.routes)
+        // Write all the orchestrated routes to the file 
+        if (orchestratedFileData.routes.length > 0) {
+            await handleOrchestratedRoutes(orchestratedFileData.routes);
+        }
+        
+    } catch (error) {
+        throw(error);
+    }
 }
+
 /**
  * Construct the json file in required format and writes it into file
  * @param {String} url - The URL to fetch.
@@ -54,12 +63,12 @@ async function constructJson(url) {
         if (isAValidUrl(url)) {
             // get the data in json format 
             jsonData = await request.get(url)
-        } else if (await isAValidJsonPath(url)) {
+        } else if (await validateJsonFilePath(url)) {
             // load the json file from mentioned location
             jsonData.data = await loadJsonFile(url);
         }
 
-        jsonData.success = jsonData?.data.routes.length > 0 && isValidJson(jsonData) ? true : false
+        jsonData.success = jsonData?.data.routes.length > 0 && isJsonValid(jsonData) ? true : false
 
         let fileData = {
             routes: []
@@ -93,7 +102,8 @@ async function constructJson(url) {
         }
 
     } catch (error) {
-        console.log(error)
+        console.error("Execution Halted : ",error)
+        throw(error)
     }
 
 }
@@ -151,20 +161,6 @@ function isADuplicateRoute(newItem, existingItems) {
 }
 
 /**
- * Executes the functions in the script.
- */
-function runFetchRoutes() {
-    try {
-        execSync('node -e "require(\'./scripts/fetchRouteConfigs.js\').fetchRoutes()"', {
-            stdio: 'inherit',
-        })
-        console.log('Route fetch Script executed successfully.')
-    } catch (error) {
-        console.error('Error occurred while running the script:', error)
-    }
-}
-
-/**
  * Checks if the provided string is a valid URL or not
  * @param {String} path - URL path
  */
@@ -192,11 +188,10 @@ async function isAValidSchema(newRoute, schema) {
         // Output the result
         if (valid) return true
 
-        console.log("Invalid Schema <Route Ignored> : ", newRoute)
+        throw { message : `Invalid Schema <Route Ignored> : ${newRoute} ` }
 
-        return false
     } catch (error) {
-        return false
+        throw error
     }
 
 }
@@ -205,7 +200,7 @@ async function isAValidSchema(newRoute, schema) {
  * Checks if the provided string is a valid path or not
  * @param {String} uri - File path
  */
-async function isAValidJsonPath(uri) {
+async function validateJsonFilePath(uri) {
     try {
         // Resolve the absolute path
         const absolutePath = path.resolve(uri);
@@ -213,10 +208,7 @@ async function isAValidJsonPath(uri) {
         // Check if the path exists and is a file
         const stats = await fs.lstat(absolutePath);
 
-        // Check if the file has a .json extension
-        const isJsonFile = path.extname(absolutePath).toLowerCase() === '.json';
-
-        return stats.isFile() && isJsonFile;
+        return stats.isFile() && path.extname(absolutePath).toLowerCase() === '.json';
     } catch (error) {
         // If an error occurs, it's not a valid local path or file
         return false;
@@ -230,27 +222,40 @@ async function isAValidJsonPath(uri) {
 async function loadJsonFile(filePath) {
     try {
         const fileContent = await fs.readFile(filePath, 'utf8');
-        const jsonData = JSON.parse(fileContent);
-        return jsonData;
+        return JSON.parse(fileContent);
     } catch (error) {
-        return error; // Return null or handle the error as needed
+        throw {
+            message: `Failed to load Json file. File path : ${filePath} `
+        }; 
     }
 }
 
 /**
  * Checks if the provided json is valid or not
- * @param {Object} jsonString - Json object
+ * @param {Object} jsonData - Json object
  */
 
-function isValidJson(jsonString) {
+function isJsonValid(jsonData) {
     try {
-        typeof jsonString === "string" ? JSON.parse(jsonString) : ""; // Attempt to parse the JSON string
+        typeof jsonData === "string" ? JSON.parse(jsonData) : ""; // Attempt to parse the JSON string
         return true; // If parsing succeeds, it's a valid JSON
     } catch (error) {
-        console.log("ERROR : : : ", error)
-        return false; // If an error occurs during parsing, it's not a valid JSON
+        throw {
+            message : `Invalid Json : ${jsonData}`
+        }
     }
 }
-module.exports = { fetchRoutes, runFetchRoutes }
+module.exports = { executeFetchRoutesScript }
 
-if (require.main === module) runFetchRoutes().catch((error) => console.error(error))
+/**
+ * Executes the functions in the script.
+ */
+async function executeFetchRoutesScript() {
+    try {
+        await fetchRouteConfigs()
+        console.log('Route fetch Script executed successfully.')
+    } catch (error) {
+        throw error.message || 'Error occurred while running the script'
+        
+    }
+}
