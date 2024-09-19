@@ -1,0 +1,24 @@
+{
+	"requiredEnvs": {
+		"USER_SERVICE_BASE_URL": {
+			"message": "Required user service base URL",
+			"optional": false
+		},
+		"MENTORING_SERVICE_BASE_URL": {
+			"message": "Required mentoring service base URL",
+			"optional": false
+		},
+		"SURVEY_SERVICE_BASE_URL": {
+			"message": "Required survey service base URL",
+			"optional": true
+		},
+		"PROJECT_SERVICE_BASE_URL": {
+			"message": "Required project service base URL",
+			"optional": true
+		},
+		"SELF_CREATION_PORTAL_SERVICE_BASE_URL": {
+			"message": "Required mentoring service base URL",
+			"optional": true
+		}
+	}
+}
