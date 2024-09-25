@@ -10,15 +10,22 @@ packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
 	process.exit()
 })
 
-// run script to fetch configs from corresponding service and create it in desired format 
-const { runFetchRoutes } = require('./scripts/fetchRouteConfigs')
-runFetchRoutes()
 
-const { runCombineRoutes } = require('./scripts/combineRoutesConfigs')
-runCombineRoutes()
+const executeScripts = require('./scripts');
 
-const dependencyManager = require('@helpers/dependencyManager')
-dependencyManager()
+// Wrap the logic in an async function to handle await
+(async () => {
+    try {
+        // First, execute fetchRouteConfigs
+        await executeScripts();
+ 
+        // Continue with the rest of the code after the scripts are done
+        const dependencyManager = require('@helpers/dependencyManager');
+        dependencyManager();
+    } catch (error) {
+        console.error('Error in app initialization:', error);
+    }
+})();
 
 let environmentData = require('./envVariables')()
 if (!environmentData.success) {
