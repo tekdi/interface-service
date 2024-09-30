@@ -38,7 +38,7 @@
 </details>
 
 </br>
-The Mentoring building block enables effective mentoring interactions between mentors and mentees. The capability aims to create a transparent eco-system to learn, connect, solve, and share within communities. MentorED is an open source mentoring application that facilitates peer learning and professional development by creating a community of mentors and mentees.
+The Interface service building block enables ELEVATE capabilities such as Mentoring, Projects, and Survey to be easily deployed into existing platforms with no changes needed in the respective core services. In any deployment of ELEVATE capabilities, all the components i.e. backend micro-services and portal talk to each other via the Interface service only, hence any one of them can be replaced with other similar blocks making it easy to integrate these capabilities into existing implementations. Changes, if any are done in isolated npm packages specific to each installation thereby leaving the rest of the services untouched and out of the risk of any issues being introduced.
 
 </div>
 <br>
@@ -47,8 +47,7 @@ The Mentoring building block enables effective mentoring interactions between me
 
 -   **Operating System:** Ubuntu 22
 -   **Node.js:** v20
--   **PostgreSQL:** 16
--   **Citus:** 12.1
+-   **Apache Kafka®:** 3.5.0
 
 # Setup Options
 
@@ -186,11 +185,11 @@ npm test
 
 # Used in
 
-This project was built to be used with [Mentoring Service](https://github.com/ELEVATE-Project/mentoring.git) and [User Service](https://github.com/ELEVATE-Project/user.git).
+This project was built to be used with [Mentoring Service](https://github.com/ELEVATE-Project/mentoring.git), [Project Service](https://github.com/ELEVATE-Project/project-service.git), [Survey Service](https://github.com/ELEVATE-Project/samiksha-service.git), [User Service](https://github.com/ELEVATE-Project/user.git).
 
-The frontend/mobile application [repo](https://github.com/ELEVATE-Project/mentoring-mobile-app).
+The frontend/mobile application for Mentoring [repo](https://github.com/ELEVATE-Project/mentoring-mobile-app) and Projects and Survey [repo](https://github.com/ELEVATE-Project/observation-survey-projects-pwa) 
 
-You can learn more about the full implementation of MentorEd [here](https://elevate-docs.shikshalokam.org/.mentorEd/intro) .
+You can learn more about the full implementation of various capabilities of ELEVATE [here](https://elevate-docs.shikshalokam.org) .
 
 # Team
 
