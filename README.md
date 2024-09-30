@@ -43,6 +43,14 @@ The Interface service building block enables ELEVATE capabilities such as Mentor
 </div>
 <br>
 
+# Interface Service Deployment View
+
+![Mentoring](https://github.com/ELEVATE-Project/interface-service/blob/main/src/Screenshot%202024-09-30%20at%205.53.03%20PM.png?raw=true)
+
+![Project and Survey](https://github.com/ELEVATE-Project/interface-service/blob/main/src/Screenshot%202024-09-30%20at%205.53.45%20PM.png?raw=true)
+
+<br>
+
 # System Requirements
 
 -   **Operating System:** Ubuntu 22
