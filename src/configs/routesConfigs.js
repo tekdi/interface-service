@@ -2,6 +2,6 @@
 const config = require('@configs/.config.json')
 
 exports.routesConfigs = {
-	services: ['user', 'mentoring', 'notification', 'scheduler', 'project', 'entity_management','self_creation_portal','survey'],
+	services: process.env.REQUIRED_BASE_PACKAGES.split(","),
 	routes: config.routes,
 }

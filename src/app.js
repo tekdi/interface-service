@@ -10,11 +10,22 @@ packageInstaller(process.env.REQUIRED_PACKAGES).catch((error) => {
 	process.exit()
 })
 
-const { runCombineRoutes } = require('./scripts/combineRoutesConfigs')
-runCombineRoutes()
 
-const dependencyManager = require('@helpers/dependencyManager')
-dependencyManager()
+const executeScripts = require('./scripts');
+
+// Wrap the logic in an async function to handle await
+(async () => {
+    try {
+        // First, execute fetchRouteConfigs
+        await executeScripts();
+ 
+        // Continue with the rest of the code after the scripts are done
+        const dependencyManager = require('@helpers/dependencyManager');
+        dependencyManager();
+    } catch (error) {
+        console.error('Error in app initialization:', error);
+    }
+})();
 
 let environmentData = require('./envVariables')()
 if (!environmentData.success) {
