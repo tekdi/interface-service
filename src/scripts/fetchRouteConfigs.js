@@ -32,9 +32,19 @@ let orchestratedFileData = {
  */
 async function fetchRouteConfigs() {
     try {
+
+        try {
+            // Check if the directory exists
+            await fs.access(outputDir);
+            console.log(`outputDir ${outputDir} already exists.`);
+        } catch (error) {
+            // If access fails, it means the outputDir doesn't exist, so create it
+            await fs.mkdir(outputDir, { recursive: true });
+            console.log(`outputDir ${outputDir} created.`);
+        }
         // Fetch routes config file from env and split
         const fetchRouteUrls = process.env.ROUTE_CONFIG_JSON_URLS_PATHS.split(",");
-        
+
         // Loop through the URLs one by one
         for (const fetchUrl of fetchRouteUrls) {
             if (fetchUrl !== '') {
@@ -46,9 +56,9 @@ async function fetchRouteConfigs() {
         if (orchestratedFileData.routes.length > 0) {
             await handleOrchestratedRoutes(orchestratedFileData.routes);
         }
-        
+
     } catch (error) {
-        throw(error);
+        throw (error);
     }
 }
 
@@ -73,7 +83,7 @@ async function constructJson(url) {
         let fileData = {
             routes: []
         }
-        
+
 
         if (jsonData.success) {
             // extract base package name to create json file 
@@ -102,8 +112,8 @@ async function constructJson(url) {
         }
 
     } catch (error) {
-        console.error("Execution Halted : ",error)
-        throw(error)
+        console.error("Execution Halted : ", error)
+        throw (error)
     }
 
 }
@@ -169,7 +179,7 @@ function isAValidUrl(path) {
         new URL(path);
         return true; // Input is a valid URL
     } catch (e) {
-        throw { message : `Invalid URL : ${path} ` }
+        throw { message: `Invalid URL : ${path} ` }
     }
 }
 
@@ -188,7 +198,7 @@ async function isAValidSchema(newRoute, schema) {
         // Output the result
         if (valid) return true
 
-        throw { message : `Invalid Schema <Route Ignored> : ${newRoute} ` }
+        throw { message: `Invalid Schema <Route Ignored> : ${newRoute} ` }
 
     } catch (error) {
         throw error
@@ -226,7 +236,7 @@ async function loadJsonFile(filePath) {
     } catch (error) {
         throw {
             message: `Failed to load Json file. File path : ${filePath} `
-        }; 
+        };
     }
 }
 
@@ -241,7 +251,7 @@ function isJsonValid(jsonData) {
         return true; // If parsing succeeds, it's a valid JSON
     } catch (error) {
         throw {
-            message : `Invalid Json : ${jsonData}`
+            message: `Invalid Json : ${jsonData}`
         }
     }
 }
@@ -256,6 +266,6 @@ async function executeFetchRoutesScript() {
         console.log('Route fetch Script executed successfully.')
     } catch (error) {
         throw error.message || 'Error occurred while running the script'
-        
+
     }
 }
