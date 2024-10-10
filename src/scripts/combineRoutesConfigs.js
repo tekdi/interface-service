@@ -11,7 +11,7 @@ async function combineRoutesAndWriteToFile() {
 
 	try {
 		const files = await fs.readdir(outputDir)
-
+		await fs.writeFile(outputFile, JSON.stringify({ routes: [] }, null, 4))
 		for (const file of files) {
 			const filePath = path.join(outputDir, file)
 			if (filePath.endsWith('.json')) {
