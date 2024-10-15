@@ -79,6 +79,11 @@ let environmentVariables = {
 		message: "Required Base package names",
 		optional: false
 	},
+	DEBUG_MODE : {
+		message: "Required debug mode",
+		optional: true,
+		default : "false"
+	},
 	...requiredEnvs.requiredEnvs,
 }
 
