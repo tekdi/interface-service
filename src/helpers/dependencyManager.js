@@ -21,8 +21,9 @@ const dependencyManager = () => {
 		packages.forEach(packageInfo => {
 
 			const { packageName }  = packageInfo.packageMeta;
+			
 
-			let requiredDependencies  = packageInfo.requiredDependencies();
+			
 			
 			const { dependencyManager, requiredEnvs } = require(packageName)
 
@@ -31,31 +32,35 @@ const dependencyManager = () => {
 				...requiredEnvs,
 			}
 
-			if( requiredDependencies.length > 0) {
+			if(packageInfo.requiredDependencies){
+			let requiredDependencies  = packageInfo.requiredDependencies();
 
-				const injectionPackageMap = new Map()
-				const unsupportedDependencies = []
+				if( requiredDependencies.length > 0) {
 
-				requiredDependencies.forEach(dependencyArray => {
+					const injectionPackageMap = new Map()
+					const unsupportedDependencies = []
+
+					requiredDependencies.forEach(dependencyArray => {
+						
+					if(dependencyArray.dependencies) {
+						dependencyArray.dependencies.map((dependency) => {
+
+						if (!supportedDependencyMap.has(dependency.name)) unsupportedDependencies.push(dependency.name)
+						else injectionPackageMap.set(dependency.name, supportedDependencyMap.get(dependency.name))
+						})
+					}
+					if (unsupportedDependencies.length > 0)
+						throw `Package ${packageName} requires unsupported dependencies: [${unsupportedDependencies}]`
 					
-				if(dependencyArray.dependencies) {
-					dependencyArray.dependencies.map((dependency) => {
-
-					if (!supportedDependencyMap.has(dependency.name)) unsupportedDependencies.push(dependency.name)
-					else injectionPackageMap.set(dependency.name, supportedDependencyMap.get(dependency.name))
+					const packageEnvironmentVariables = {}
+					Object.keys(requiredEnvs).map((envVariable) => {
+						packageEnvironmentVariables[envVariable] = process.env[envVariable]
 					})
+
+					dependencyManager(injectionPackageMap, packageEnvironmentVariables)
+
+					});
 				}
-				if (unsupportedDependencies.length > 0)
-					throw `Package ${packageName} requires unsupported dependencies: [${unsupportedDependencies}]`
-				
-				const packageEnvironmentVariables = {}
-				Object.keys(requiredEnvs).map((envVariable) => {
-					packageEnvironmentVariables[envVariable] = process.env[envVariable]
-				})
-
-				dependencyManager(injectionPackageMap, packageEnvironmentVariables)
-
-				});
 			}
 		
 		});
