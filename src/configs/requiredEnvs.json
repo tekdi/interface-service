@@ -6,7 +6,7 @@
 		},
 		"MENTORING_SERVICE_BASE_URL": {
 			"message": "Required mentoring service base URL",
-			"optional": false
+			"optional": true
 		},
 		"SURVEY_SERVICE_BASE_URL": {
 			"message": "Required survey service base URL",
@@ -17,7 +17,7 @@
 			"optional": true
 		},
 		"SELF-CREATION-PORTAL_SERVICE_BASE_URL": {
-			"message": "Required scp service base URL",
+			"message": "Required SCP service base URL",
 			"optional": true
 		},
 		"ENTITY-MANAGEMENT_SERVICE_BASE_URL": {
