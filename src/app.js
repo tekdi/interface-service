@@ -7,13 +7,20 @@ const path = require('path');
 const packageInstaller = require('./utils/packageInstaller');
 const executeScripts = require('./scripts');
 
+        
+
 (async () => {
     try {
+
+        
         // First, install necessary packages
         await packageInstaller(process.env.REQUIRED_PACKAGES);
         
         // Next, execute fetchRouteConfigs and combineRoutesConfigs
         await executeScripts();
+
+        const dependencyManager = require('@helpers/dependencyManager')
+        await dependencyManager()
 
         // After scripts execution, continue with environment data validation
         let environmentData = require('./envVariables')();
@@ -55,7 +62,8 @@ const executeScripts = require('./scripts');
                 onError(err);
             }
             console.log('Environment: ' + process.env.APPLICATION_ENV);
-            console.log('Application is running on port: ' + process.env.APPLICATION_PORT);
+            console.log('Application is running on port: ' + process.env.APPLICATION_PORT);    
+            
         });
 
     } catch (error) {
