@@ -20,7 +20,15 @@ const isBadResponse = (statusCode) => statusCode >= 400 && statusCode <= 599
 
 const packageRouterCaller = async (req, res, responses, servicePackage, packages) => {
 	const selectedPackage = packages.find((obj) => obj.packageMeta.basePackageName === servicePackage.basePackageName)
-	req['baseUrl'] = process.env[`${selectedPackage.packageMeta.basePackageName.toUpperCase()}_SERVICE_BASE_URL`]
+	
+	if(servicePackage.service){
+		req['baseUrl'] = process.env[`${servicePackage.service.toUpperCase()}_SERVICE_BASE_URL`]
+	}else {
+		req['baseUrl'] = process.env[`${selectedPackage.packageMeta.basePackageName.toUpperCase()}_SERVICE_BASE_URL`]
+	}
+	if(process.env.DEBUG_MODE == "true"){
+		console.log("req['baseUrl']",req['baseUrl']);
+	}
 	const newBody = bodyValueReplacer(req.body, servicePackage.targetBody)
 	req.body = newBody
 	responses[selectedPackage.packageMeta.basePackageName] = await selectedPackage.packageRouter(req, res, responses)
