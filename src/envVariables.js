@@ -6,17 +6,11 @@ let tableData = new table()
 let environmentVariables = {
 	APPLICATION_PORT: {
 		message: 'Required port no',
-		optional: true,
-		default: "3567",
+		optional: false,
 	},
 	APPLICATION_ENV: {
 		message: 'Required node environment',
 		optional: false,
-	},
-	API_DOC_URL: {
-		message: 'Required api doc',
-		optional: true,
-		default: "/interface/api-doc",
 	},
 	REQUIRED_PACKAGES: {
 		message: 'Required REQUIRED_PACKAGES',
@@ -66,13 +60,11 @@ let environmentVariables = {
 	},
 	RATE_LIMITER_NUMBER_OF_PROXIES: {
 		message: 'Required number of proxies',
-		optional: true,
-		default: 3
+		optional: false,
 	},
 	RATE_LIMITER_ENABLED: {
 		message: 'Required global rate limiter enabled flag',
-		optional: true,
-		default: true,
+		optional: false,
 	},
 	ALLOWED_HOST: {
 		message: 'Required CORS allowed host',
