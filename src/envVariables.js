@@ -24,7 +24,8 @@ let environmentVariables = {
 	},
 	SUPPORTED_HTTP_TYPES: {
 		message: 'Required supported HTTP types',
-		optional: false,
+		optional: true,
+		default: 'GET POST PUT PATCH DELETE',
 	},
 	SCHEDULER_SERVICE_BASE_URL: {
 		message: 'Required scheduler service base URL',
