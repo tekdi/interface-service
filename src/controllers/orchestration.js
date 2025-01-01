@@ -31,7 +31,9 @@ const packageRouterCaller = async (req, res, responses, servicePackage, packages
 	}
 	const newBody = bodyValueReplacer(req.body, servicePackage.targetBody)
 	req.body = newBody
-	responses[selectedPackage.packageMeta.basePackageName] = await selectedPackage.packageRouter(req, res, responses)
+	req.service = servicePackage.service;
+
+	responses[selectedPackage.packageMeta.basePackageName] = await selectedPackage.packageRouter(req, res, responses);
 	const responseStatusCode = responses[selectedPackage.packageMeta.basePackageName].status
 	if (isBadResponse(responseStatusCode) && !res.headersSent) {
 		res.status(responseStatusCode).send(responses[selectedPackage.packageMeta.basePackageName].data)
@@ -47,6 +49,7 @@ const orchestrationHandler = async (packages, req, res) => {
 		let asyncRequestsStatues = []
 		if (inSequence)
 			for (const servicePackage of targetPackages) {
+
 				const isSuccess = await packageRouterCaller(req, res, responses, servicePackage, packages)
 				if (!isSuccess) {
 					asyncRequestsStatues.push(false)
