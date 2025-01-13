@@ -1,9 +1,4 @@
 {
 	"requiredDependencies": [],
-	"supportedDependencies": [
-		{
-			"name": "kafka",
-			"packageName": "elevate-kafka"
-		}
-	]
+	"supportedDependencies": []
 }
