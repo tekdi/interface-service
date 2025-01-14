@@ -24,10 +24,8 @@ const executeScripts = require('./scripts')
 			console.error('Server could not start. Not all environment variables are provided')
 			process.exit(1)
 		}
-		console.log('before init')
 		// Initialize the rest of the application (after the scripts are done)
 		require('./init')
-		console.log('after init')
 
 		// Create an Express app instance
 		const app = express()
@@ -41,25 +39,20 @@ const executeScripts = require('./scripts')
 			res.setHeader('Access-Control-Allow-Origin', process.env.ALLOWED_HOST)
 			next()
 		})
-		console.log('1')
 		// Load router packages and initialize the router
 		const routerPackages = require('@utils/packageLoader').packageLoader()
 		const validatedPackages = routerPackages // Bypassing the validator for now
 		const { initializeRouter } = require('@router')
 		app.use(initializeRouter(validatedPackages))
-		console.log('2')
 		// Serve API documentation
 		app.get(process.env.API_DOC_URL, (req, res) => {
 			res.sendFile(path.join(__dirname, './api-doc/index.html'))
 		})
-		console.log('3')
 		// Start the server
 		app.listen(process.env.APPLICATION_PORT, (err) => {
 			if (err) {
 				onError(err)
 			}
-			console.log('Environment: ' + process.env.APPLICATION_ENV)
-			console.log('Application is running on port: ' + process.env.APPLICATION_PORT)
 		})
 	} catch (error) {
 		// Handle any error from script execution or package installation
