@@ -6,14 +6,9 @@ exports.routeConfigInjector = (req, res, next) => {
 	const baseURL = req.protocol + '://' + req.headers.host + '/'
 	const parsedUrl = new URL(req.originalUrl, baseURL)
 	const urlWithoutQuery = parsedUrl.pathname
-	console.log('urlWithoutQuery: ', urlWithoutQuery)
-	console.log('routesConfigs: ', routesConfigs)
-	const routeConfig = routesConfigs.routes.find(
-		(route) => matchPathsAndExtractParams(route.sourceRoute, urlWithoutQuery)
-		//(routeConfig = routesConfigs.routes[0])
+	const routeConfig = routesConfigs.routes.find((route) =>
+		matchPathsAndExtractParams(route.sourceRoute, urlWithoutQuery)
 	)
-	//let routeConfig = routesConfigs.routes[0]
-	console.log('routeConfig: ', routeConfig)
 	if (routeConfig.targetPackages[0] && routeConfig.targetPackages[0].service) {
 		req['baseUrl'] = process.env[`${routeConfig.targetPackages[0].service.toUpperCase()}_SERVICE_BASE_URL`]
 	} else {
