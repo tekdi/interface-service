@@ -4,12 +4,12 @@
 			"message": "Required user service base URL",
 			"optional": false
 		},
-		"MENTORING_SERVICE_BASE_URL": {
-			"message": "Required mentoring service base URL",
+		"NOTIFICATION_SERVICE_BASE_URL": {
+			"message": "Required notification service base URL",
 			"optional": true
 		},
-		"SURVEY_SERVICE_BASE_URL": {
-			"message": "Required survey service base URL",
+		"EVENT_SERVICE_BASE_URL": {
+			"message": "Required event service base URL",
 			"optional": true
 		},
 		"PROJECT_SERVICE_BASE_URL": {

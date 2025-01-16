@@ -7,7 +7,7 @@ let environmentVariables = {
 	APPLICATION_PORT: {
 		message: 'Required port no',
 		optional: true,
-		default: "3567",
+		default: '3567',
 	},
 	APPLICATION_ENV: {
 		message: 'Required node environment',
@@ -16,7 +16,7 @@ let environmentVariables = {
 	API_DOC_URL: {
 		message: 'Required api doc',
 		optional: true,
-		default: "/interface/api-doc",
+		default: '/interface/api-doc',
 	},
 	REQUIRED_PACKAGES: {
 		message: 'Required REQUIRED_PACKAGES',
@@ -27,14 +27,14 @@ let environmentVariables = {
 		optional: true,
 		default: 'GET POST PUT PATCH DELETE',
 	},
-	SCHEDULER_SERVICE_BASE_URL: {
-		message: 'Required scheduler service base URL',
-		optional: false,
-	},
-	NOTIFICATION_SERVICE_BASE_URL: {
-		message: 'Required notification service base URL',
-		optional: false,
-	},
+	// SCHEDULER_SERVICE_BASE_URL: {
+	// 	message: 'Required scheduler service base URL',
+	// 	optional: false,
+	// },
+	// NOTIFICATION_SERVICE_BASE_URL: {
+	// 	message: 'Required notification service base URL',
+	// 	optional: false,
+	// },
 	RATE_LIMITER_PUBLIC_LOW_WINDOW: {
 		message: 'Required window duration for public-low type',
 		optional: true,
@@ -68,7 +68,7 @@ let environmentVariables = {
 	RATE_LIMITER_NUMBER_OF_PROXIES: {
 		message: 'Required number of proxies',
 		optional: true,
-		default: 3
+		default: 3,
 	},
 	RATE_LIMITER_ENABLED: {
 		message: 'Required global rate limiter enabled flag',
@@ -84,14 +84,14 @@ let environmentVariables = {
 		message: 'Required ROUTE_CONFIG_JSON_URLS_PATHS urls',
 		optional: false,
 	},
-	REQUIRED_BASE_PACKAGES : {
-		message: "Required Base package names",
-		optional: false
+	REQUIRED_BASE_PACKAGES: {
+		message: 'Required Base package names',
+		optional: false,
 	},
-	DEBUG_MODE : {
-		message: "Required debug mode",
+	DEBUG_MODE: {
+		message: 'Required debug mode',
 		optional: true,
-		default : "false"
+		default: 'false',
 	},
 	...requiredEnvs.requiredEnvs,
 }
