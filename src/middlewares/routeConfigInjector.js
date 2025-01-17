@@ -9,12 +9,10 @@ exports.routeConfigInjector = (req, res, next) => {
 	const routeConfig = routesConfigs.routes.find((route) =>
 		matchPathsAndExtractParams(route.sourceRoute, urlWithoutQuery)
 	)
-	if(routeConfig.targetPackages[0] && routeConfig.targetPackages[0].service){
+	if (routeConfig.targetPackages[0] && routeConfig.targetPackages[0].service) {
 		req['baseUrl'] = process.env[`${routeConfig.targetPackages[0].service.toUpperCase()}_SERVICE_BASE_URL`]
-		
-	}else {
+	} else {
 		req['baseUrl'] = process.env[`${routeConfig.targetPackages[0].basePackageName.toUpperCase()}_SERVICE_BASE_URL`]
-	
 	}
 	req['type'] = routeConfig.type
 	req['inSequence'] = routeConfig.inSequence
