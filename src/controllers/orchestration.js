@@ -32,9 +32,14 @@ const packageRouterCaller = async (req, res, responses, servicePackage, packages
 	const newBody = bodyValueReplacer(req.body, servicePackage.targetBody)
 	req.body = newBody
 	req.service = servicePackage.service;
-
-	responses[servicePackage.service] = await selectedPackage.packageRouter(req, res, responses);
-	const responseStatusCode = responses[servicePackage.service].status
+	let responseStatusCode
+	if(servicePackage.merge == true && servicePackage.mergeKey != ''){
+		responses[servicePackage.mergeKey] = await selectedPackage.packageRouter(req, res, responses);
+		responseStatusCode = responses[servicePackage.mergeKey].status
+	}else{
+		responses[servicePackage.service] = await selectedPackage.packageRouter(req, res, responses);
+		responseStatusCode = responses[servicePackage.service].status
+	}
 	if (isBadResponse(responseStatusCode) && !res.headersSent) {
 		res.status(responseStatusCode).send(responses[servicePackage.service].data)
 		return false
@@ -51,6 +56,7 @@ const orchestrationHandler = async (packages, req, res) => {
 			for (const servicePackage of targetPackages) {
 
 				const isSuccess = await packageRouterCaller(req, res, responses, servicePackage, packages)
+
 				if (!isSuccess) {
 					asyncRequestsStatues.push(false)
 					break
@@ -64,8 +70,12 @@ const orchestrationHandler = async (packages, req, res) => {
 			)
 		let response = {}
 		for (const servicePackage of targetPackages) {
-			
-			const body = responses[servicePackage.service]?.result
+			let body
+			if(servicePackage.merge == true && servicePackage.mergeKey != ''){
+				body = responses[servicePackage.mergeKey]?.result
+			}else{
+				body = responses[servicePackage.service]?.result
+			}
 			response = { ...response, ...body }
 			response = bodyValueReplacer(response, servicePackage.responseBody)
 		}
