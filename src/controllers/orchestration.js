@@ -41,7 +41,11 @@ const packageRouterCaller = async (req, res, responses, servicePackage, packages
 		responseStatusCode = responses[servicePackage.service].status
 	}
 	if (isBadResponse(responseStatusCode) && !res.headersSent) {
-		res.status(responseStatusCode).send(responses[servicePackage.service].data)
+		if(servicePackage.merge == true && servicePackage.mergeKey != ''){
+			res.status(responseStatusCode).send(responses[servicePackage.mergeKey].data)
+		}else{
+			res.status(responseStatusCode).send(responses[servicePackage.service].data)
+		}
 		return false
 	}
 	return true
