@@ -31,10 +31,21 @@ const packageRouterCaller = async (req, res, responses, servicePackage, packages
 	}
 	const newBody = bodyValueReplacer(req.body, servicePackage.targetBody)
 	req.body = newBody
-	responses[selectedPackage.packageMeta.basePackageName] = await selectedPackage.packageRouter(req, res, responses)
-	const responseStatusCode = responses[selectedPackage.packageMeta.basePackageName].status
+	req.service = servicePackage.service;
+	let responseStatusCode
+	if(servicePackage.merge == true && servicePackage.mergeKey != ''){
+		responses[servicePackage.mergeKey] = await selectedPackage.packageRouter(req, res, responses);
+		responseStatusCode = responses[servicePackage.mergeKey].status
+	}else{
+		responses[servicePackage.service] = await selectedPackage.packageRouter(req, res, responses);
+		responseStatusCode = responses[servicePackage.service].status
+	}
 	if (isBadResponse(responseStatusCode) && !res.headersSent) {
-		res.status(responseStatusCode).send(responses[selectedPackage.packageMeta.basePackageName].data)
+		if(servicePackage.merge == true && servicePackage.mergeKey != ''){
+			res.status(responseStatusCode).send(responses[servicePackage.mergeKey].data)
+		}else{
+			res.status(responseStatusCode).send(responses[servicePackage.service].data)
+		}
 		return false
 	}
 	return true
@@ -47,7 +58,9 @@ const orchestrationHandler = async (packages, req, res) => {
 		let asyncRequestsStatues = []
 		if (inSequence)
 			for (const servicePackage of targetPackages) {
+
 				const isSuccess = await packageRouterCaller(req, res, responses, servicePackage, packages)
+
 				if (!isSuccess) {
 					asyncRequestsStatues.push(false)
 					break
@@ -61,7 +74,12 @@ const orchestrationHandler = async (packages, req, res) => {
 			)
 		let response = {}
 		for (const servicePackage of targetPackages) {
-			const body = responses[servicePackage.basePackageName]?.result
+			let body
+			if(servicePackage.merge == true && servicePackage.mergeKey != ''){
+				body = responses[servicePackage.mergeKey]?.result
+			}else{
+				body = responses[servicePackage.service]?.result
+			}
 			response = { ...response, ...body }
 			response = bodyValueReplacer(response, servicePackage.responseBody)
 		}
