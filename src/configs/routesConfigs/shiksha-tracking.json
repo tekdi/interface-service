@@ -1,223 +1,197 @@
 {
     "routes": [
         {
-            "sourceRoute": "/interface/v1/account/create",
+            "sourceRoute": "/interface/v1/tracking/assessment/read/:assessmentTrackingId",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
             "targetPackages": [
                 {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
                 }
             ]
         },
         {
-            "sourceRoute": "/interface/v1/account/login",
+            "sourceRoute": "/interface/v1/tracking/assessment/create",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
             "targetPackages": [
                 {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
                 }
             ]
         },
         {
-            "sourceRoute": "/interface/v1/tenant/create",
+            "sourceRoute": "/interface/v1/tracking/assessment/search",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
             "targetPackages": [
                 {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
                 }
             ]
         },
         {
-            "sourceRoute": "/interface/v1/tenant/read",
-            "type": "GET",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
-                }
-            ]
-        },
-        {
-            "sourceRoute": "/interface/v1/tenant/update/:id",
-            "type": "PATCH",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
-                }
-            ]
-        },
-        {
-            "sourceRoute": "/interface/v1/cohort/create",
+            "sourceRoute": "/interface/v1/tracking/assessment/search/status",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
             "targetPackages": [
                 {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
                 }
             ]
         },
         {
-            "sourceRoute": "/interface/v1/cohort/update/:id",
-            "type": "PUT",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
-                }
-            ]
-        },
-        {
-            "sourceRoute": "/interface/v1/cohort/search",
+            "sourceRoute": "/interface/v1/tracking/assessment/list",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
             "targetPackages": [
                 {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
                 }
             ]
         },
         {
-            "sourceRoute": "/interface/v1/cohort/mycohorts/:id",
-            "type": "GET",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
-                }
-            ]
-        },
-        {
-            "sourceRoute": "/interface/v1/cohort/cohortHierarchy/:id",
-            "type": "GET",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
-                }
-            ]
-        },
-        {
-            "sourceRoute": "/interface/v1/cohortmember/list",
+            "sourceRoute": "/interface/v1/tracking/assessment/delete/:assessmentTrackingId",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
             "targetPackages": [
                 {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
                 }
             ]
         },
         {
-            "sourceRoute": "/interface/v1/cohortmember/create",
+            "sourceRoute": "/interface/v1/tracking/content/read/:contentTrackingId",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
             "targetPackages": [
                 {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
                 }
             ]
         },
         {
-            "sourceRoute": "/interface/v1/cohortmember/read/:id",
-            "type": "GET",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
-                }
-            ]
-        },
-        {
-            "sourceRoute": "/interface/v1/cohortmember/update/:id",
-            "type": "PUT",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
-                }
-            ]
-        },
-        {
-            "sourceRoute": "/interface/v1/user/read/:id",
-            "type": "GET",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
-                }
-            ]
-        },
-        {
-            "sourceRoute": "/interface/v1/user/update/:id",
-            "type": "PATCH",
-            "priority": "MUST_HAVE",
-            "inSequence": false,
-            "orchestrated": false,
-            "targetPackages": [
-                {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
-                }
-            ]
-        },
-        {
-            "sourceRoute": "/interface/v1/user/list",
+            "sourceRoute": "/interface/v1/tracking/content/create",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
             "orchestrated": false,
             "targetPackages": [
                 {
-                    "basePackageName": "user",
-                    "packageName": "shiksha-user"
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/interface/v1/tracking/content/search",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/interface/v1/tracking/content/search/status",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/interface/v1/tracking/content/course/status",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/interface/v1/tracking/content/unit/status",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/interface/v1/tracking/content/list",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/interface/v1/tracking/content/delete/:contentTrackingId",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/interface/v1/tracking/content/course/inprogress",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "tracking",
+                    "packageName": "shiksha-tracking"
                 }
             ]
         }
