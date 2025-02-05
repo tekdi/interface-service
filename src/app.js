@@ -39,9 +39,11 @@ const executeScripts = require('./scripts')
 			res.setHeader('Access-Control-Allow-Origin', process.env.ALLOWED_HOST)
 			next()
 		})
+
 		// Load router packages and initialize the router
 		const routerPackages = require('@utils/packageLoader').packageLoader()
 		const validatedPackages = routerPackages // Bypassing the validator for now
+		console.log('validatedPackages', validatedPackages)
 		const { initializeRouter } = require('@router')
 		app.use(initializeRouter(validatedPackages))
 		// Serve API documentation

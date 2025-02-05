@@ -4,21 +4,21 @@
 			"message": "Required user service base URL",
 			"optional": false
 		},
-		"MENTORING_SERVICE_BASE_URL": {
-			"message": "Required mentoring service base URL",
-			"optional": true
+		"NOTIFICATION_SERVICE_BASE_URL": {
+			"message": "Required notification service base URL",
+			"optional": false
 		},
-		"SURVEY_SERVICE_BASE_URL": {
-			"message": "Required survey service base URL",
-			"optional": true
+		"EVENT_SERVICE_BASE_URL": {
+			"message": "Required event service base URL",
+			"optional": false
 		},
-		"PROJECT_SERVICE_BASE_URL": {
-			"message": "Required project service base URL",
-			"optional": true
+		"TRACKING_SERVICE_BASE_URL": {
+			"message": "Required tracking service base URL",
+			"optional": false
 		},
-		"SELF-CREATION-PORTAL_SERVICE_BASE_URL": {
+		"ATTENDANCE_SERVICE_BASE_URL": {
 			"message": "Required SCP service base URL",
-			"optional": true
+			"optional": false
 		},
 		"ENTITY-MANAGEMENT_SERVICE_BASE_URL": {
 			"message": "Required entity-management service base URL",
