@@ -20,8 +20,8 @@
 			"message": "Required SCP service base URL",
 			"optional": false
 		},
-		"ENTITY-MANAGEMENT_SERVICE_BASE_URL": {
-			"message": "Required entity-management service base URL",
+		"CMS_SERVICE_BASE_URL": {
+			"message": "Required cms service base URL",
 			"optional": true
 		}
 	}
