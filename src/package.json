@@ -27,7 +27,7 @@
 		"module-alias": "^2.2.3",
 		"request": "^2.88.2",
 		"shiksha-attendance": "^1.0.1",
-		"shiksha-cms": "^1.0.0",
+		"shiksha-cms": "^1.0.1",
 		"shiksha-event": "^1.1.2",
 		"shiksha-notification": "^1.1.1",
 		"shiksha-tracking": "^1.0.1",
