@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+  name: interface
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: interface
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: interface
+    spec:
+      containers:
+      - image: ${ECR_REPOSITORY}:${IMAGE_TAG}
+        imagePullPolicy: "Always"
+        name: interface-service
+        ports:
+        - containerPort: 5004
+        envFrom:
+        - configMapRef:
+            name: interface-service-config
+        resources: {}
+      restartPolicy: Always
+      volumes: null
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: interface
+spec:
+  type: ClusterIP
+  ports:
+  - port: 5004
+    protocol: TCP
+  selector:
+    app: interface
