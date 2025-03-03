@@ -1,5 +1,6 @@
 'use strict'
 exports.matchPathsAndExtractParams = (pattern, url) => {
+	
 	const paramNames = []
 	const regexPattern = new RegExp(
 		pattern.replace(/\/:(\w+)/g, (_, paramName) => {
