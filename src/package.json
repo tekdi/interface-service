@@ -30,8 +30,8 @@
 		"shiksha-cms": "^1.1.2",
 		"shiksha-event": "^1.1.3",
 		"shiksha-notification": "^1.1.2",
-		"shiksha-tracking": "^1.0.4",
-		"shiksha-user": "^1.1.8"
+		"shiksha-tracking": "^1.0.5",
+		"shiksha-user": "^1.2.1"
 	},
 	"devDependencies": {
 		"eslint": "^8.16.0",
