@@ -31,7 +31,7 @@
 		"shiksha-event": "^1.1.3",
 		"shiksha-notification": "^1.1.2",
 		"shiksha-tracking": "^1.0.7",
-		"shiksha-user": "^1.2.1"
+		"shiksha-user": "^1.2.2"
 	},
 	"devDependencies": {
 		"eslint": "^8.16.0",
