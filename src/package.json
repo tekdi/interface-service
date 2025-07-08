@@ -31,7 +31,7 @@
 		"shiksha-ecml-cms": "^1.0.5",
 		"shiksha-event": "^1.1.3",
 		"shiksha-notification": "^1.1.3",
-		"shiksha-tracking": "^1.0.8",
+		"shiksha-tracking": "^1.1.0",
 		"shiksha-user": "^1.2.3"
 	},
 	"devDependencies": {
