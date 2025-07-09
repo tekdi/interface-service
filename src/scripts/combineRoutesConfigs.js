@@ -36,6 +36,7 @@ function runCombineRoutes() {
 			stdio: 'inherit',
 		})
 		console.log('Script executed successfully')
+		console.log('All routes have been combined into config.json')
 	} catch (error) {
 		console.error('Error occurred while running the script:', error)
 	}
