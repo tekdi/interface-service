@@ -52,6 +52,4 @@ jobs:
           aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region ${{ secrets.AWS_REGION_NAME }}
           kubectl delete deployment interface
           kubectl apply -f manifest/interface-updated.yaml
-          kubectl apply -f manifest/configmap.yaml
-          sleep 10
-          kubectl get pods | grep interfaces
+          kubectl apply -f manifest/configmap.yaml && sleep 5 && kubectl get pods | grep interfaces
