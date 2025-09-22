@@ -17,10 +17,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout repository
       - name: Check out repository
         uses: actions/checkout@v2
 
-      # Configure AWS credentials
+      # 2. Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -28,7 +29,17 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION_NAME }}
 
-      # Decode ConfigMap from base64 (same way as tracking)
+      # 3. Determine EKS cluster name based on environment
+      - name: Set EKS cluster name
+        run: |
+          if [[ "${{ github.event.inputs.environment }}" == "prod" ]]; then
+            echo "EKS_CLUSTER_NAME=${{ secrets.EKS_CLUSTER_NAME_PROD }}" >> $GITHUB_ENV
+          else
+            echo "EKS_CLUSTER_NAME=${{ secrets.EKS_CLUSTER_NAME }}" >> $GITHUB_ENV
+          fi
+          echo "Using cluster: $EKS_CLUSTER_NAME"
+
+      # 4. Write ConfigMap manifest
       - name: Write ConfigMap manifest
         run: |
           mkdir -p manifest
@@ -36,7 +47,7 @@ jobs:
           echo "Generated ConfigMap:"
           cat manifest/configmap.yaml
 
-      # Update Deployment manifest
+      # 5. Update Deployment manifest
       - name: Update Deployment Manifest
         env:
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
@@ -46,15 +57,23 @@ jobs:
           echo "Updated deployment manifest:"
           cat manifest/interface-updated.yaml
 
-      # Deploy to AWS EKS
+      # 6. Deploy to AWS EKS
       - name: Deploy to AWS EKS
         env:
-          EKS_CLUSTER_NAME: ${{ github.event.inputs.environment == 'prod' && secrets.EKS_CLUSTER_NAME_PROD || secrets.EKS_CLUSTER_NAME }}
+          EKS_CLUSTER_NAME: ${{ env.EKS_CLUSTER_NAME }}
         run: |
+          echo "Updating kubeconfig for cluster $EKS_CLUSTER_NAME"
           aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region ${{ secrets.AWS_REGION_NAME }}
+          
+          echo "Applying ConfigMap"
           kubectl apply -f manifest/configmap.yaml
+          
+          echo "Applying Deployment"
           kubectl apply -f manifest/interface-updated.yaml
-          # Force restart so new config is picked up
+          
+          echo "Restarting deployment to pick up new config"
           kubectl rollout restart deployment interface
+          
           sleep 10
+          echo "Current interface pods:"
           kubectl get pods | grep interface
