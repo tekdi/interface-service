@@ -63,7 +63,7 @@ jobs:
           EKS_CLUSTER_NAME: ${{ env.EKS_CLUSTER_NAME }}
         run: |
           echo "Updating kubeconfig for cluster $EKS_CLUSTER_NAME"
-          aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region ${{ secrets.AWS_REGION_NAME }}
+          aws eks update-kubeconfig --name "$EKS_CLUSTER_NAME" --region "${{ secrets.AWS_REGION_NAME }}"
           
           echo "Applying ConfigMap"
           kubectl apply -f manifest/configmap.yaml
