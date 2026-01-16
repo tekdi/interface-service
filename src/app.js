@@ -33,7 +33,7 @@ const executeScripts = require('./scripts')
 
 		// Middleware and CORS setup
 		app.use(cors())
-		app.use(json({ limit: '50mb' }));
+		// app.use(json({ limit: '50mb' }));
 		
 		// Set Access-Control-Allow-Origin header
 		app.use((req, res, next) => {
