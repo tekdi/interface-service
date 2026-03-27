@@ -56,8 +56,5 @@ jobs:
 
           kubectl apply -f manifest/configmap.yaml -n $NAMESPACE
           kubectl apply -f manifest/interface-updated.yaml -n $NAMESPACE
-
-          kubectl rollout restart deployment interface -n $NAMESPACE
-          kubectl rollout status deployment interface -n $NAMESPACE
-
+          kubectl delete pod -l app=interface -n $NAMESPACE
           kubectl get pods -n $NAMESPACE -l app=interface
