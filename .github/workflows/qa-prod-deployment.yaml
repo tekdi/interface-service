@@ -15,12 +15,14 @@ jobs:
   deploy:
     name: Deploy to AWS EKS
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
 
     steps:
+      # 1. Checkout
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      # Configure AWS credentials
+      # 2. Configure AWS
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -28,33 +30,34 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION_NAME }}
 
-      # Decode ConfigMap from base64 (same way as tracking)
+      # 3. Write ConfigMap
       - name: Write ConfigMap manifest
         run: |
           mkdir -p manifest
           echo "${{ secrets.ENV_FILE_CONTENT }}" | base64 -d > manifest/configmap.yaml
-          echo "Generated ConfigMap:"
-          cat manifest/configmap.yaml
 
-      # Update Deployment manifest
+      # 4. Update Deployment Manifest
       - name: Update Deployment Manifest
         env:
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
           IMAGE_TAG: ${{ github.event.inputs.tag }}
         run: |
           envsubst < manifest/interface.yaml > manifest/interface-updated.yaml
-          echo "Updated deployment manifest:"
-          cat manifest/interface-updated.yaml
 
-      # Deploy to AWS EKS
+      # 5. Deploy
       - name: Deploy to AWS EKS
         env:
+          AWS_REGION: ${{ secrets.AWS_REGION_NAME }}
           EKS_CLUSTER_NAME: ${{ github.event.inputs.environment == 'prod' && secrets.EKS_CLUSTER_NAME_PROD || secrets.EKS_CLUSTER_NAME }}
+          NAMESPACE: ${{ github.event.inputs.environment == 'prod' && 'microservices' || 'microservices-qa' }}
         run: |
-          aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region ${{ secrets.AWS_REGION_NAME }}
-          kubectl apply -f manifest/configmap.yaml
-          kubectl apply -f manifest/interface-updated.yaml
-          # Force restart so new config is picked up
-          kubectl rollout restart deployment interface
-          sleep 10
-          kubectl get pods | grep interface
+          aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
+          kubectl get ns $NAMESPACE >/dev/null 2>&1 || kubectl create ns $NAMESPACE
+
+          kubectl apply -f manifest/configmap.yaml -n $NAMESPACE
+          kubectl apply -f manifest/interface-updated.yaml -n $NAMESPACE
+
+          kubectl rollout restart deployment interface -n $NAMESPACE
+          kubectl rollout status deployment interface -n $NAMESPACE
+
+          kubectl get pods -n $NAMESPACE -l app=interface
